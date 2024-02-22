@@ -1,13 +1,14 @@
 * { box-sizing: border-box; }
 ul { list-style-type: none; }
-body { font-family: Verdana, sans-serif; }
+body { font-family: Verdana, sans-serif; 
+border-radius: 10px;}
 
 .month {
   padding: 20px;
   width: 80%;
   margin: 0 auto;
   background: #A57959;
-  text-align: center;
+  text-align: left;
 }
 
 .month ul {
