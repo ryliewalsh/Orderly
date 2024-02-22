@@ -48,14 +48,19 @@ li a {
   text-decoration: none;
 }
 /* specific styling for each category */
-li.do {
+li.overview {
   background-color: #A57959;
 }
+
 li.pay {
-  background-color: #D5DBD9;
+  background-color: #ceac8f;
 }
 li.plan {
-  background-color: #BFC4BA;
+  background-color: #D5DBD9;
+}
+
+li.do{
+  background-color:  #BFC4BA;
 }
 li.about {
   background-color: #B2ABA1;

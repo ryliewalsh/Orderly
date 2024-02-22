@@ -9,6 +9,7 @@
     </header>
         <div id="nav">
             <ol>
+                <li class = "overview"><a href="index.php">Overview</a></li>
                 <li class = "pay"><a href="pay.php">To Pay</a></li>
                 <li class = "plan"><a href="plan.php">To Plan</a></li>
                 <li class = "do"><a href="do.php">To Do</a></li>
