@@ -9,9 +9,9 @@
     </header>
         <div id="nav">
             <ol>
-                <li><a href="toPay.php"></a>To Pay</li>
-                <li><a href="comments.php">To Plan</a></li>
-                <li><a href="not-stolen.php">To Do</a></li>
+                <li><a href="pay.php">To Pay</a></li>
+                <li><a href="plan.php">To Plan</a></li>
+                <li><a href="do.php">To Do</a></li>
                 <li><a href="about.php">About</a></li>
             </ol>
         </div>
