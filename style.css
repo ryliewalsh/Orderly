@@ -24,34 +24,28 @@
   margin-left: auto;
 }
 
+
 ol {
   list-style-type: none;
-   margin: 0;
-   padding: 0;
-   overflow: hidden;
-   background-color: #333333;
- }
- 
- 
- li {
-   float: left;
- }
- 
- li a {
-  display: flex;
-  justify-content: space-between; 
-  align-items: center; 
-  background-color: #f0f0f0;
-  padding: 10px 20px;
- }
- 
- li a:hover {
-   background-color: #111111;
- 
- }
+  margin: 0;
+  padding: 0;
+}
 
- body {
-  border: 1px black solid;
-  margin: 50 50;
-  background-color: #F0F0F0;
+li {
+  display: inline-block; 
+  text-align: center; 
+  margin-right: 10px; 
+}
+
+li a {
+  display: block;
+  color: #fff; 
+  background-color: #333; 
+  padding: 10px 20px; 
+  text-decoration: none;
+}
+
+
+li a:hover {
+  background-color: #555; 
 }
