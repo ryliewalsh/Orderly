@@ -23,3 +23,23 @@
   
   margin-left: auto;
 }
+
+#nav ol {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+#nav ol li {
+  flex-grow: 1;
+  text-align: center;
+}
+
+#nav ol li a {
+  display: block;
+  padding: 10px;
+  background-color: #ddd;
+  text-decoration: none;
+}
