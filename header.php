@@ -9,10 +9,10 @@
     </header>
         <div id="nav">
             <ol>
-                <li><a href="pay.php">To Pay</a></li>
-                <li><a href="plan.php">To Plan</a></li>
-                <li><a href="do.php">To Do</a></li>
-                <li><a href="about.php">About</a></li>
+                <li class = "pay"><a href="pay.php">To Pay</a></li>
+                <li class = "plan"><a href="plan.php">To Plan</a></li>
+                <li class = "do"><a href="do.php">To Do</a></li>
+                <li class = "about"><a href="about.php">About</a></li>
             </ol>
         </div>
 </body>

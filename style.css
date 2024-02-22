@@ -33,7 +33,11 @@ ol {
 }
 
 li {
+  width: 40px; 
+  height: 20px;
+  border-radius: 10px;
   text-align: center;
+  overflow: hidden;
 }
 
 li a {
@@ -42,6 +46,19 @@ li a {
   background-color: #333;
   padding: 10px 20px;
   text-decoration: none;
+}
+/* specific styling for each category */
+li.do {
+  background-color: #A57959;
+}
+li.pay {
+  background-color: #D5DBD9;
+}
+li.plan {
+  background-color: #BFC4BA;
+}
+li.about {
+  background-color: #B2ABA1;
 }
 
 li a:hover {
