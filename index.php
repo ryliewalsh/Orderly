@@ -8,8 +8,8 @@
 
 <div class="month">      
   <ul>
-    <li class="prev">&#10094;</li>
-    <li class="next">&#10095;</li>
+    <!-- <li class="prev">&#10094;</li>
+    <li class="next">&#10095;</li> -->
     <li>
       February<br>
       <span style="font-size:18px">2024</span>
