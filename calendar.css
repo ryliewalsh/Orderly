@@ -14,7 +14,7 @@ body { font-family: Verdana, sans-serif;
 }
 
 .month ul {
-  margin: .046%;
+  margin: 0;
   padding: 0;
 }
 
@@ -34,7 +34,7 @@ body { font-family: Verdana, sans-serif;
 }
 
 .weekdays {
-  margin: 0;
+  margin: .046%;
   width: 80%;
   padding: 10px 0;
   background-color: #ddd;
