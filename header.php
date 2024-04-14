@@ -1,20 +1,25 @@
 <html>
   <head>
     <link rel="stylesheet" href="style.css">
+      <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
   </head>
   <body>
-    <header class="header">
-        <div class="box-left">LOGO</div>
-        <div class="box-right">User profile</div>
-    </header>
-        <div id="nav">
-            <ol>
-                <li class = "overview"><a href="index.php">Overview</a></li>
-                <li class = "pay"><a href="pay.php">To Pay</a></li>
-                <li class = "plan"><a href="plan.php">To Plan</a></li>
-                <li class = "do"><a href="do.php">To Do</a></li>
-                <li class = "about"><a href="about.php">About</a></li>
-            </ol>
-        </div>
-</body>
+  <div class="header">
+
+      <a class = "logo" href="index.php">Orderly.</a>
+      <a class="overview" href="index.php">Overview</a>
+      <a class="pay" href="pay.php">Pay</a>
+      <a class="plan" href="plan.php">Plan</a>
+      <a class="do" href="do.php">Do</a>
+      <a class="about" href="about.php">About</a>
+
+      <div class="header-right">
+
+          <a class="user" href="userSettings.php">Welcome home, <span class="username">USER</span></a>
+      </div>
+  </div>
+  </body>
+
 </html>
+
