@@ -1,13 +1,11 @@
-<?php require_once "header.php";
+<?php
 require_once "Dao.php";
-$dao = new Dao("comments.log");
+$dao = new Dao("items.log");
 ?>
 
     <div id="text">
 
-        <h2>Leave a Comment</h2>
-
-        <form method="post" action="comment_handler.php">
+        <form method="post" action="itemHandler.php">
             <div>
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name">
@@ -24,22 +22,6 @@ $dao = new Dao("comments.log");
             </div>
         </form>
 
-        <h2>Comments</h2>
-        <table>
-            <thead>
-            <tr>
-                <th>Comment</th>
-                <th>Date</th>
-            </tr>
-            </thead>
-            <?php
 
-            $lines = $dao->getComments();
-            foreach ($lines as $line) {
-                echo "<tr><td>{$line['comment']}</td><td>{$line['date_entered']}</td></tr>";
-            }
-            ?>
-        </table>
 
     </div>
-<?php require_once "footer.php"; ?>

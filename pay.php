@@ -18,7 +18,7 @@
             </div>
             <div class="small-box">
                 <div class="label-box">Upcoming Expenses</div>
-                <div class="content-box">Add a bill?</div>
+                <?php include("addItem.php");?>
             </div>
         </div>
     </div>
