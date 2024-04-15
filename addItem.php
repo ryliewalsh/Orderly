@@ -1,7 +1,4 @@
-<?php
-require_once "Dao.php";
-$dao = new Dao("items.log");
-?>
+
 
     <div id="text">
 
@@ -21,7 +18,6 @@ $dao = new Dao("items.log");
                 <input type="submit" value="Submit">
             </div>
         </form>
-
 
 
     </div>

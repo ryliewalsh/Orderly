@@ -33,5 +33,5 @@ $messages[] = "Thanks for the comment!";
 $_SESSION['messages'] = $messages;
 
 header("Location: https://orderly-b0075f006315.herokuapp.com/pay.php");
-exit();
+
 ?>
