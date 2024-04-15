@@ -18,9 +18,10 @@
             </div>
             <div class="small-box">
                 <div class="label-box">Upcoming Expenses</div>
-                <?php include("addItem.php");?>
+                <?php include_once("addItem.php");?>
             </div>
         </div>
     </div>
     </body>
+    </html>
 <?php require_once "footer.php"; ?>
