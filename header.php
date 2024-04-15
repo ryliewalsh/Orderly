@@ -1,12 +1,5 @@
 <?php
 session_start();
-
-
-if (!isset($_SESSION['user_id'])) {
-
-    header("Location: signUp.php");
-    exit();
-}
 ?>
 <!DOCTYPE html>
 <html>
