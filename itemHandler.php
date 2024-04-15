@@ -20,7 +20,7 @@ if(0 == strlen($comment)) {
 if (0 < count($messages)) {
     $_SESSION['messages'] = $messages;
     $_SESSION['inputs'] = $_POST;
-    header("Location: ./pay.php");
+    header("Location: https://orderly-b0075f006315.herokuapp.com/pay.php");
     exit();
 }
 
@@ -32,6 +32,6 @@ $_SESSION['sentiment'] = "good";
 $messages[] = "Thanks for the comment!";
 $_SESSION['messages'] = $messages;
 
-header("Location: ./pay.php");
+header("Location: https://orderly-b0075f006315.herokuapp.com/pay.php");
 exit();
 ?>
