@@ -27,17 +27,20 @@ class DAO {
     }
 
 
-    public function addBill($name, $comment) {
+    public function addBill($desc, $amount, $due_date, $is_recurring ) {
         #$this->logger->LogInfo("saveComment: [{$name}], [{$comment}]");
         $conn = $this->getConnection();
         $saveQuery =
             "INSERT INTO bills
-            (comment, name)
+            (user_id, description, amount, due_date, is_recurring, is_paid)
             VALUES
-            (:comment, :name)";
+            (1,:desc, :amount, :due_date, :is_recurring, 0 )";
+
         $q = $conn->prepare($saveQuery);
-        $q->bindParam(":comment", $comment);
-        $q->bindParam(":name", $name);
+        $q->bindParam(":desc", $description);
+        $q->bindParam(":amount", $amount);
+        $q->bindParam(":due_date", $due_date);
+        $q->bindParam(":is_recurring", $is_recurring);
         $q->execute();
     }
 

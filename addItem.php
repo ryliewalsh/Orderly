@@ -1,23 +1,22 @@
+<div id="text">
+    <form method="post" action="itemHandler.php">
+        <div>
+            <label for="description">Description:</label>
+            <input type="text" id="description" name="description">
+        </div>
+        <div>
+            <label for="amount">Amount:</label>
+            <input type="text" id="amount" name="amount">
+        </div>
+        <div>
+            <label for="due_date">Due Date:</label>
+            <input type="date" id="due_date" name="due_date">
+        </div>
+        <div>
+            <label for="is_recurring">Recurring:</label>
+            <input type="checkbox" id="is_recurring" name="is_recurring" value="1">
+        </div>
 
-
-    <div id="text">
-
-        <form method="post" action="itemHandler.php">
-            <div>
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name">
-            </div>
-            <div>
-                <label for="name">Comment:</label>
-                <input type="text" id="comment" name="comment">
-            </div>
-
-            <div>
-                <label for="name">Rating:</label>
-                <input type="text" id="rating" name="rating">
-                <input type="submit" value="Submit">
-            </div>
-        </form>
-
-
-    </div>
+        <input type="submit" value="Submit">
+    </form>
+</div>
