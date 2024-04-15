@@ -6,7 +6,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $due_date = $_POST['due_date'];
     $amount = $_POST['amount'];
     $is_recurring = $_POST['is_recurring'];
-    $is_paid = $_POST['is_paid'];
+
 
     // Validate form data (you can add more validation if needed)
     $errors = array();

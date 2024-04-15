@@ -3,10 +3,10 @@
 class DAO {
 
     public $filename;
-    private $host = "ec2-52-54-200-216.compute-1.amazonaws.com";
-    private $db = "ddnhtlfuck0irk";
-    private $user = "rgauzdxzwidjio";
-    private $pass = "a45367df63fdb2b618561cd9410d14da932a9665efb95cf73096827eb9c5f6ce";
+    private $host = "us-cluster-east-01.k8s.cleardb.net";
+    private $db = "heroku_1d54b3f3ff98f88";
+    private $user = "bbf816cd32fc09";
+    private $pass = "0c51babd";
 
     public function getConnection () {
         return
@@ -25,19 +25,35 @@ class DAO {
         $lines = explode("\n", trim($stuff));
         return $lines;
     }
-
-
-    public function addBill($desc, $amount, $due_date, $is_recurring ) {
+    public function addUser($description, $amount, $due_date, $is_recurring ) {
         #$this->logger->LogInfo("saveComment: [{$name}], [{$comment}]");
         $conn = $this->getConnection();
         $saveQuery =
             "INSERT INTO bills
             (user_id, description, amount, due_date, is_recurring, is_paid)
             VALUES
-            (1,:desc, :amount, :due_date, :is_recurring, 0 )";
+            (1,:description, :amount, :due_date, :is_recurring, 0 )";
 
         $q = $conn->prepare($saveQuery);
-        $q->bindParam(":desc", $description);
+        $q->bindParam(":description", $description);
+        $q->bindParam(":amount", $amount);
+        $q->bindParam(":due_date", $due_date);
+        $q->bindParam(":is_recurring", $is_recurring);
+        $q->execute();
+    }
+
+
+    public function addBill($description, $amount, $due_date, $is_recurring ) {
+        #$this->logger->LogInfo("saveComment: [{$name}], [{$comment}]");
+        $conn = $this->getConnection();
+        $saveQuery =
+            "INSERT INTO bills
+            (user_id, description, amount, due_date, is_recurring, is_paid)
+            VALUES
+            (1,:description, :amount, :due_date, :is_recurring, 0 )";
+
+        $q = $conn->prepare($saveQuery);
+        $q->bindParam(":description", $description);
         $q->bindParam(":amount", $amount);
         $q->bindParam(":due_date", $due_date);
         $q->bindParam(":is_recurring", $is_recurring);
