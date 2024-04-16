@@ -24,8 +24,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (empty($errors)) {
 
-        require_once 'Dao.php';
-        $dao = new Dao();
+        require_once 'DAO.php';
+        $dao = new DAO();
         $dao->addBill($description, $amount, $due_date, $is_recurring);
 
 

@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($errors)) {
         // Hash the password
         $hashed_password = password_hash($password, PASSWORD_DEFAULT);
-        require_once 'Dao.php';
+        require_once 'DAO.php';
         $dao = new DAO();
         $dao->addUser($email,$username,$hashed_password,$household,$first_name);
         header("Location: login.php"); // Change index.php to the desired page
