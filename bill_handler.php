@@ -29,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $dao->addBill($description, $amount, $due_date, $is_recurring);
 
 
-        header("Location: pay.php");
+        header("Location: https://orderly-b0075f006315.herokuapp.com/pay.php");
         exit();
     } else {
 
