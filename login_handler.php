@@ -3,8 +3,8 @@ session_start();
 
 $username = $_POST['username'];
 $password = $_POST['password'];
-require_once 'Dao.php';
-$dao = new Dao();
+require_once 'DAO.php';
+$dao = new DAO();
 
 $user = $dao->getUser($username);
 
