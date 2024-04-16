@@ -61,7 +61,7 @@ class DAO {
     public function addBill($user_id,$description, $amount, $due_date, $is_recurring ) {
         #$this->logger->LogInfo("saveComment: [{$name}], [{$comment}]");
         $conn = $this->getConnection();
-        $is_paid = false;
+        $is_paid = 0;
         $saveQuery =
             "INSERT INTO bills(user_id, description, amount, due_date, is_recurring, is_paid)
             VALUES(:user_id,:description, :amount, :due_date, :is_recurring, :is_paid )";
