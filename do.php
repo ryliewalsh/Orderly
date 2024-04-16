@@ -18,7 +18,7 @@
             </div>
             <div class="small-box">
                 <div class="label-box">Upcoming Tasks</div>
-                <div class="content-box">Add a chore?</div>
+                <div class="content-box"> <?php include_once("addChore.php");?></div>
             </div>
         </div>
     </div>

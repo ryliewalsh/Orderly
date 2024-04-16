@@ -1,12 +1,8 @@
 <div id="text">
-    <form method="post" action="itemHandler.php">
+    <form method="post" action="chore_handler.php">
         <div>
             <label for="description">Description:</label>
             <input type="text" id="description" name="description">
-        </div>
-        <div>
-            <label for="amount">Amount:</label>
-            <input type="text" id="amount" name="amount">
         </div>
         <div>
             <label for="due_date">Due Date:</label>
