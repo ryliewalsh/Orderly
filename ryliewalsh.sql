@@ -45,7 +45,7 @@ CREATE TABLE bills (
                        bill_id INT AUTO_INCREMENT PRIMARY KEY,
                        user_id INT NOT NULL,
                        description TEXT NOT NULL,
-                       amount DECIMAL(10,2) NOT NULL, -- Adjusted DECIMAL syntax
+                       amount DECIMAL(10,2) NOT NULL,
                        due_date DATE NOT NULL,
                        is_recurring BOOLEAN NOT NULL,
                        is_paid BOOLEAN NOT NULL,
