@@ -75,8 +75,29 @@ class DAO {
         $q->execute();
     }
 
+
+    public function addChore($user_id,$description, $due_date, $is_recurring ) {
+        #$this->logger->LogInfo("saveComment: [{$name}], [{$comment}]");
+        $conn = $this->getConnection();
+        $is_done = 0;
+        $saveQuery =
+            "INSERT INTO chores(user_id, description, due_date, is_recurring, is_done)
+            VALUES(:user_id,:description,  :due_date, :is_recurring, :is_done )";
+        $q = $conn->prepare($saveQuery);
+        $q->bindParam(":user_id", $user_id);
+        $q->bindParam(":description", $description);
+        $q->bindParam(":due_date", $due_date);
+        $q->bindParam(":is_recurring", $is_recurring);
+        $q->bindParam(":is_paid", $is_done);
+        $q->execute();
+    }
+
     public function getBills () {
         $conn = $this->getConnection();
         return $conn->query("SELECT description, amount, due_date, is_paid FROM bills ORDER BY due_date desc")->fetchAll(PDO::FETCH_ASSOC);
+    }
+    public function getChores () {
+        $conn = $this->getConnection();
+        return $conn->query("SELECT description, due_date, is_done FROM chores ORDER BY due_date desc")->fetchAll(PDO::FETCH_ASSOC);
     }
 }

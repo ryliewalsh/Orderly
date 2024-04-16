@@ -9,12 +9,11 @@
 
     <div class="wallpaper">
         <large-box>
-            <large-box class="title">
                 <h1>Agenda</h1>
                 <table>
                     <thead>
                     <tr>
-                        <th>Task</th>
+                        <th>Comment</th>
                         <th>Date</th>
                     </tr>
                     </thead>
@@ -32,16 +31,16 @@
                     }
                     ?>
                 </table>
-
-            </large-box>
         </large-box>
+
         <div class="vertical">
             <div class="small-box">
                 <div class="label-box">To Do Today</div>
-                <div class="content-box">Congrats nothing to do!</div>
+                <div class="content-box">Nothing to do today</div>
             </div>
+
             <div class="small-box">
-                <div class="label-box">Upcoming Tasks</div>
+                <div class="label-box">Add a Task</div>
                 <div class="content-box"> <?php include_once("addChore.php");?></div>
             </div>
         </div>

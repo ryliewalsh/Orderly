@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         require_once 'DAO.php';
         $dao = new DAO();
-        $dao->addChore($description, $amount, $due_date, $is_recurring);
+        $dao->addChore($description,  $due_date, $is_recurring);
 
 
 

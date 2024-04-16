@@ -17,7 +17,7 @@
             </div>
             <div class="small-box">
                 <div class="label-box">Account</div>
-                <div class="content-box">Sign out</div>
+                <a class = "content-box" href="signOut.php">Sign Out.</a>
                 <div class="content-box">Delete account</div>
             </div>
         </div>
