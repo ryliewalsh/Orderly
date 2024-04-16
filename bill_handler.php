@@ -1,5 +1,6 @@
 <?php
 
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $description = $_POST['description'];
@@ -28,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $dao->addBill($description, $amount, $due_date, $is_recurring);
 
 
-
+        header("Location: pay.php");
         exit();
     } else {
 

@@ -17,6 +17,37 @@ class DAO {
     public function __construct ($filename = "bills.data") {
         $this->filename = $filename;
     }
+    public function addHousehold($household_name) {
+        $conn = $this->getConnection();
+        $saveQuery =
+            "INSERT INTO households (household_name) VALUES (:household_name)";
+        $q = $conn->prepare($saveQuery);
+        $q->bindParam(":household_name", $household_name);
+        $q->execute();
+    }
+
+    public function addUser($email, $username, $password_hash, $household_id, $role, $first_name, $last_name) {
+        $conn = $this->getConnection();
+        $saveQuery =
+            "INSERT INTO users (email, username, password_hash, household_id, role, first_name, last_name)
+            VALUES (:email, :username, :password_hash, :household_id, :role, :first_name, :last_name)";
+        $q = $conn->prepare($saveQuery);
+        $q->bindParam(":email", $email);
+        $q->bindParam(":username", $username);
+        $q->bindParam(":password_hash", $password_hash);
+        $q->bindParam(":household_id", $household_id);
+        $q->bindParam(":role", $role);
+        $q->bindParam(":first_name", $first_name);
+        $q->bindParam(":last_name", $last_name);
+        $q->execute();
+    }
+    public function getUser($username) {
+        $conn = $this->getConnection();
+        $stmt = $conn->prepare("SELECT * FROM users WHERE username = :username LIMIT 1");
+        $stmt->bindParam(":username", $username);
+        $stmt->execute();
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
 
 
 
@@ -25,22 +56,7 @@ class DAO {
         $lines = explode("\n", trim($stuff));
         return $lines;
     }
-    public function addUser($description, $amount, $due_date, $is_recurring ) {
-        #$this->logger->LogInfo("saveComment: [{$name}], [{$comment}]");
-        $conn = $this->getConnection();
-        $saveQuery =
-            "INSERT INTO bills
-            (user_id, description, amount, due_date, is_recurring, is_paid)
-            VALUES
-            (1,:description, :amount, :due_date, :is_recurring, 0 )";
 
-        $q = $conn->prepare($saveQuery);
-        $q->bindParam(":description", $description);
-        $q->bindParam(":amount", $amount);
-        $q->bindParam(":due_date", $due_date);
-        $q->bindParam(":is_recurring", $is_recurring);
-        $q->execute();
-    }
 
 
     public function addBill($description, $amount, $due_date, $is_recurring ) {

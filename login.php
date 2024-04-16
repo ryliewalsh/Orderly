@@ -1,5 +1,7 @@
 <html>
 <head>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 </head>
 <body>
 <h1>Login Page</h1>
