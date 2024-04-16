@@ -75,8 +75,8 @@ class DAO {
         $q->execute();
     }
 
-    public function getComments () {
+    public function getBills () {
         $conn = $this->getConnection();
-        return $conn->query("SELECT comment, date_entered, id FROM comments ORDER BY date_entered desc")->fetchAll(PDO::FETCH_ASSOC);
+        return $conn->query("SELECT description, amount, due_date, is_paid FROM bills ORDER BY due_date desc")->fetchAll(PDO::FETCH_ASSOC);
     }
 }

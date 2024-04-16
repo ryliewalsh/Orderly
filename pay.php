@@ -8,12 +8,34 @@
     <body>
 
     <div class="wallpaper">
+        <large-box>
         <large-box class="title">
             <h1>Budget</h1>
+            <table>
+                <thead>
+                <tr>
+                    <th>Comment</th>
+                    <th>Date</th>
+                </tr>
+                </thead>
+                <?php
+                require_once "DAO.php";
+                $dao = new DAO();
+                $lines = $dao->getBills();
 
-            <div class="content-box">Congrats nothing due!</div>
+                if (count($lines) == 0) {
+                    echo "<tr><td colspan='2'>Congrats, nothing due!</td></tr>";
+                } else {
+                    foreach ($lines as $line) {
+                        echo "<tr><td>{$line['description']}</td><td>{$line['due_date']}</td></tr>";
+                    }
+                }
+                ?>
+            </table>
 
         </large-box>
+        </large-box>
+
         <div class="vertical">
             <div class="small-box">
                 <div class="label-box">Due Today</div>

@@ -8,8 +8,32 @@
     <body>
 
     <div class="wallpaper">
-        <large-box class="title">
-            <h1>Agenda</h1>
+        <large-box>
+            <large-box class="title">
+                <h1>Agenda</h1>
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Task</th>
+                        <th>Date</th>
+                    </tr>
+                    </thead>
+                    <?php
+                    require_once "DAO.php";
+                    $dao = new DAO();
+                    $lines = $dao->getChores();
+
+                    if (count($lines) == 0) {
+                        echo "<tr><td colspan='2'>Congrats, nothing due!</td></tr>";
+                    } else {
+                        foreach ($lines as $line) {
+                            echo "<tr><td>{$line['description']}</td><td>{$line['due_date']}</td></tr>";
+                        }
+                    }
+                    ?>
+                </table>
+
+            </large-box>
         </large-box>
         <div class="vertical">
             <div class="small-box">
