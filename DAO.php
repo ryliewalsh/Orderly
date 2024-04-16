@@ -26,19 +26,18 @@ class DAO {
         $q->execute();
     }
 
-    public function addUser($email, $username, $password_hash, $household_id, $role, $first_name, $last_name) {
+    public function addUser($email, $username, $password_hash, $household_id, $first_name) {
         $conn = $this->getConnection();
         $saveQuery =
-            "INSERT INTO users (email, username, password_hash, household_id, role, first_name, last_name)
-            VALUES (:email, :username, :password_hash, :household_id, :role, :first_name, :last_name)";
+            "INSERT INTO users (email, username, password_hash, household_id, first_name)
+            VALUES (:email, :username, :password_hash, :household_id,  :first_name)";
         $q = $conn->prepare($saveQuery);
         $q->bindParam(":email", $email);
         $q->bindParam(":username", $username);
         $q->bindParam(":password_hash", $password_hash);
         $q->bindParam(":household_id", $household_id);
-        $q->bindParam(":role", $role);
         $q->bindParam(":first_name", $first_name);
-        $q->bindParam(":last_name", $last_name);
+
         $q->execute();
     }
     public function getUser($username) {
