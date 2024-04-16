@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         require_once 'DAO.php';
         $dao = new DAO();
-        $dao->addBill($user_id,description, $amount, $due_date, $is_recurring);
+        $dao->addBill($user_id,$description, $amount, $due_date, $is_recurring);
 
 
         header("Location: https://orderly-b0075f006315.herokuapp.com/pay.php");
