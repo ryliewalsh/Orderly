@@ -17,12 +17,13 @@ class DAO {
     public function __construct ($filename = "bills.data") {
         $this->filename = $filename;
     }
-    public function addHousehold($household_name) {
+    public function addHousehold($household_name, $house_key) {
         $conn = $this->getConnection();
         $saveQuery =
-            "INSERT INTO households (household_name) VALUES (:household_name)";
+            "INSERT INTO households (household_name, house_key) VALUES (:household_name, :house_key)";
         $q = $conn->prepare($saveQuery);
         $q->bindParam(":household_name", $household_name);
+        $q->bindParam(":house_key", $house_key);
         $q->execute();
     }
 
