@@ -33,7 +33,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit();
     } else {
 
-        header("Location: form.php?errors=" . urlencode(implode(",", $errors)));
+        header("Location: https://orderly-b0075f006315.herokuapp.com/pay.php");
+
         exit();
     }
 } else {

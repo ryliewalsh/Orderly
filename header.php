@@ -8,13 +8,13 @@
 <?php
 session_start();
 
-
-if (!isset($_SESSION['authenticated']) && basename($_SERVER['PHP_SELF']) !== 'login.php') {
-
-    header("Location: home.php");
+if (isset($_SESSION['authenticated']) && $_SESSION['authenticated']) {
+    // User is authenticated
+} else {
+    // User is not authenticated
+    header("Location: /login.php");
     exit();
 }
-
 
 ?>
 <div class="header">
