@@ -14,6 +14,11 @@ if (!isset($_SESSION['authenticated']) && basename($_SERVER['PHP_SELF']) !== 'lo
     header("Location: home.php");
     exit();
 }
+if (isset($_SESSION['authenticated']) && basename($_SERVER['PHP_SELF']) === 'login.php') {
+
+    header("Location: home.php");
+    exit();
+}
 
 ?>
 <div class="header">
