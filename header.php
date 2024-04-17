@@ -9,6 +9,13 @@
 session_start();
 
 if (isset($_SESSION['authenticated']) && $_SESSION['authenticated']) {
+    if( isset($_SESSION['house_id'])){
+        header("Location: /home.php");
+    }
+    else{
+        header("Location: /joinHousehold.php");
+    }
+
 
 } else {
 
