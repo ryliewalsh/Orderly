@@ -9,9 +9,9 @@
 session_start();
 
 if (isset($_SESSION['authenticated']) && $_SESSION['authenticated']) {
-    // User is authenticated
+
 } else {
-    // User is not authenticated
+
     header("Location: /login.php");
     exit();
 }
