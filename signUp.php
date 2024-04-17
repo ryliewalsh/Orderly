@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up</title>
-    <!-- Add your CSS stylesheets or link them here -->
+
 </head>
 <body>
 <h2>Sign Up</h2>

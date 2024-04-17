@@ -1,6 +1,12 @@
 <?php
 session_start();
 
+if (isset($_SESSION['authenticated'])) {
+    session_unset();
+    session_destroy();
+    session_start();
+}
+
 $username = $_POST['username'];
 $password = $_POST['password'];
 require_once 'DAO.php';
