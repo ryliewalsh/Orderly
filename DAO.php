@@ -50,8 +50,9 @@ class DAO {
 
 
 
-    function getHouseId($houseName, $houseKey, $pdo) {
-        $stmt = $pdo->prepare("SELECT household_id FROM households WHERE household_name = ? AND house_key = ?");
+    function getHouseId($houseName, $houseKey) {
+        $conn = $this->getConnection();
+        $stmt = $conn->prepare("SELECT household_id FROM households WHERE household_name = ? AND house_key = ?");
         $stmt->execute([$houseName, $houseKey]);
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
         if ($row) {
@@ -62,7 +63,8 @@ class DAO {
     }
 
     function addHouseholdMember($user_id, $household_id){
-        $stmt = $this->pdo->prepare("UPDATE users SET household_id = :householdId WHERE user_id = :userId");
+        $conn = $this->getConnection();
+        $stmt = $conn->prepare("UPDATE users SET household_id = :householdId WHERE user_id = :userId");
 
 
         $stmt->bindParam(':userId', $user_id, PDO::PARAM_INT);
