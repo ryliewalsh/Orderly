@@ -12,7 +12,7 @@ if (isset($_SESSION['authenticated']) && $_SESSION['authenticated']) {
 
 } else {
 
-    header("Location: /login.php");
+    header("Location: /home.php");
     exit();
 }
 
