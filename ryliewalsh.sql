@@ -11,8 +11,8 @@ CREATE TABLE users (
                        email VARCHAR(100) NOT NULL UNIQUE,
                        username VARCHAR(50) NOT NULL UNIQUE,
                        password_hash VARCHAR(100) NOT NULL,
-                       household_id INT NOT NULL,
-                       role VARCHAR(10) NOT NULL,
+                       household_id INT  NULL,
+
                        first_name VARCHAR(100) NOT NULL,
                        last_name VARCHAR(100) NOT NULL,
                        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
