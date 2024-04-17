@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,8 +24,9 @@
     <label for="first_name">First Name:</label>
     <input type="text" id="first_name" name="first_name" required><br><br>
 
-    <label for="household">Household:</label>
-    <input type="text" id="household" name="household" required><br><br>
+    <label for="household">Key:</label>
+    <input type="text" id="household" name="household" required>
+    <button type="button" onclick="myFunction()">Need Key?</button>
 
 
 

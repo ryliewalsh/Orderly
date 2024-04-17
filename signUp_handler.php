@@ -21,6 +21,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $errors[] = "Password is required";
     }
 
+    if (empty($first_name)) {
+        $errors[] = "First name is required";
+    }
+    if (empty($household)) {
+        $errors[] = "Password is required";
+    }
+
+
+
 
 
 
