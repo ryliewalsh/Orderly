@@ -8,8 +8,9 @@
 <?php session_start();
 if (!isset($_SESSION['authenticated']) && basename($_SERVER['PHP_SELF']) !== 'login.php' ) {
     // Redirect the user to the login/signup page
-    header("Location: login.php");
+    header("Location: home.php");
     exit();
+
 }?>
 <div class="header">
 
@@ -22,7 +23,7 @@ if (!isset($_SESSION['authenticated']) && basename($_SERVER['PHP_SELF']) !== 'lo
 
     <div class="header-right">
 
-        <a class="user" href="userSettings.php">Welcome home, <span class="username">USER</span></a>
+        <a class="user" href="userSettings.php">Welcome home, <span class="username">User</span></a>
     </div>
 </div>
 </body>

@@ -9,6 +9,7 @@ $dao = new DAO();
 $user = $dao->getUser($username);
 
 if ($user && password_verify($password, $user['password_hash'])) {
+
     $_SESSION['authenticated'] = true;
     $_SESSION['username'] = $username;
     $_SESSION['user_id'] = $user['user_id'];
