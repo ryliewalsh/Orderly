@@ -13,6 +13,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $newKey = generateNewKey();
         if ($newKey === null) {
             $errors[] = "Failed to generate a new key. Please try again later.";
+        } else {
+            // Populate the houseKey input field with the generated key
+            $enteredHouseKey = $newKey;
         }
     }
 
@@ -38,13 +41,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Redirect back to the form page with errors
-    header("Location: https://orderly-b0075f006315.herokuapp.com/form_page.php?errors=" . urlencode(implode(",", $errors)));
+    header("Location: https://orderly-b0075f006315.herokuapp.com/signUp.php");
     exit();
 }
 
 function generateNewKey() {
-    // Implement your logic to generate a new key
-    // Return the generated key or null if generation fails
-}
+    $characters = '0123456789abcdefghijklmnopqrstuvwxyz';
+    $key = '';
+    $length = 4;
 
+    for ($i = 0; $i < $length; $i++) {
+        $key .= $characters[mt_rand(0, strlen($characters) - 1)];
+    }
+
+    return $key;
+}
 ?>
