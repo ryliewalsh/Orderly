@@ -26,11 +26,19 @@
 
     <label for="household">Key:</label>
     <input type="text" id="household" name="household" required>
-    <button type="button" onclick="myFunction()">Need Key?</button>
+    <button type="button" onclick="makeKey()">Need Key?</button>
 
 
 
     <button type="submit">Sign Up</button>
 </form>
+<script>
+    function makeKey() {
+        let r = (Math.random() + 1).toString(36).substring(7);
+        document.write(r);
+
+    }
+</script>
 </body>
 </html>
+
