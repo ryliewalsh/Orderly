@@ -42,6 +42,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Redirect back to the form page with errors
     header("Location: https://orderly-b0075f006315.herokuapp.com/signUp.php");
+    echo "<ul>";
+    foreach ($errors as $error) {
+        echo "<li>$error</li>";
+    }
+    echo "</ul>";
+
     exit();
 }
 
