@@ -1,9 +1,9 @@
 <?php
 session_start();
 if (isset($_SESSION['authenticated']) && $_SESSION['authenticated']) {
-    session_unset();
-    session_destroy();
 
+    header("Location: home.php");
+    exit();
 }
 ?>
 
@@ -11,16 +11,35 @@ if (isset($_SESSION['authenticated']) && $_SESSION['authenticated']) {
 <head>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#loginForm').submit(function(event) {
+                event.preventDefault();
+
+                var username = $('#username').val().trim();
+                var password = $('#password').val().trim();
+                if (username === '' || password === '') {
+
+                    $('#errorMessage').text('Username and password are required').show();
+                    return;
+                }
+
+
+                this.submit();
+            });
+        });
+    </script>
 </head>
 <body>
 <h1>Login Page</h1>
-<form method="post" action="login_handler.php"/>
-<div>Username <input type="text" name="username"/></div>
-<br/>
-<div>Password <input type="password" name="password"/></div>
-<br/>
-<div><input type="submit" value="Login"></div>
+<form id="loginForm" method="post" action="login_handler.php">
+    <div>Username <input type="text" name="username" id="username"></div>
+    <br/>
+    <div>Password <input type="password" name="password" id="password"></div>
+    <br/>
+    <div><input type="submit" value="Login"></div>
 </form>
-
+<div id="errorMessage" style="color: red; display: none;"></div>
 </body>
 </html>
