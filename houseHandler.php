@@ -17,8 +17,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if ($householdId !== null) {
                 // Household exists, proceed with adding the household member
                 $user_id = $dao->getUser($_SESSION['username']);
-                $success = $dao->addHouseholdMember($user_id, $householdId);
-                if ($success) {
+                 $dao->addHouseholdMember($user_id, $householdId);
+
                     // add message
                     header("Location: https://orderly-b0075f006315.herokuapp.com/index.php");
                     exit();
@@ -32,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             }
         }
-    }
+
 
 
 
