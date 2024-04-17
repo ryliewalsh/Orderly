@@ -25,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $errors[] = "First name is required";
     }
     if (empty($household)) {
-        $errors[] = "Password is required";
+        $errors[] = "Household name is required";
     }
 
 
@@ -36,6 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($errors)) {
 
         $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+
         require_once 'DAO.php';
         $dao = new DAO();
         $dao->addUser($email,$username,$hashed_password,$household,$first_name);

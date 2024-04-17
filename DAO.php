@@ -50,11 +50,26 @@ class DAO {
 
 
 
-    public function getGoods () {
-        $stuff = file_get_contents($this->filename);
-        $lines = explode("\n", trim($stuff));
-        return $lines;
+
+    function getHouseId($houseName, $houseKey, $pdo) {
+        $stmt = $pdo->prepare("SELECT household_id FROM households WHERE household_name = ? AND house_key = ?");
+        $stmt->execute([$houseName, $houseKey]);
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+        if ($row) {
+            return $row['household_id'];
+        } else {
+            return null;
+        }
     }
+
+    function addHouseholdMember($user_id, $household_id){
+        $stmt = $this->pdo->prepare("UPDATE users SET household_id = :householdId WHERE user_id = :userId");
+
+
+        $stmt->bindParam(':userId', $user_id, PDO::PARAM_INT);
+        $stmt->bindParam(':householdId', $household_id, PDO::PARAM_INT);
+    }
+
 
 
 

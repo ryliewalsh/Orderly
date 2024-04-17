@@ -31,12 +31,7 @@
 
     <button type="submit">Sign Up</button>
 </form>
-<script>
-     function makeKey() {
-        let r = (Math.random() + 1).toString(36).substring(7);
-        document.getElementById("household").value = r;
-    }
-</script>
+
 </body>
 </html>
 

@@ -1,7 +1,8 @@
 -- Table for storing households
 CREATE TABLE households (
                             household_id INT AUTO_INCREMENT PRIMARY KEY,
-                            household_name VARCHAR(100) NOT NULL
+                            household_name VARCHAR(100) NOT NULL,
+                            house_key VARCHAR(100) NOT NULL
 );
 
 -- Table for storing users
