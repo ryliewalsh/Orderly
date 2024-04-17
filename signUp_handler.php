@@ -26,11 +26,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
 
-
-
-
-
-
     if (empty($errors)) {
 
         $hashed_password = password_hash($password, PASSWORD_DEFAULT);

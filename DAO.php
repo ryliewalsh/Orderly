@@ -26,7 +26,7 @@ class DAO {
         $q->execute();
     }
 
-    public function addUser($email, $username, $password_hash, $household_id, $first_name) {
+    public function addUser($email, $username, $password_hash, $first_name) {
         $conn = $this->getConnection();
         $saveQuery =
             "INSERT INTO users (email, username, password_hash,  first_name)
