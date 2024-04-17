@@ -1,12 +1,11 @@
 <?php
-if (isset($_SESSION['authenticated'])) {
+if (isset($_SESSION['authenticated']) && $_SESSION['authenticated']) {
     session_unset();
     session_destroy();
 
 
 }
 ?>
-
 
 <html>
 <head>
