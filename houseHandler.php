@@ -9,15 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $enteredHouseName = $_POST['houseName'];
     $enteredHouseKey = $_POST['houseKey'];
 
-    if (isset($_POST['createNewHousehold'])) {
-        $newKey = generateNewKey();
-        if ($newKey === null) {
-            $errors[] = "Failed to generate a new key. Please try again later.";
-        } else {
-            // Populate the houseKey input field with the generated key
-            $enteredHouseKey = $newKey;
-        }
-    }
+
 
     if (empty($errors)) {
         // Verify household name and key
@@ -42,11 +34,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Redirect back to the form page with errors
     header("Location: https://orderly-b0075f006315.herokuapp.com/signUp.php");
-    echo "<ul>";
-    foreach ($errors as $error) {
-        echo "<li>$error</li>";
-    }
-    echo "</ul>";
 
     exit();
 }
