@@ -1,11 +1,7 @@
 <?php
 session_start();
 
-if (isset($_SESSION['authenticated'])) {
-    session_unset();
-    session_destroy();
 
-}
 
 $username = $_POST['username'];
 $password = $_POST['password'];
