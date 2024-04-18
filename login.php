@@ -46,6 +46,6 @@ if (isset($_SESSION['error_messages'])) {
     <br/>
     <div><input type="submit" value="Login"></div>
 </form>
-<div id="errorMessage" style="color: red; display: none;"></div>
+
 </body>
 </html>
