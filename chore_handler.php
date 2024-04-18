@@ -14,7 +14,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     if (empty($due_date)) {
         $errors[] = "Due date is required";
+
+     } elseif (strtotime($due_date) < strtotime(date('Y-m-d'))) {
+        $errors[] = "Due date cannot be prior to the current date";
     }
+
 
     if (empty($errors)) {
         require_once 'DAO.php';
