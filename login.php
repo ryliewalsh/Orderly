@@ -4,12 +4,7 @@ session_start();
      unset($_SESSION['authenticated']);
 
  }
-if (isset($_SESSION['error_messages'])) {
-    foreach ($_SESSION['error_messages'] as $error) {
-        echo "<div class='message'>$error</div>";
-    }
-    unset($_SESSION['error_messages']);
-}
+
 ?>
 <html>
 <head>
@@ -38,7 +33,19 @@ if (isset($_SESSION['error_messages'])) {
     </script>
 </head>
 <body>
-<h1>Login Page</h1>
+<div class="header">
+    <a class="logo" href="index.php">Orderly.</a>
+</div>
+<?php
+if (isset($_SESSION['error_messages'])) {
+    foreach ($_SESSION['error_messages'] as $error) {
+        echo "<div class='message'>$error</div>";
+    }
+    unset($_SESSION['error_messages']);
+}
+?>
+<div class="signup-form">
+<h2>Login Page</h2>
 <form method="post" action="login_handler.php">
     <label for="username">Username:</label>
     <input type="text" id="username" name="username" autocomplete="off"><br><br>
@@ -48,7 +55,7 @@ if (isset($_SESSION['error_messages'])) {
 
     <div><input type="submit" value="Login"></div>
 </form>
-</form>
+</div>
 
 </body>
 </html>
