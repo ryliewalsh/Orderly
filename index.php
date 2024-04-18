@@ -27,7 +27,7 @@
                         echo "<div class='item-box'><a href='do.php' class='small-item chore'>Chore</a><div>{$chore['description']}</div></div>";
                     }
                     foreach ($bills as $bill) {
-                        echo "<div class='item-box'><div class='small-item bill'></div><div>{$bill['description']}</div></div>";
+                        echo "<div class='item-box'><a href = 'pay.php' class ='small-item bill'>Bill</a><div>{$bill['description']}</div></div>";
                     }
                 }
                 ?>
@@ -43,11 +43,11 @@
                 if (empty($upcomingChores) && empty($upcomingBills)) {
                     echo "All caught up!";
                 } else {
-                    foreach ($upcomingChores as $chore) {
-                        echo "<div class='item-box'><div class='small-item'></div><div>{$chore['description']}</div></div>";
+                    foreach ($chores as $chore) {
+                        echo "<div class='item-box'><a href='do.php' class='small-item chore'>Chore</a><div>{$chore['description']}</div></div>";
                     }
-                    foreach ($upcomingBills as $bill) {
-                        echo "<div class='item-box'><div class='small-item'></div><div>{$bill['description']}</div></div>";
+                    foreach ($bills as $bill) {
+                        echo "<div class='item-box'><a href = 'pay.php' class ='small-item bill'>Bill</a><div>{$bill['description']}</div></div>";
                     }
                 }
                 ?>
