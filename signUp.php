@@ -11,6 +11,7 @@
     <div class="header">
         <div class="logo">Orderly.</div>
     </div>
+    </div>
     <div class="signup-form">
         <h2>Sign Up</h2>
         <form action="signUp_handler.php" method="post">
@@ -29,6 +30,6 @@
             <button type="submit">Sign Up</button>
         </form>
     </div>
-</div>
+
 </body>
 </html>
