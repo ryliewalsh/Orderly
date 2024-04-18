@@ -15,16 +15,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $errors[] = "Description is required";
     }
 
-    if ($due_date === false) {
+    if (empty($due_date)) {
+        $errors[] = "Due date is required";
 
-        $errors[] = "Invalid due date format";
+    } elseif (strtotime($due_date) < strtotime(date('Y-m-d'))) {
+        $errors[] = "Due date cannot be prior to the current date";
     }
 
 
-    if ($amount === false) {
-
-        $errors[] = "Invalid amount format";
-    } elseif ($amount <= 0) {
+    if (empty($description)) {
+        $errors[] = "Amount is required";
+    }
+    if ($amount <= 0) {
         $errors[] = "Amount must be a positive number";
     }
 
