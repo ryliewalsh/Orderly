@@ -1,19 +1,20 @@
 <?php
 session_start();
 
-// Check if the form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Retrieve form data
+
     $email = $_POST['email'];
     $username = $_POST['username'];
     $password = $_POST['password'];
     $first_name = $_POST['first_name'];
 
-
     $errors = array();
-    if (empty($email)) {
-        $errors[] = "Email is required";
+
+
+    if (!preg_match("/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/", $email)) {
+        $errors[] = "Invalid email format";
     }
+
     if (empty($username)) {
         $errors[] = "Username is required";
     }
@@ -25,24 +26,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $errors[] = "First name is required";
     }
 
-
     if (empty($errors)) {
 
         $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
+
         require_once 'DAO.php';
         $dao = new DAO();
-        $dao->addUser($email,$username,$hashed_password,$first_name);
-        header("Location: https://orderly-b0075f006315.herokuapp.com/home.php");
+        $dao->addUser($email, $username, $hashed_password, $first_name);
+
+
+        header("Location: https://orderly-b0075f006315.herokuapp.com/login.php");
         exit();
     } else {
+        // Handle errors
 
-        $error_message = implode(", ", $errors);
+        $_SESSION['error_message'] = $errors;
+
+        // Redirect back to the form page
         header("Location: https://orderly-b0075f006315.herokuapp.com/home.php");
         exit();
     }
 } else {
-
+    // If form is not submitted, redirect to error page
     header("Location: error.php");
     exit();
 }

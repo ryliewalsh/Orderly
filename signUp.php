@@ -1,14 +1,31 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up</title>
-
 </head>
 <body>
 <h2>Sign Up</h2>
+
+<?php
+session_start();
+
+// Check if there are any errors stored in the session
+$errors = isset($_SESSION['errors']) ? $_SESSION['errors'] : array();
+
+// Clear the errors from the session
+unset($_SESSION['errors']);
+?>
+
+<?php if (!empty($errors)): ?>
+    <div style="color: red;">
+        <?php foreach ($errors as $error): ?>
+            <div><?php echo $error; ?></div>
+        <?php endforeach; ?>
+    </div>
+<?php endif; ?>
+
 <form action="signUp_handler.php" method="post">
     <label for="email">Email:</label>
     <input type="email" id="email" name="email" required><br><br>
@@ -19,7 +36,6 @@
     <label for="password">Password:</label>
     <input type="password" id="password" name="password" required><br><br>
 
-
     <label for="first_name">First Name:</label>
     <input type="text" id="first_name" name="first_name" required><br><br>
 
@@ -28,4 +44,3 @@
 
 </body>
 </html>
-
