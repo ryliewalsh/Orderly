@@ -1,5 +1,6 @@
 <?php
 session_start();
+$_SESSION['authenticated'] = false;
 
 if (isset($_POST['username']) && isset($_POST['password'])) {
     $username = $_POST['username'];
