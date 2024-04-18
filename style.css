@@ -261,6 +261,7 @@ input[type="password"] {
     border-radius: 5px;
 }
 .small-item {
+    color: whitesmoke;
     width: 10%;
     height: 20px;
     margin-left: auto;
