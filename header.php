@@ -12,11 +12,7 @@ if (isset($_SESSION['authenticated']) && $_SESSION['authenticated']) {
     }
   */
 
-} else if ($_SERVER['SCRIPT_NAME'] !== '/login.php' && $_SERVER['SCRIPT_NAME'] !== '/signUp.php') {
-    // If the current page is not login or sign-up, display the header
-    include_once("header.php");
-}
-{
+} else {
     unset($_SESSION['login_failed']);
     header("Location: https://orderly-b0075f006315.herokuapp.com/home.php");
     exit();

@@ -1,6 +1,5 @@
 <?php
-include_once("header.php");
-
+session_start();
 
 if (isset($_SESSION['error_messages'])) {
     foreach ($_SESSION['error_messages'] as $error) {
@@ -19,6 +18,7 @@ if (isset($_SESSION['error_messages'])) {
     <title>Sign Up</title>
 </head>
 <body>
+<div class="logo" >Orderly.</div>
 <div class="signup-form">
 <h2>Sign Up</h2>
 
