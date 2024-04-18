@@ -9,17 +9,10 @@
 
 <div class="wallpaper">
     <large-box>
-        <div class="title">
+
             <h1>Budget</h1>
-            <div class="label-box">disc</div>
+            <div class="label-table">disc</div>
             <table>
-                <thead>
-                <tr>
-                    <th>Description</th>
-                    <th>Amount</th>
-                    <th>Due By</th>
-                </tr>
-                </thead>
                 <?php
                 require_once "DAO.php";
                 $dao = new DAO();
@@ -62,7 +55,7 @@
             <div class="label-box">Add an Expense</div>
             <div class="content-box"> <?php include_once("addBill.php");?></div>
         </div>
-    </div>
+
 </div>
 </body>
 </html>
