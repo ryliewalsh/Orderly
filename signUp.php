@@ -1,4 +1,11 @@
-
+<?php
+if (isset($_SESSION['error_messages'])) {
+    foreach ($_SESSION['error_messages'] as $error) {
+        echo "<div class='message'>$error</div>";
+    }
+    unset($_SESSION['error_messages']);
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
