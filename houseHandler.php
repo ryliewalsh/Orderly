@@ -1,9 +1,4 @@
 
-<head>
-    <title>Welcome!</title>
-    <link rel="stylesheet" href="style.css">
-    <meta name="robots" content="noindex, nofollow">
-</head>
 <?php
 session_start();
 require_once 'DAO.php';
