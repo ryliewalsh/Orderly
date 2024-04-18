@@ -1,15 +1,15 @@
 <?php include_once("header.php"); ?>
 
-    <html>
-    <head>
-        <title>To Pay</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
+<html>
+<head>
+    <title>To Pay</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-    <div class="wallpaper">
-        <large-box>
-        <large-box class="title">
+<div class="wallpaper">
+    <large-box>
+        <div class="title">
             <h1>Budget</h1>
             <table>
                 <thead>
@@ -29,41 +29,41 @@
                 } else {
                     echo "<div class='item-box'>";
                     foreach ($lines as $line) {
-                        echo "<div class='item'><span>{$line['description']}</span><span>{$line['due_date']}</span></div>";
+                        echo "<div class='item'><span>{$line['description']}</span><span>{$line['amount']}</span><span>{$line['due_date']}</span></div>";
                     }
                     echo "</div>";
                 }
                 ?>
             </table>
+        </div>
+    </large-box>
 
-        </large-box>
-        </large-box>
-
-        <div class="vertical">
-            <div class="small-box">
-                <div class="label-box">Due Today</div>
+    <div class="vertical">
+        <div class="small-box">
+            <div class="label-box">Due Today</div>
             <?php
-                require_once "DAO.php";
-                $dao = new DAO();
-                $lines = $dao->getTodaysBills();
-                if (count($lines) == 0) {
+            require_once "DAO.php";
+            $dao = new DAO();
+            $lines = $dao->getTodaysBills();
+            if (count($lines) == 0) {
                 echo "<div class='item-box'><div class='item'><span>Congrats, nothing due!</span></div></div>";
-                } else {
+            } else {
                 echo "<div class='item-box'>";
                 foreach ($lines as $line) {
-                    echo "<div class='item'><span>{$line['description']}</span><span>{$line['due_date']}</span></div>";
+                    echo "<div class='item'><span>{$line['description']}</span><span>{$line['amount']}</span><span>{$line['due_date']}</span></div>";
                 }
                 echo "</div>";
-                 }
-                ?>
-                </div>
+            }
+            ?>
+        </div>
 
-            <div class="small-box">
-                <div class="label-box">Add an Expense</div>
-                    <div class="content-box"> <?php include_once("addBill.php");?></>
-            </div>
+        <div class="small-box">
+            <div class="label-box">Add an Expense</div>
+            <div class="content-box"> <?php include_once("addBill.php");?></div>
         </div>
     </div>
-    </body>
-    </html>
+</div>
+</body>
+</html>
+
 <?php require_once "footer.php"; ?>
