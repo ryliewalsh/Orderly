@@ -11,18 +11,15 @@
     <large-box>
         <div class="title">
             <h1>Budget</h1>
+
             <table>
-                <thead>
-                <tr>
-                    <th>Description</th>
-                    <th>Amount</th>
-                    <th>Due By</th>
-                </tr>
-                </thead>
+
+
+
                 <?php
                 require_once "DAO.php";
                 $dao = new DAO();
-                $lines = $dao->getBills();
+                $lines = $dao->getChores();
 
                 if (count($lines) == 0) {
                     echo "<div class='item-box'><div class='item'><span>Congrats, nothing due!</span></div></div>";
@@ -40,17 +37,17 @@
 
     <div class="vertical">
         <div class="small-box">
-            <div class="label-box">Due Today</div>
+            <div class="label-box">To Do Today</div>
             <?php
             require_once "DAO.php";
             $dao = new DAO();
-            $lines = $dao->getTodaysBills();
+            $lines = $dao->getTodaysChores();
             if (count($lines) == 0) {
                 echo "<div class='item-box'><div class='item'><span>Congrats, nothing due!</span></div></div>";
             } else {
                 echo "<div class='item-box'>";
                 foreach ($lines as $line) {
-                    echo "<div class='item'><span>{$line['description']}</span><span>{$line['amount']}</span><span>{$line['due_date']}</span></div>";
+                    echo "<div class='item'><span>{$line['description']}</span><span>{$line['due_date']}</span></div>";
                 }
                 echo "</div>";
             }
