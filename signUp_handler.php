@@ -10,9 +10,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $errors = array();
 
-
-
-
     if (empty($username)) {
         $errors[] = "Username is required";
     }
@@ -25,29 +22,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     if (empty($errors)) {
-
         $hashed_password = password_hash($password, PASSWORD_DEFAULT);
-
 
         require_once 'DAO.php';
         $dao = new DAO();
         $dao->addUser($email, $username, $hashed_password, $first_name);
 
-
         header("Location: https://orderly-b0075f006315.herokuapp.com/login.php");
         exit();
     } else {
-        // Handle errors
-
+        // Store errors in session and redirect back to the form page
         $_SESSION['error_message'] = $errors;
-
-
         header("Location: https://orderly-b0075f006315.herokuapp.com/home.php");
         exit();
     }
 } else {
-
-    header("Location: error.php");
-    exit();
+    // Display errors on the same page if available
+    if (isset($_SESSION['error_message'])) {
+        foreach ($_SESSION['error_message'] as $error) {
+            echo "<div class='error'>$error</div>";
+        }
+        unset($_SESSION['error_message']);
+    }
 }
 ?>
