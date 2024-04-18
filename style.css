@@ -254,3 +254,29 @@ input[type="password"] {
     border-radius: 5px;
     box-sizing: border-box;
 }
+
+.item-box {
+    background-color: whitesmoke;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.item {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.item:last-child {
+    border-bottom: none;
+}
+
+.item span {
+    flex: 1;
+    padding: 5px;
+}
+
+.item span:first-child {
+    margin-right: 10px;
+}
