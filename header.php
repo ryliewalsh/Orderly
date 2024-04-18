@@ -2,7 +2,7 @@
 session_start();
 
 if (isset($_SESSION['authenticated']) && $_SESSION['authenticated']) {
-    if (isset($_SESSION['house_id'])) {
+  /*  if (isset($_SESSION['house_id'])) {
         header("Location: /index.php");
         exit();
     } elseif ($_SERVER['SCRIPT_NAME'] !== '/joinHousehold.php') {
@@ -10,6 +10,8 @@ if (isset($_SESSION['authenticated']) && $_SESSION['authenticated']) {
         header("Location: /joinHousehold.php");
         exit();
     }
+  */
+    header("Location: /index.php");
 } else {
     header("Location: /home.php");
     exit();
