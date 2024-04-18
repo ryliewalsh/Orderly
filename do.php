@@ -26,11 +26,9 @@
                 if (count($lines) == 0) {
                     echo "<div class='item-box'><div class='item'><span>Congrats, nothing due!</span></div></div>";
                 } else {
-                    echo "<div class='item-box'>";
                     foreach ($lines as $line) {
                         echo "<div class='item'><span>{$line['description']}</span><span>{$line['due_date']}</span></div>";
                     }
-                    echo "</div>";
                 }
                 ?>
             </table>
@@ -41,17 +39,13 @@
         <div class="small-box">
             <div class="label-box">Due Today</div>
             <?php
-            require_once "DAO.php";
-            $dao = new DAO();
             $lines = $dao->getTodaysChores();
             if (count($lines) == 0) {
                 echo "<div class='item-box'><div class='item'><span>Congrats, nothing due!</span></div></div>";
             } else {
-                echo "<div class='item-box'>";
                 foreach ($lines as $line) {
                     echo "<div class='item'><span>{$line['description']}</span><span>{$line['due_date']}</span></div>";
                 }
-                echo "</div>";
             }
             ?>
         </div>
