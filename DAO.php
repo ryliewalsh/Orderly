@@ -94,7 +94,7 @@ class DAO {
 
 
     public function addChore($user_id,$description, $due_date, $is_recurring ) {
-        #$this->logger->LogInfo("saveComment: [{$name}], [{$comment}]");
+
         $conn = $this->getConnection();
         $is_done = 0;
         $saveQuery =

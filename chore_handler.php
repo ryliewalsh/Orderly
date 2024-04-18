@@ -6,7 +6,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $description = $_POST['description'];
     $due_date = $_POST['due_date'];
-    $is_recurring = isset($_POST['is_recurring']) && $_POST['is_recurring'] == '1' ? '1' : '0';
+    $is_recurring = isset($_POST['is_recurring']) && $_POST['is_recurring'] === '1';
 
     $errors = array();
     if (empty($description)) {
