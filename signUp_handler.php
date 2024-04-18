@@ -31,20 +31,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         header("Location: https://orderly-b0075f006315.herokuapp.com/login.php");
         exit();
     } else {
-
+        // Store errors in session and redirect back to the form page
+        $_SESSION['error_messages'] = $errors;
         header("Location: https://orderly-b0075f006315.herokuapp.com/home.php");
         exit();
     }
 } else {
-
-
-     if (isset($_SESSION['messages'])) {
-        foreach ($_SESSION['messages'] as $errors) {
-           echo "<div class='message '>{$errors}</div>";
+    // Display errors on the same page if available
+    if (isset($_SESSION['error_messages'])) {
+        foreach ($_SESSION['error_messages'] as $error) {
+            echo "<div class='error'>$error</div>";
         }
-        unset($_SESSION['messages']);
-     }
-
-
+        unset($_SESSION['error_messages']);
+    }
 }
 ?>
