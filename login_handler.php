@@ -17,18 +17,24 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
 
     $user = $dao->getUser($username);
 
-    if ($user && password_verify($password, $user['password_hash'])) {
+    if (empty($errors)) {
+        $user = $dao->getUser($username);
 
-        $_SESSION['authenticated'] = true;
-        $_SESSION['username'] = $username;
-        $_SESSION['user_id'] = $user['user_id'];
+        if ($user && password_verify($password, $user['password_hash'])) {
+            $_SESSION['authenticated'] = true;
+            $_SESSION['username'] = $username;
+            $_SESSION['user_id'] = $user['user_id'];
 
-
-        unset($_POST['password']);
-    } else {
-
-       $errors[] = "Username or password is incorrect";
+            unset($_POST['password']);
+            header("Location: https://orderly-b0075f006315.herokuapp.com/index.php");
+            exit();
+        } else {
+            $errors[] = "Username or password is incorrect";
+        }
     }
+    $_SESSION['error_messages'] = $errors;
+
+    header("Location:https://orderly-b0075f006315.herokuapp.com/login.php");
 }
 
 
