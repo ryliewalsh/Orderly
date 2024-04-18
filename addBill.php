@@ -13,11 +13,11 @@ if (isset($_SESSION['error_messages'])) {
     <form method="post" action="bill_handler.php">
         <div>
             <label for="description">Description:</label>
-            <input type="text" id="description" name="description" value="<?php echo isset($_SESSION['inputs']['description']) ? $_SESSION['inputs']['description'] : ""; ?>">
+            <input type="text" id="description" name="description" value="<?php echo isset($_SESSION['inputs']['description']) ? htmlspecialchars( $_SESSION['inputs']['description']) : ""; ?>">
         </div>
         <div>
             <label for="amount">Amount:</label>
-            <input type="text" id="amount" name="amount" value="<?php echo isset($_SESSION['inputs']['amount']) ? $_SESSION['inputs']['amount'] : ""; ?>">
+            <input type="text" id="amount" name="amount" value="<?php echo isset($_SESSION['inputs']['amount']) ? htmlspecialchars( $_SESSION['inputs']['amount']): ""; ?>">
         </div>
         <div>
             <label for="due_date">Due Date:</label>

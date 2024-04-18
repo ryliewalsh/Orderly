@@ -1,3 +1,14 @@
+<?php
+session_start();
+
+if (isset($_SESSION['error_messages'])) {
+    foreach ($_SESSION['error_messages'] as $error) {
+        echo "<div class='message'>$error</div>";
+    }
+    unset($_SESSION['error_messages']);
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,25 +19,6 @@
 <body>
 <h2>Sign Up</h2>
 
-<?php
-session_start();
-if (isset($_SESSION['errors']) && !empty($_SESSION['errors'])) {
-    echo '<div style="color: red;">';
-    foreach ($_SESSION['errors'] as $error) {
-        echo $error . "<br>";
-    }
-    echo '</div>';
-    unset($_SESSION['errors']);
-}
-?>
-
-<?php if (!empty($errors)): ?>
-    <div style="color: red;">
-        <?php foreach ($errors as $error): ?>
-            <div><?php echo $error; ?></div>
-        <?php endforeach; ?>
-    </div>
-<?php endif; ?>
 
 <form action="signUp_handler.php" method="post">
     <label for="email">Email:</label>
