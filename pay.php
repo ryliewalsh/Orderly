@@ -22,14 +22,14 @@
                 <?php
                 require_once "DAO.php";
                 $dao = new DAO();
-                $lines = $dao->getChores();
+                $lines = $dao->getBills();
 
                 if (count($lines) == 0) {
                     echo "<div class='item-box'><div class='item'><span>Congrats, nothing due!</span></div></div>";
                 } else {
                     echo "<div class='item-box'>";
                     foreach ($lines as $line) {
-                        echo "<div class='item'><span>{$line['description']}</span><span>{$line['due_date']}</span></div>";
+                        echo "<div class='item'><span>{$line['description']}</span><span>{$line['amount']}</span><span>{$line['due_date']}</span></div>";
                     }
                     echo "</div>";
                 }

@@ -10,26 +10,25 @@
 <div class="wallpaper">
     <large-box>
         <div class="title">
-            <h1>Budget</h1>
+            <h1>Agenda</h1>
             <table>
                 <thead>
                 <tr>
                     <th>Description</th>
-                    <th>Amount</th>
-                    <th>Due By</th>
+                    <th>Do By</th>
                 </tr>
                 </thead>
                 <?php
                 require_once "DAO.php";
                 $dao = new DAO();
-                $lines = $dao->getBills();
+                $lines = $dao->getChores();
 
                 if (count($lines) == 0) {
-                    echo "<div class='item-box'><div class='item'><span>Congrats, nothing due!</span></div></div>";
+                    echo "<div class='item-box'><div class='item'><span>Congrats, nothing to do!</span></div></div>";
                 } else {
                     echo "<div class='item-box'>";
                     foreach ($lines as $line) {
-                        echo "<div class='item'><span>{$line['description']}</span><span>{$line['amount']}</span><span>{$line['due_date']}</span></div>";
+                        echo "<div class='item'><span>{$line['description']}</span><span>{$line['due_date']}</span></div>";
                     }
                     echo "</div>";
                 }
