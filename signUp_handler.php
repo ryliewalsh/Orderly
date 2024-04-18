@@ -3,10 +3,10 @@
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    $email = $_POST['email'];
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-    $first_name = $_POST['first_name'];
+    $email = htmlspecialchars($_POST['email']);
+    $username = htmlspecialchars($_POST['username']);
+    $password = htmlspecialchars($_POST['password']);
+    $first_name = htmlspecialchars($_POST['first_name']);
 
     $errors = array();
 
