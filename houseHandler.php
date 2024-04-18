@@ -51,4 +51,9 @@ function generateNewKey() {
 
     return $key;
 }
+if (!empty($errors)) {
+    foreach ($errors as $error) {
+        echo "<p>Error: $error</p>";
+    }
+}
 ?>
