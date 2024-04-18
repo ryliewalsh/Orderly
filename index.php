@@ -24,10 +24,10 @@
                     echo "Congrats nothing to do!";
                 } else {
                     foreach ($chores as $chore) {
-                        echo "<div class='item-box'><div>{$chore['description']}</div><div class='small-item'></div></div>";
+                        echo "<div class='item-box'><div>{$chore['description']}</div></div>";
                     }
                     foreach ($bills as $bill) {
-                        echo "<div class='item-box'><div class='small-item'></div><div>{$bill['description']}</div></div>";
+                        echo "<div class='item-box'></div><div>{$bill['description']}</div></div>";
                     }
                 }
                 ?>
@@ -44,10 +44,10 @@
                     echo "All caught up!";
                 } else {
                     foreach ($upcomingChores as $chore) {
-                        echo "<div class='item-box'><div class='small-item'></div><div>{$chore['description']}</div></div>";
+                        echo "<div class='item-box'></div><div>{$chore['description']}</div></div>";
                     }
                     foreach ($upcomingBills as $bill) {
-                        echo "<div class='item-box'><div class='small-item'></div><div>{$bill['description']}</div></div>";
+                        echo "<div class='item-box'></div><div>{$bill['description']}</div></div>";
                     }
                 }
                 ?>
