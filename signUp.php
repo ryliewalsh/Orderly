@@ -18,7 +18,10 @@ if (isset($_SESSION['error_messages'])) {
     <title>Sign Up</title>
 </head>
 <body>
-<div class="logo" >Orderly.</div>
+<div class="header">
+    <div class="logo" >Orderly.</div>
+</div>
+<div class =wallpaper>
 <div class="signup-form">
 <h2>Sign Up</h2>
 
@@ -38,6 +41,7 @@ if (isset($_SESSION['error_messages'])) {
 
     <button type="submit">Sign Up</button>
 </form>
+</div>
 </div>
 </body>
 </html>
