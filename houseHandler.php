@@ -9,8 +9,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $enteredHouseName = $_POST['houseName'];
     $enteredHouseKey = $_POST['houseKey'];
     $action = $_POST['action'];
-    if (empty($enteredHouseName) || empty($enteredHouseKey)) {
-        $errors[] = "Household name and key are required.";
+    if (empty($enteredHouseName) ) {
+        $errors[] = "Household name is required.";
     } else {
         if ($action === "join") {
             $householdId = $dao->getHouseId($enteredHouseName, $enteredHouseKey);
@@ -29,12 +29,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             } elseif ($action === "create") {
                 $new_key = generateNewKey();
                 $dao->addHousehold($enteredHouseName, $enteredHouseKey);
+                header("Location: https://orderly-b0075f006315.herokuapp.com/index.php");
+                exit();
 
             }
         }
-
-
-
 
 
 }
