@@ -9,9 +9,9 @@
 
 <div class="wallpaper">
     <large-box>
-
+        <div class="title">
             <h1>Budget</h1>
-            <div class="label-table">disc</div>
+            <div class="label-box">disc</div>
             <table>
                 <?php
                 require_once "DAO.php";
@@ -55,7 +55,7 @@
             <div class="label-box">Add an Expense</div>
             <div class="content-box"> <?php include_once("addBill.php");?></div>
         </div>
-
+    </div>
 </div>
 </body>
 </html>
