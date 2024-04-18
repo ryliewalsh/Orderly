@@ -33,12 +33,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         require_once 'DAO.php';
         $dao = new DAO();
         $dao->addUser($email,$username,$hashed_password,$first_name);
-        header("Location: login.php");
+        header("Location: https://orderly-b0075f006315.herokuapp.com/home.php");
         exit();
     } else {
 
         $error_message = implode(", ", $errors);
-        header("Location: signUp.php?error=$error_message");
+        header("Location: https://orderly-b0075f006315.herokuapp.com/home.php");
         exit();
     }
 } else {

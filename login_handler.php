@@ -24,7 +24,7 @@ if ($user && password_verify($password, $user['password_hash'])) {
 
 } else {
     // Invalid credentials, redirect to the login page
-    header("Location: https://orderly-b0075f006315.herokuapp.com/login.php");
+    header("Location: https://orderly-b0075f006315.herokuapp.com/home.php");
     exit();
 }
 ?>
