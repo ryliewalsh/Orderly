@@ -12,6 +12,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (empty($username)) {
         $errors[] = "Username is required";
+    } else {
+        require_once 'DAO.php';
+        $dao = new DAO();
+        $existingUser = $dao->getUser($username);
+        if ($existingUser) {
+            $errors[] = "Username already exists";
+        }
     }
     if (empty($password)) {
         $errors[] = "Password is required";
