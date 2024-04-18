@@ -18,10 +18,7 @@ if (isset($_SESSION['error_messages'])) {
             <label for="due_date">Due Date:</label>
             <input type="date" id="due_date" name="due_date">
         </div>
-        <div>
-            <label for="is_recurring">Recurring:</label>
-            <input type="checkbox" id="is_recurring" name="is_recurring" value="1">
-        </div>
+
 
         <input type="submit" value="Submit">
     </form>

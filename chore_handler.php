@@ -6,7 +6,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $description = $_POST['description'];
     $due_date = $_POST['due_date'];
-    $is_recurring = isset($_POST['is_recurring']) && $_POST['is_recurring'] === '1';
+
 
     $errors = array();
     if (empty($description)) {
@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         require_once 'DAO.php';
         $dao = new DAO();
         $user_id = $_SESSION['user_id'];
-        $dao->addChore($user_id,$description,  $due_date, $is_recurring);
+        $dao->addChore($user_id,$description,  $due_date);
 
 
         header("Location: https://orderly-b0075f006315.herokuapp.com/do.php");

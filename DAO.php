@@ -93,18 +93,17 @@ class DAO {
     }
 
 
-    public function addChore($user_id,$description, $due_date, $is_recurring ) {
+    public function addChore($user_id,$description, $due_date ) {
 
         $conn = $this->getConnection();
         $is_done = 0;
         $saveQuery =
-            "INSERT INTO chores(user_id, description, due_date, is_recurring, is_done)
-            VALUES(:user_id,:description,  :due_date, :is_recurring, :is_done )";
+            "INSERT INTO chores(user_id, description, due_date, is_done)
+            VALUES(:user_id,:description,  :due_date,  :is_done )";
         $q = $conn->prepare($saveQuery);
         $q->bindParam(":user_id", $user_id);
         $q->bindParam(":description", $description);
         $q->bindParam(":due_date", $due_date);
-        $q->bindParam(":is_recurring", $is_recurring);
         $q->bindParam(":is_paid", $is_done);
         $q->execute();
     }
