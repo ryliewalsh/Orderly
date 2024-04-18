@@ -13,7 +13,7 @@ session_start();
 <body>
 
     <div class="header">
-        <div class="logo">Orderly.</div>
+    <a class="logo" href="index.php">Orderly.</a>
     </div>
     <?php
     if (isset($_SESSION['error_messages'])) {
@@ -23,9 +23,7 @@ session_start();
         unset($_SESSION['error_messages']);
     }
     ?>
-    <div class="header">
-        <a class="logo" href="index.php">Orderly.</a>
-    </div>
+
         <form action="signUp_handler.php" method="post">
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" value="<?php echo isset($_SESSION['inputs']['email']) ? htmlspecialchars($_SESSION['inputs']['email']) : ''; ?>"><br><br>
