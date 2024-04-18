@@ -29,6 +29,13 @@
                 }
                 ?>
             </table>
+            <thead>
+            <tr>
+                <th>Comment</th>
+                <th>Date</th>
+            </tr>
+            </thead>
+
         </div>
     </large-box>
 
