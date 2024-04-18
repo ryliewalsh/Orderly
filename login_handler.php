@@ -18,7 +18,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
     $user = $dao->getUser($username);
 
     if (empty($errors)) {
-        $user = $dao->getUser($username);
+
 
         if ($user && password_verify($password, $user['password_hash'])) {
             $_SESSION['authenticated'] = true;
