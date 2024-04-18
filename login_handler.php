@@ -1,31 +1,33 @@
 <?php
 session_start();
 
-$username = $_POST['username'];
-$password = $_POST['password'];
-require_once 'DAO.php';
-$dao = new DAO();
+if (isset($_POST['username']) && isset($_POST['password'])) {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
 
-$user = $dao->getUser($username);
+    require_once 'DAO.php';
+    $dao = new DAO();
 
-if ($user && password_verify($password, $user['password_hash'])) {
+    $user = $dao->getUser($username);
 
-    $_SESSION['authenticated'] = true;
-    $_SESSION['username'] = $username;
-    $_SESSION['user_id'] = $user['user_id'];
+    if ($user && password_verify($password, $user['password_hash'])) {
 
-    // Clear the password from the POST data
-    unset($_POST['password']);
-
-
-    header("Location: https://orderly-b0075f006315.herokuapp.com/index.php");
-    exit();
-} else {
-
-    $_SESSION['login_failed'] = true;
+        $_SESSION['authenticated'] = true;
+        $_SESSION['username'] = $username;
+        $_SESSION['user_id'] = $user['user_id'];
 
 
-    header("Location: https://orderly-b0075f006315.herokuapp.com/login.php");
-    exit();
+        unset($_POST['password']);
+    } else {
+        $_SESSION['login_failed'] = true;
+    }
 }
+
+
+if ($_SESSION['authenticated']) {
+    header("Location: https://orderly-b0075f006315.herokuapp.com/index.php");
+} else {
+    header("Location: https://orderly-b0075f006315.herokuapp.com/login.php");
+}
+exit();
 ?>
