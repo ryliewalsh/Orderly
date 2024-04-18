@@ -233,7 +233,8 @@ large-box {
     color: white;
     padding: 5px 10px;
     width: 100%;
-    background-color: red;
+    background-color: #e3826d;
+    border-radius: 5px;
 }
 .signup-form {
     margin: 20px auto;
