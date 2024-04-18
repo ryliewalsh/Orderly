@@ -18,6 +18,8 @@
 
 
                 this.submit();
+                $('#username').val('');
+                $('#password').val('');
             });
         });
     </script>
