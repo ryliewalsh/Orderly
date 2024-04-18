@@ -136,7 +136,7 @@ class DAO {
 
         $today = date('Y-m-d');
 
-        $stmt = $conn->prepare("SELECT description,  due_date, is_paid FROM chores WHERE user_id = :user_id AND due_date = :today");
+        $stmt = $conn->prepare("SELECT description,  due_date FROM chores WHERE user_id = :user_id AND due_date = :today");
         $stmt->bindParam(':user_id', $user_id);
         $stmt->bindParam(':today', $today);
         $stmt->execute();
