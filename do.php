@@ -17,8 +17,8 @@
                 <table>
                     <thead>
                     <tr>
-                        <th>Comment</th>
-                        <th>Date</th>
+                        <th>Task</th>
+                        <th>Do By</th>
                     </tr>
                     </thead>
                     <?php

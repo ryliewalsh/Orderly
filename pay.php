@@ -14,8 +14,9 @@
             <table>
                 <thead>
                 <tr>
-                    <th>Comment</th>
-                    <th>Date</th>
+                    <th>Description</th>
+                    <th>Amount</th>
+                    <th>Due By</th>
                 </tr>
                 </thead>
                 <?php
@@ -27,7 +28,7 @@
                     echo "<tr><td colspan='2'>Congrats, nothing due!</td></tr>";
                 } else {
                     foreach ($lines as $line) {
-                        echo "<tr><td>{$line['description']}</td><td>{$line['due_date']}</td></tr>";
+                        echo "<tr><td>{$line['description']}</td><td>{$line['amount']}</td><td>{$line['due_date']}</td></tr>";
                     }
                 }
                 ?>
