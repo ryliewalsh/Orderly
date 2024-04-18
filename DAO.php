@@ -108,12 +108,21 @@ class DAO {
         $q->execute();
     }
 
-    public function getBills () {
+    public function getBills() {
         $conn = $this->getConnection();
-        return $conn->query("SELECT description, amount, due_date, is_paid FROM bills ORDER BY due_date desc")->fetchAll(PDO::FETCH_ASSOC);
+        $user_id = $_SESSION['user_id'];
+        $stmt = $conn->prepare("SELECT description, amount, due_date, is_paid FROM bills WHERE user_id = :user_id ORDER BY due_date DESC");
+        $stmt->bindParam(':user_id', $user_id);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
-    public function getChores () {
+
+    public function getChores() {
         $conn = $this->getConnection();
-        return $conn->query("SELECT description, due_date, is_done FROM chores ORDER BY due_date desc")->fetchAll(PDO::FETCH_ASSOC);
+        $user_id = $_SESSION['user_id'];
+        $stmt = $conn->prepare("SELECT description, due_date, is_done FROM chores WHERE user_id = :user_id ORDER BY due_date DESC");
+        $stmt->bindParam(':user_id', $user_id);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 }
