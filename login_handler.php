@@ -9,21 +9,22 @@ $dao = new DAO();
 $user = $dao->getUser($username);
 
 if ($user && password_verify($password, $user['password_hash'])) {
+    // Successful login
     $_SESSION['authenticated'] = true;
     $_SESSION['username'] = $username;
     $_SESSION['user_id'] = $user['user_id'];
 
-//    if ($user['household_id'] === null) {
-//        // If the user's household_id is NULL, redirect to the join household page
-//        header("Location: https://orderly-b0075f006315.herokuapp.com/joinHousehold.php");
-//        exit();
+    // Clear the session flag for unsuccessful login attempts
+    unset($_SESSION['login_failed']);
 
-        // If the user already belongs to a household, redirect to another page
-        header("Location: https://orderly-b0075f006315.herokuapp.com/index.php");
-        exit();
-
+    // Redirect to the home page
+    header("Location: https://orderly-b0075f006315.herokuapp.com/index.php");
+    exit();
 } else {
-    // Invalid credentials, redirect to the login page
+    // Invalid credentials
+    $_SESSION['login_failed'] = true;
+
+    // Redirect back to the login page
     header("Location: https://orderly-b0075f006315.herokuapp.com/home.php");
     exit();
 }

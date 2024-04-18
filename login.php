@@ -1,14 +1,9 @@
 <?php
 session_start();
 
-// Check if the clear password query parameter is set
-if (isset($_GET['clear_password'])) {
-    // Redirect back to the login page without the clear_password query parameter
-    header("Location: login.php");
-    exit();
-}
 
-// Your login handling code goes here
+
+
 
 ?>
 <html>
