@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         require_once 'DAO.php';
         $dao = new DAO();
         $user_id = $_SESSION['user_id'];
-        $dao->addChore($description,  $due_date, $is_recurring);
+        $dao->addChore($user_id,$description,  $due_date, $is_recurring);
 
 
         header("Location: https://orderly-b0075f006315.herokuapp.com/do.php");
