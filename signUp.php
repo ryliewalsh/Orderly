@@ -10,14 +10,23 @@
 
 <?php
 session_start();
-
-if (isset($_SESSION['errors'])) {
-    foreach ($_SESSION['errors'] as $message) {
-        echo "<div class='message'>{$message}</div>";
+if (isset($_SESSION['errors']) && !empty($_SESSION['errors'])) {
+    echo '<div style="color: red;">';
+    foreach ($_SESSION['errors'] as $error) {
+        echo $error . "<br>";
     }
-    unset($_SESSION['errors']); // Clear the errors after displaying them
+    echo '</div>';
+    unset($_SESSION['errors']);
 }
-   ?>
+?>
+
+<?php if (!empty($errors)): ?>
+    <div style="color: red;">
+        <?php foreach ($errors as $error): ?>
+            <div><?php echo $error; ?></div>
+        <?php endforeach; ?>
+    </div>
+<?php endif; ?>
 
 <form action="signUp_handler.php" method="post">
     <label for="email">Email:</label>
