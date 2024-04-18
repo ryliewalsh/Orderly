@@ -23,8 +23,8 @@ session_start();
         unset($_SESSION['error_messages']);
     }
     ?>
-    <div class="signup-form">
-        <h2>Sign Up</h2>
+    <div class="header">
+        <a class="logo" href="index.php">Orderly.</a>
         <form action="signUp_handler.php" method="post">
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" value="<?php echo isset($_SESSION['inputs']['email']) ? htmlspecialchars($_SESSION['inputs']['email']) : ''; ?>"><br><br>
