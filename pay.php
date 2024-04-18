@@ -25,11 +25,13 @@
                 $lines = $dao->getBills();
 
                 if (count($lines) == 0) {
-                    echo "<tr><td colspan='2'>Congrats, nothing due!</td></tr>";
+                    echo "<div class='item-box'><div class='item'><span>Congrats, nothing due!</span></div></div>";
                 } else {
+                    echo "<div class='item-box'>";
                     foreach ($lines as $line) {
-                        echo "<tr><td>{$line['description']}</td><td>{$line['amount']}</td><td>{$line['due_date']}</td></tr>";
+                        echo "<div class='item'><span>{$line['description']}</span><span>{$line['due_date']}</span></div>";
                     }
+                    echo "</div>";
                 }
                 ?>
             </table>
@@ -44,14 +46,15 @@
                 require_once "DAO.php";
                 $dao = new DAO();
                 $lines = $dao->getTodaysBills();
-
                 if (count($lines) == 0) {
-                echo "<tr><td colspan='2'>Congrats, nothing due Today!</td></tr>";
+                echo "<div class='item-box'><div class='item'><span>Congrats, nothing due!</span></div></div>";
                 } else {
+                echo "<div class='item-box'>";
                 foreach ($lines as $line) {
-                echo "<tr><td>{$line['description']}</td><td>{$line['amount']}</td><td>{$line['due_date']}</td></tr>";
+                    echo "<div class='item'><span>{$line['description']}</span><span>{$line['due_date']}</span></div>";
                 }
-                }
+                echo "</div>";
+                 }
                 ?>
                 </div>
 

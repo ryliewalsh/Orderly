@@ -43,6 +43,9 @@
             <div class="small-box">
                 <div class="label-box">To Do Today</div>
                 <?php
+                require_once "DAO.php";
+                $dao = new DAO();
+                $lines = $dao->getTodaysChores();
                 if (count($lines) == 0) {
                 echo "<div class='item-box'><div class='item'><span>Congrats, nothing due!</span></div></div>";
                 } else {
