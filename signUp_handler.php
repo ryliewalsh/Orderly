@@ -11,9 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $errors = array();
 
 
-    if (!preg_match("/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/", $email)) {
-        $errors[] = "Invalid email format";
-    }
+
 
     if (empty($username)) {
         $errors[] = "Username is required";
@@ -43,12 +41,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $_SESSION['error_message'] = $errors;
 
-        // Redirect back to the form page
+
         header("Location: https://orderly-b0075f006315.herokuapp.com/home.php");
         exit();
     }
 } else {
-    // If form is not submitted, redirect to error page
+
     header("Location: error.php");
     exit();
 }
