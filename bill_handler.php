@@ -51,13 +51,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $_SESSION['error_messages'] = $errors;
 
-        header("Location: form_page.php");
+        header("Location:https://orderly-b0075f006315.herokuapp.com/pay.php");
         exit();
     }
 } else {
 
     $_SESSION['error_messages'] = array("Invalid request method");
-    header("Location: form_page.php");
+    header("Location:https://orderly-b0075f006315.herokuapp.com/pay.php");
     exit();
 }
 ?>
