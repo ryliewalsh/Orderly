@@ -1,11 +1,4 @@
-<?php
-if (isset($_SESSION['error_messages'])) {
-    foreach ($_SESSION['error_messages'] as $error) {
-        echo "<div class='message'>$error</div>";
-    }
-    unset($_SESSION['error_messages']);
-}
-?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,11 +8,18 @@ if (isset($_SESSION['error_messages'])) {
     <title>Sign Up</title>
 </head>
 <body>
-<div class="wallpaper">
+
     <div class="header">
         <div class="logo">Orderly.</div>
     </div>
-    </div>
+    <?php
+    if (isset($_SESSION['error_messages'])) {
+        foreach ($_SESSION['error_messages'] as $error) {
+            echo "<div class='message'>$error</div>";
+        }
+        unset($_SESSION['error_messages']);
+    }
+    ?>
     <div class="signup-form">
         <h2>Sign Up</h2>
         <form action="signUp_handler.php" method="post">
