@@ -104,7 +104,7 @@ class DAO {
         $q->bindParam(":user_id", $user_id);
         $q->bindParam(":description", $description);
         $q->bindParam(":due_date", $due_date);
-        $q->bindParam(":is_paid", $is_done);
+        $q->bindParam(":is_done", $is_done);
         $q->execute();
     }
 
