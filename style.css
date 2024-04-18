@@ -268,7 +268,11 @@ input[type="password"] {
 }
 
 .small-item.chore{
-    background-color: red;
+    background-color: #BFC4BA;
+
+}
+.small-item.bill{
+    background-color: #ceac8f;
 
 }
 .item {
