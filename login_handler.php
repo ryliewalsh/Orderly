@@ -34,6 +34,6 @@ if ($_SESSION['authenticated']) {
 } else {
     header("Location: https://orderly-b0075f006315.herokuapp.com/login.php");
 }
-session_unset();
+
 exit();
 ?>
