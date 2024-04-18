@@ -24,11 +24,10 @@
                     echo "Congrats nothing to do!";
                 } else {
                     foreach ($chores as $chore) {
-                        echo "<div class='item-box'><div class='small-item chore'></div><div>{$chore['description']}</div></div>";
-
+                        echo "<div class='item-box'><a href='do.php' class='small-item chore'>Chore</a><div>{$chore['description']}</div></div>";
                     }
                     foreach ($bills as $bill) {
-                        echo "<div class='item-box'><div class='small-item'></div><div>{$bill['description']}</div></div>";
+                        echo "<div class='item-box'><div class='small-item bill'></div><div>{$bill['description']}</div></div>";
                     }
                 }
                 ?>
