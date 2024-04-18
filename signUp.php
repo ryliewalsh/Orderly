@@ -10,12 +10,14 @@
 
 <?php
 session_start();
-
-// Check if there are any errors stored in the session
-$errors = isset($_SESSION['errors']) ? $_SESSION['errors'] : array();
-
-// Clear the errors from the session
-unset($_SESSION['errors']);
+if (isset($_SESSION['errors']) && !empty($_SESSION['errors'])) {
+    echo '<div style="color: red;">';
+    foreach ($_SESSION['errors'] as $error) {
+        echo $error . "<br>";
+    }
+    echo '</div>';
+    unset($_SESSION['errors']); // Clear the errors after displaying them
+}
 ?>
 
 <?php if (!empty($errors)): ?>
