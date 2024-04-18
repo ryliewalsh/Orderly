@@ -267,6 +267,10 @@ input[type="password"] {
     margin-left: auto;
 }
 
+.small-item.chore{
+    background-color: red;
+
+}
 .item {
     display: flex;
     justify-content: space-between;
