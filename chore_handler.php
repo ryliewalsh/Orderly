@@ -29,7 +29,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit();
     } else {
 
-        header("Location: form.php?errors=" . urlencode(implode(",", $errors)));
+        if (isset($_SESSION['messages'])) {
+            foreach ($_SESSION['messages'] as $errors) {
+                echo "<div class='message '>{$errors}</div>";
+            }
+            unset($_SESSION['messages']);
+        }
         exit();
     }
 } else {
