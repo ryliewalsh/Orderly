@@ -11,7 +11,7 @@ if (isset($_SESSION['authenticated']) && $_SESSION['authenticated']) {
         exit();
     }
   */
-    header("Location: https://orderly-b0075f006315.herokuapp.com/index.php");
+
 } else {
     header("Location: https://orderly-b0075f006315.herokuapp.com/home.php");
     exit();
