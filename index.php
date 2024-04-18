@@ -7,7 +7,7 @@
 <body>
 
 <div class="wallpaper">
-    <large-box>
+    <large-box >
         <?php include_once("calendar.php"); ?>
     </large-box>
     <div class="vertical">
@@ -24,10 +24,10 @@
                     echo "Congrats nothing to do!";
                 } else {
                     foreach ($chores as $chore) {
-                        echo "<div class='item-box'><div>{$chore['description']}</div></div>";
+                        echo "<div>{$chore['description']}</div>";
                     }
                     foreach ($bills as $bill) {
-                        echo "<div class='item-box'></div><div>{$bill['description']}</div></div>";
+                        echo "<div>{$bill['description']}</div>";
                     }
                 }
                 ?>
@@ -44,10 +44,10 @@
                     echo "All caught up!";
                 } else {
                     foreach ($upcomingChores as $chore) {
-                        echo "<div class='item-box'></div><div>{$chore['description']}</div></div>";
+                        echo "<div>{$chore['description']}</div>";
                     }
                     foreach ($upcomingBills as $bill) {
-                        echo "<div class='item-box'></div><div>{$bill['description']}</div></div>";
+                        echo "<div>{$bill['description']}</div>";
                     }
                 }
                 ?>
