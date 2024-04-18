@@ -11,7 +11,7 @@
     <large-box>
         <div class="title">
             <h1>Budget</h1>
-            <div class="label-box">disc</div>
+
             <table>
                 <?php
                 require_once "DAO.php";
