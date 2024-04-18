@@ -19,7 +19,6 @@ if (isset($_SESSION['error_messages'])) {
             <input type="date" id="due_date" name="due_date">
         </div>
 
-
         <input type="submit" value="Submit">
     </form>
 </div>
