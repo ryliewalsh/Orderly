@@ -13,6 +13,12 @@
             <h1>Budget</h1>
 
             <table>
+                <thead>
+                <tr>
+                    <th>Comment</th>
+                    <th>Date</th>
+                </tr>
+                </thead>
                 <?php
                 require_once "DAO.php";
                 $dao = new DAO();
@@ -29,13 +35,6 @@
                 }
                 ?>
             </table>
-            <thead>
-            <tr>
-                <th>Comment</th>
-                <th>Date</th>
-            </tr>
-            </thead>
-
         </div>
     </large-box>
 
