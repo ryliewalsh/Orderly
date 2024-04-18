@@ -27,6 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
 
         $_SESSION['error_messages'] = $errors;
+        $_SESSION['inputs']['description'] = $description;
         header("Location:https://orderly-b0075f006315.herokuapp.com/do.php");
         exit();
     }
