@@ -1,7 +1,14 @@
+
+<head>
+    <title>Welcome!</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="robots" content="noindex, nofollow">
+</head>
 <?php
 session_start();
 require_once 'DAO.php';
 $dao = new DAO();
+
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $errors = array();
