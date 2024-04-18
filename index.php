@@ -13,11 +13,45 @@
     <div class="vertical">
         <div class="small-box">
             <div class="label-box">Today's Items</div>
-            <div class="content-box">Congrats nothing to do!</div>
+            <div class="content-box">
+                <?php
+                require_once "DAO.php";
+                $dao = new DAO();
+                $chores = $dao->getTodaysChores();
+                $bills = $dao->getTodaysBills();
+
+                if (empty($chores) && empty($bills)) {
+                    echo "Congrats nothing to do!";
+                } else {
+                    foreach ($chores as $chore) {
+                        echo "<div>{$chore['description']}</div>";
+                    }
+                    foreach ($bills as $bill) {
+                        echo "<div>{$bill['description']}</div>";
+                    }
+                }
+                ?>
+            </div>
         </div>
         <div class="small-box">
             <div class="label-box">Upcoming</div>
-            <div class="content-box">All caught up!</div>
+            <div class="content-box">
+                <?php
+                $upcomingChores = $dao->getChores();
+                $upcomingBills = $dao->getBills();
+
+                if (empty($upcomingChores) && empty($upcomingBills)) {
+                    echo "All caught up!";
+                } else {
+                    foreach ($upcomingChores as $chore) {
+                        echo "<div>{$chore['description']}</div>";
+                    }
+                    foreach ($upcomingBills as $bill) {
+                        echo "<div>{$bill['description']}</div>";
+                    }
+                }
+                ?>
+            </div>
         </div>
     </div>
 </div>
