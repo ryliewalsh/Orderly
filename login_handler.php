@@ -26,7 +26,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
 }
 
 // Unset all session variables if the login page is loaded
-session_unset();
+
 
 // Redirect the user based on authentication status
 if ($_SESSION['authenticated']) {
@@ -34,5 +34,6 @@ if ($_SESSION['authenticated']) {
 } else {
     header("Location: https://orderly-b0075f006315.herokuapp.com/login.php");
 }
+session_unset();
 exit();
 ?>
