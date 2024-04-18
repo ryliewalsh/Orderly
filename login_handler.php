@@ -9,24 +9,23 @@ $dao = new DAO();
 $user = $dao->getUser($username);
 
 if ($user && password_verify($password, $user['password_hash'])) {
-    // Successful login
+
     $_SESSION['authenticated'] = true;
     $_SESSION['username'] = $username;
     $_SESSION['user_id'] = $user['user_id'];
 
-    unset($password);
+    // Clear the password from the POST data
+    unset($_POST['password']);
 
 
-
-    // Redirect to the home page
     header("Location: https://orderly-b0075f006315.herokuapp.com/index.php");
     exit();
 } else {
-    // Invalid credentials
+
     $_SESSION['login_failed'] = true;
 
-    // Redirect back to the login page
-    header("Location: https://orderly-b0075f006315.herokuapp.com/home.php");
+
+    header("Location: https://orderly-b0075f006315.herokuapp.com/login.php");
     exit();
 }
 ?>
