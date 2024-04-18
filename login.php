@@ -39,12 +39,15 @@ if (isset($_SESSION['error_messages'])) {
 </head>
 <body>
 <h1>Login Page</h1>
-<form id="loginForm" method="post" action="login_handler.php">
-    <div>Username <input type="text" name="username" id="username" autocomplete="off"></div>
-    <br/>
-    <div>Password <input type="password" name="password" id="password" autocomplete="off"></div>
-    <br/>
+<form method="post" action="login_handler.php">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" autocomplete="off"><br><br>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" autocomplete="off"><br><br>
+
     <div><input type="submit" value="Login"></div>
+</form>
 </form>
 
 </body>
