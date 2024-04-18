@@ -264,7 +264,7 @@ input[type="password"] {
     width: 10px;
     height: 10px;
     background-color: #555;
-    margin-left: 10px;
+    margin-left: auto;
 }
 
 .item {
