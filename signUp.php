@@ -15,15 +15,15 @@ session_start();
 <div class="header">
     <a class="logo" href="index.php">Orderly.</a>
 </div>
-    <?php
-    if (isset($_SESSION['error_messages'])) {
-        foreach ($_SESSION['error_messages'] as $error) {
-            echo "<div class='message'>$error</div>";
-        }
-        unset($_SESSION['error_messages']);
+<?php
+if (isset($_SESSION['error_messages'])) {
+    foreach ($_SESSION['error_messages'] as $error) {
+        echo "<div class='message'>$error</div>";
     }
-    ?>
-    <div class="signup-form">
+    unset($_SESSION['error_messages']);
+}
+?>
+<div class="signup-form">
         <h2>Sign Up</h2>
         <form action="signUp_handler.php" method="post">
             <label for="email">Email:</label>
