@@ -40,12 +40,24 @@
         <div class="vertical">
             <div class="small-box">
                 <div class="label-box">Due Today</div>
-                    <div class="content-box">Nothing due today</div>
-            </div>
+            <?php
+                require_once "DAO.php";
+                $dao = new DAO();
+                $lines = $dao->getTodaysBills();
+
+                if (count($lines) == 0) {
+                echo "<tr><td colspan='2'>Congrats, nothing due Today!</td></tr>";
+                } else {
+                foreach ($lines as $line) {
+                echo "<tr><td>{$line['description']}</td><td>{$line['amount']}</td><td>{$line['due_date']}</td></tr>";
+                }
+                }
+                ?>
+                </div>
 
             <div class="small-box">
                 <div class="label-box">Add an Expense</div>
-                    <div class="content-box"> <?php include_once("addBill.php");?></div>
+                    <div class="content-box"> <?php include_once("addBill.php");?></>
             </div>
         </div>
     </div>

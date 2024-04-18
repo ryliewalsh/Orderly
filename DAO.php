@@ -107,6 +107,19 @@ class DAO {
         $q->bindParam(":is_done", $is_done);
         $q->execute();
     }
+    public function getTodaysBills() {
+        $conn = $this->getConnection();
+        $user_id = $_SESSION['user_id'];
+
+        $today = date('Y-m-d');
+
+        $stmt = $conn->prepare("SELECT description, amount, due_date, is_paid FROM bills WHERE user_id = :user_id AND due_date = :today");
+        $stmt->bindParam(':user_id', $user_id);
+        $stmt->bindParam(':today', $today);
+        $stmt->execute();
+
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
 
     public function getBills() {
         $conn = $this->getConnection();
@@ -117,6 +130,19 @@ class DAO {
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    public function getTodaysChores() {
+        $conn = $this->getConnection();
+        $user_id = $_SESSION['user_id'];
+
+        $today = date('Y-m-d');
+
+        $stmt = $conn->prepare("SELECT description, amount, due_date, is_paid FROM chores WHERE user_id = :user_id AND due_date = :today");
+        $stmt->bindParam(':user_id', $user_id);
+        $stmt->bindParam(':today', $today);
+        $stmt->execute();
+
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
     public function getChores() {
         $conn = $this->getConnection();
         $user_id = $_SESSION['user_id'];
