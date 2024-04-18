@@ -7,6 +7,13 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
 
     require_once 'DAO.php';
     $dao = new DAO();
+    if (empty($username)) {
+        $errors[] = "Username is required";
+    }
+
+    if (empty($password)) {
+        $errors[] = "Password is required";
+    }
 
     $user = $dao->getUser($username);
 
@@ -20,7 +27,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
         unset($_POST['password']);
     } else {
 
-        $_SESSION['login_failed'] = true;
+       $errors[] = "Username or password is incorrect";
     }
 }
 
