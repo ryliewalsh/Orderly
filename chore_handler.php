@@ -1,14 +1,7 @@
 <?php
 session_start();
 
-if (isset($_SESSION['error_messages'])) {
 
-    foreach ($_SESSION['error_messages'] as $error) {
-        echo "<tr><td>{$error}</td></tr>";
-    }
-    // Unset the error messages after displaying them
-    unset($_SESSION['error_messages']);
-}
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $description = $_POST['description'];
