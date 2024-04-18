@@ -30,16 +30,16 @@ if (isset($_SESSION['errors']) && !empty($_SESSION['errors'])) {
 
 <form action="signUp_handler.php" method="post">
     <label for="email">Email:</label>
-    <input type="email" id="email" name="email" required><br><br>
+    <input type="email" id="email" name="email"><br><br>
 
     <label for="username">Username:</label>
-    <input type="text" id="username" name="username" required><br><br>
+    <input type="text" id="username" name="username" ><br><br>
 
     <label for="password">Password:</label>
-    <input type="password" id="password" name="password" required><br><br>
+    <input type="password" id="password" name="password" ><br><br>
 
     <label for="first_name">First Name:</label>
-    <input type="text" id="first_name" name="first_name" required><br><br>
+    <input type="text" id="first_name" name="first_name" ><br><br>
 
     <button type="submit">Sign Up</button>
 </form>
