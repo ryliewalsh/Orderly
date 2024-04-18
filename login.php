@@ -1,6 +1,8 @@
 <?php
 session_start();
-
+ if (isset($_SESSION['authenticated'])){
+     unset($_SESSION['authenticated']);
+ }
 if (isset($_SESSION['error_messages'])) {
     foreach ($_SESSION['error_messages'] as $error) {
         echo "<div class='message'>$error</div>";

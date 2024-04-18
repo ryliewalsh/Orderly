@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if (isset($_SESSION['authenticated']) && $_SESSION['authenticated']&& !endsWith($_SERVER['PHP_SELF'], 'login.php')) {
+if (isset($_SESSION['authenticated']) && $_SESSION['authenticated']) {
   /*  if (isset($_SESSION['house_id'])) {
         header("Location: /index.php");
         exit();
