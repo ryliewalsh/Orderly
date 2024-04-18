@@ -1,4 +1,15 @@
-<?php include_once("header.php"); ?>
+<?php include_once("header.php");
+
+
+if (isset($_SESSION['error_messages'])) {
+
+    foreach ($_SESSION['error_messages'] as $error) {
+        echo "<tr><td>{$error}</td></tr>";
+    }
+    // Unset the error messages after displaying them
+    unset($_SESSION['error_messages']);
+}
+?>
 
     <html>
     <head>
@@ -10,6 +21,7 @@
     <div class="wallpaper">
         <large-box>
                 <h1>Agenda</h1>
+
                 <table>
                     <thead>
                     <tr>
