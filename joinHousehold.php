@@ -15,11 +15,11 @@
                 <form action="houseHandler.php" method="post">
                     <div>
                         <label for="houseName">Household Name:</label>
-                        <input type="text" id="houseName" name="houseName" required>
+                        <input type="text" id="houseName" name="houseName" >
                     </div>
                     <div>
                         <label for="houseKey">Household Key:</label>
-                        <input type="text" id="houseKey" name="houseKey" required>
+                        <input type="text" id="houseKey" name="houseKey" >
                     </div>
                     <div>
                         <button type="submit" name="action" value="join">Join Existing Household</button>
