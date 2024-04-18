@@ -24,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $dao->addChore($user_id,$description,  $due_date);
 
 
-       // header("Location: https://orderly-b0075f006315.herokuapp.com/do.php");
+        header("Location: https://orderly-b0075f006315.herokuapp.com/do.php");
         exit();
     } else {
 
