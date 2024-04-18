@@ -58,8 +58,8 @@
         </div>
 
         <div class="small-box">
-            <div class="label-box">Add an Expense</div>
-            <div class="content-box"> <?php include_once("addBill.php");?></div>
+            <div class="label-box">Add a Task</div>
+            <div class="content-box"> <?php include_once("addChore.php");?></div>
         </div>
     </div>
 </div>
