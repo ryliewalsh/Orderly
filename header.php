@@ -3,16 +3,14 @@ session_start();
 
 if (isset($_SESSION['authenticated']) && $_SESSION['authenticated']) {
     if (isset($_SESSION['house_id'])) {
-
         header("Location: /index.php");
         exit();
-    } else {
-        // If the house_id is not set, redirect to the joinHousehold page
+    } elseif ($_SERVER['SCRIPT_NAME'] !== '/joinHousehold.php') {
+        // If the house_id is not set and the current page is not joinHousehold.php, redirect to the joinHousehold page
         header("Location: /joinHousehold.php");
         exit();
     }
 } else {
-
     header("Location: /home.php");
     exit();
 }
