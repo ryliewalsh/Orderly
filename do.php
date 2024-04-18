@@ -11,15 +11,18 @@
     <large-box>
         <div class="title">
             <h1>Budget</h1>
-
             <table>
-
-
-
+                <thead>
+                <tr>
+                    <th>Description</th>
+                    <th>Amount</th>
+                    <th>Due By</th>
+                </tr>
+                </thead>
                 <?php
                 require_once "DAO.php";
                 $dao = new DAO();
-                $lines = $dao->getChores();
+                $lines = $dao->getBills();
 
                 if (count($lines) == 0) {
                     echo "<div class='item-box'><div class='item'><span>Congrats, nothing due!</span></div></div>";
