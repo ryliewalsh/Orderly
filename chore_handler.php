@@ -6,7 +6,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $description = $_POST['description'];
     $due_date = $_POST['due_date'];
-    $is_recurring = $_POST['is_recurring'];
+    $is_recurring = isset($_POST['is_recurring']) && $_POST['is_recurring'] == '1' ? '1' : '0';
 
     $errors = array();
     if (empty($description)) {
@@ -21,18 +21,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $dao = new DAO();
         $dao->addChore($description,  $due_date, $is_recurring);
 
-        // Redirect to a success page or perform other actions
+
         header("Location: https://orderly-b0075f006315.herokuapp.com/do.php");
         exit();
     } else {
 
         $_SESSION['error_messages'] = $errors;
-        header("Location:https://orderly-b0075f006315.herokuapp.com/do.php"); // Replace form_page.php with the actual page URL
+        header("Location:https://orderly-b0075f006315.herokuapp.com/do.php");
         exit();
     }
 } else {
-    // Handle case when the form is not submitted
-    // This block may be empty or you can include other logic
+
     exit();
 }
 ?>
