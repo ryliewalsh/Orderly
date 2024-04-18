@@ -13,20 +13,17 @@ if (isset($_SESSION['error_messages'])) {
     <form method="post" action="bill_handler.php">
         <div>
             <label for="description">Description:</label>
-            <input type="text" id="description" name="description">
+            <input type="text" id="description" name="description" value="<?php echo isset($_SESSION['inputs']['description']) ? $_SESSION['inputs']['description'] : ""; ?>">
         </div>
         <div>
             <label for="amount">Amount:</label>
-            <input type="text" id="amount" name="amount">
+            <input type="text" id="amount" name="amount" value="<?php echo isset($_SESSION['inputs']['amount']) ? $_SESSION['inputs']['amount'] : ""; ?>">
         </div>
         <div>
             <label for="due_date">Due Date:</label>
             <input type="date" id="due_date" name="due_date">
         </div>
-        <div>
-            <label for="is_recurring">Recurring:</label>
-            <input type="checkbox" id="is_recurring" name="is_recurring" value="1">
-        </div>
+
 
         <input type="submit" value="Submit">
     </form>
