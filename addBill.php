@@ -1,3 +1,14 @@
+<?php
+session_start();
+
+if (isset($_SESSION['error_messages'])) {
+    foreach ($_SESSION['error_messages'] as $error) {
+        echo "<div class='message'>$error</div>";
+    }
+    unset($_SESSION['error_messages']);
+}
+?>
+
 <div id="text">
     <form method="post" action="bill_handler.php">
         <div>
