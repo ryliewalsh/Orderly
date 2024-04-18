@@ -36,6 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         header("Location: https://orderly-b0075f006315.herokuapp.com/signUp.php");
         exit();
     }
+
 }
 
 
