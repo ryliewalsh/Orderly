@@ -1,4 +1,7 @@
-<?php include_once("header.php"); ?>
+<?php include_once("header.php");
+require_once "DAO.php";
+$dao = new DAO();
+?>
 
 <html>
 <head>
@@ -20,8 +23,7 @@
                 </tr>
                 </thead>
                 <?php
-                require_once "DAO.php";
-                $dao = new DAO();
+
                 $lines = $dao->getBills();
 
                 if (count($lines) == 0) {
