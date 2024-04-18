@@ -36,8 +36,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
 
-    if (empty($errors)) {
 
+    if (empty($errors)) {
+        require_once 'DAO.php';
+        $dao = new DAO();
+        $user_id = $_SESSION['user_id'];
+
+        $dao->addChore($user_id,$description,  $due_date);
+
+
+        header("Location: https://orderly-b0075f006315.herokuapp.com/pay.php");
+        exit();
     } else {
 
         $_SESSION['error_messages'] = $errors;
