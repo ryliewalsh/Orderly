@@ -260,7 +260,7 @@ input[type="password"] {
     padding: 10px;
     border-radius: 5px;
 }
-.small-item a{
+.small-item {
     width: 10%;
     height: 20px;
     margin-left: auto;
