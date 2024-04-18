@@ -16,7 +16,7 @@ if (isset($_SESSION['errors']) && !empty($_SESSION['errors'])) {
         echo $error . "<br>";
     }
     echo '</div>';
-    unset($_SESSION['errors']); // Clear the errors after displaying them
+    unset($_SESSION['errors']);
 }
 ?>
 
