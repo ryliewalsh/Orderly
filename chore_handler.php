@@ -19,6 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($errors)) {
         require_once 'DAO.php';
         $dao = new DAO();
+        $user_id = $_SESSION['user_id'];
         $dao->addChore($description,  $due_date, $is_recurring);
 
 
