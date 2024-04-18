@@ -14,8 +14,9 @@ if ($user && password_verify($password, $user['password_hash'])) {
     $_SESSION['username'] = $username;
     $_SESSION['user_id'] = $user['user_id'];
 
-    // Clear the session flag for unsuccessful login attempts
-    unset($_SESSION['login_failed']);
+    unset($password);
+
+
 
     // Redirect to the home page
     header("Location: https://orderly-b0075f006315.herokuapp.com/index.php");
