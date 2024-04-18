@@ -12,12 +12,7 @@
         <div class="title">
             <h1>Agenda</h1>
             <table>
-                <thead>
-                <tr>
-                    <th>Description</th>
-                    <th>Do By</th>
-                </tr>
-                </thead>
+
                 <?php
                 require_once "DAO.php";
                 $dao = new DAO();

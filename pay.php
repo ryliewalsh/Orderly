@@ -16,12 +16,7 @@ $dao = new DAO();
             <h1>Budget</h1>
 
             <table>
-                <thead>
-                <tr>
-                    <th>Comment</th>
-                    <th>Date</th>
-                </tr>
-                </thead>
+
                 <?php
 
                 $lines = $dao->getBills();
