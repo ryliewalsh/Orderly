@@ -29,7 +29,7 @@
             <input type="text" id="first_name" name="first_name" value="<?php echo isset($_SESSION['inputs']['first_name']) ? htmlspecialchars($_SESSION['inputs']['first_name']) : ''; ?>"><br><br>
 
             <button type="submit">Sign Up</button>
-            <a href="login.php"><button type="submit">Log In</button></a>
+            <a href="./login.php"><button type="submit">Log In</button></a>
         </form>
     </div>
 
