@@ -1,11 +1,3 @@
-<?php
-session_start();
-
-
-
-
-
-?>
 <html>
 <head>
     <link rel="stylesheet" href="style.css">
@@ -33,9 +25,9 @@ session_start();
 <body>
 <h1>Login Page</h1>
 <form id="loginForm" method="post" action="login_handler.php">
-    <div>Username <input type="text" name="username" id="username"></div>
+    <div>Username <input type="text" name="username" id="username" autocomplete="off"></div>
     <br/>
-    <div>Password <input type="password" name="password" id="password"></div>
+    <div>Password <input type="password" name="password" id="password" autocomplete="off"></div>
     <br/>
     <div><input type="submit" value="Login"></div>
 </form>
