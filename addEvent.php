@@ -22,10 +22,7 @@ if (isset($_SESSION['error_messages'])) {
             <label for="due_date">Date:</label>
             <input type="date" id="due_date" name="due_date">
         </div>
-        <div>
-            <label for="time">Time:</label>
-            <input type="time" id="time" name="time">
-        </div>
+
 
         <input type="submit" value="Submit">
     </form>

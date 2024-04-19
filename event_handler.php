@@ -6,7 +6,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $_POST['name'];
     $description = $_POST['description'];
     $due_date = $_POST['due_date'];
-    $time = $_POST['time'];
+
 
     $errors = array();
     if (empty($description)) {
@@ -18,17 +18,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } elseif (strtotime($due_date) < strtotime(date('Y-m-d'))) {
         $errors[] = "Due date cannot be prior to the current date";
     }
-    if (empty($time)) {
-        $errors[] = "Due date is required";
 
-    }
 
     if (empty($errors)) {
         require_once 'DAO.php';
         $dao = new DAO();
         $user_id = $_SESSION['user_id'];
 
-        $dao->addEvent($user_id,$name, $description,  $due_date, $time);
+        $dao->addEvent($user_id,$name, $description,  $due_date);
 
 
         header("Location: https://orderly-b0075f006315.herokuapp.com/plan.php");
