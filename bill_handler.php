@@ -45,11 +45,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
 
         $_SESSION['error_messages'] = $errors;
+        $_SESSION['inputs']['description'] = $description;
+        $_SESSION['inputs']['amount'] = $amount;
 
         header("Location:https://orderly-b0075f006315.herokuapp.com/pay.php");
         exit();
     }
 } else {
+
 
     $_SESSION['error_messages'] = array("Invalid request method");
     header("Location:https://orderly-b0075f006315.herokuapp.com/pay.php");
