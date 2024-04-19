@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $dao = new DAO();
         $user_id = $_SESSION['user_id'];
 
-        $dao->addEvent($user_id,$name, $description,  $due_date, $time);
+       // $dao->addEvent($user_id,$name, $description,  $due_date, $time);
 
 
         header("Location: https://orderly-b0075f006315.herokuapp.com/plan.php");
