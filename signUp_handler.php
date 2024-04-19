@@ -42,6 +42,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
 
         $_SESSION['error_messages'] = $errors;
+        $_SESSION['inputs'] = array(
+            'email' => $email,
+            'username' => $username,
+            'first_name' => $first_name
+        );
         header("Location: https://orderly-b0075f006315.herokuapp.com/signUp.php");
         exit();
     }
