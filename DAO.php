@@ -92,6 +92,21 @@ class DAO {
         $q->execute();
     }
 
+    public function addEvent($user_id,$name, $description, $due_date, $time ) {
+
+        $conn = $this->getConnection();
+        $is_done = 0;
+        $saveQuery =
+            "INSERT INTO chores(user_id, name, description, due_date,time )
+            VALUES(:user_id, :name, :description,  :due_date,  :time)";
+        $q = $conn->prepare($saveQuery);
+        $q->bindParam(":user_id", $user_id);
+        $q->bindParam(":name", $name);
+        $q->bindParam(":description", $description);
+        $q->bindParam(":due_date", $due_date);
+        $q->bindParam(":time", $time);
+        $q->execute();
+    }
 
     public function addChore($user_id,$description, $due_date ) {
 
