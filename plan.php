@@ -41,7 +41,7 @@ $dao = new DAO();
             <?php
             require_once "DAO.php";
             $dao = new DAO();
-            $lines = $dao->getTodaysBills();
+            $lines = $dao->getTodaysEvents();
             if (count($lines) == 0) {
                 echo "<div class='item-box'><div class='item'><span>Nothing planned.</span></div></div>";
 

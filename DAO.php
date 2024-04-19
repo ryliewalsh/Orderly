@@ -175,4 +175,19 @@ class DAO {
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+
+    public function getTodaysEvents() {
+        $conn = $this->getConnection();
+        $user_id = $_SESSION['user_id'];
+
+        $today = date('Y-m-d');
+
+        $stmt = $conn->prepare("SELECT description,  due_date FROM events WHERE user_id = :user_id AND due_date = :today");
+        $stmt->bindParam(':user_id', $user_id);
+        $stmt->bindParam(':today', $today);
+
+        $stmt->execute();
+
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
 }
