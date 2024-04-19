@@ -33,7 +33,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
         }
     }
     $_SESSION['error_messages'] = $errors;
-
+    $_SESSION['username'] = $username;
     header("Location:https://orderly-b0075f006315.herokuapp.com/login.php");
 }
 

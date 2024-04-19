@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
 
-    if (empty($description)) {
+    if (empty($amount)) {
         $errors[] = "Amount is required";
     }
     if ($amount <= 0) {
