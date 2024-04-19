@@ -11,7 +11,7 @@ if (isset($_SESSION['error_messages'])) {
 <div id="text">
     <form method="post" action="event_handler.php">
         <div>
-            <label for="name">Description:</label>
+            <label for="name">Name:</label>
             <input type="text" id="name" name="name" value="<?php echo isset($_SESSION['inputs']['name']) ? htmlspecialchars($_SESSION['inputs']['name']) : ""; ?>">
         </div>
         <div>
