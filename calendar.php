@@ -39,7 +39,7 @@
                     center: 'title',
                     right: 'dayGridMonth,timeGridWeek,timeGridDay'
                 },
-                events: <?php echo json_encode($allEvents); ?> // Replace with dynamic PHP data
+                events: <?php echo $allEvents; ?>
             });
 
             calendar.render();
