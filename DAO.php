@@ -92,19 +92,19 @@ class DAO {
         $q->execute();
     }
 
-    public function addEvent($user_id,$name, $description, $due_date ) {
+    public function addEvent($user_id,$name, $description, $due_date, $time ) {
 
         $conn = $this->getConnection();
 
         $saveQuery =
-            "INSERT INTO chores(user_id, name, description, due_date )
-            VALUES(:user_id, :name, :description,  :due_date  )";
+            "INSERT INTO chores(user_id, name, description, due_date,time )
+            VALUES(:user_id, :name, :description,  :due_date,  :time)";
         $q = $conn->prepare($saveQuery);
         $q->bindParam(":user_id", $user_id);
         $q->bindParam(":name", $name);
         $q->bindParam(":description", $description);
         $q->bindParam(":due_date", $due_date);
-        $q->bindParam(":", $);
+        $q->bindParam(":time", $time);
         $q->execute();
     }
 
@@ -170,7 +170,7 @@ class DAO {
     public function getEvents(){
         $conn = $this->getConnection();
         $user_id = $_SESSION['user_id'];
-        $stmt = $conn->prepare("SELECT name FROM events WHERE user_id = :user_id ORDER BY due_date DESC");
+        $stmt = $conn->prepare("SELECT name, description, due_date, time FROM events WHERE user_id = :user_id ORDER BY time DESC");
         $stmt->bindParam(':user_id', $user_id);
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
