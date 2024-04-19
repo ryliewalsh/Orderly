@@ -97,13 +97,13 @@ class DAO {
         $conn = $this->getConnection();
 
         $saveQuery =
-            "INSERT INTO chores(user_id, name, description, event_date,time )
+            "INSERT INTO chores(user_id, name, description, due_date,time )
             VALUES(:user_id, :name, :description,  :due_date,  :time)";
         $q = $conn->prepare($saveQuery);
         $q->bindParam(":user_id", $user_id);
         $q->bindParam(":name", $name);
         $q->bindParam(":description", $description);
-        $q->bindParam(":event_date", $due_date);
+        $q->bindParam(":due_date", $due_date);
         $q->bindParam(":time", $time);
         $q->execute();
     }
@@ -170,7 +170,7 @@ class DAO {
     public function getEvents(){
         $conn = $this->getConnection();
         $user_id = $_SESSION['user_id'];
-        $stmt = $conn->prepare("SELECT name, description, event_date, time FROM events WHERE user_id = :user_id ORDER BY time DESC");
+        $stmt = $conn->prepare("SELECT name, description, due_date, time FROM events WHERE user_id = :user_id ORDER BY time DESC");
         $stmt->bindParam(':user_id', $user_id);
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -182,7 +182,7 @@ class DAO {
 
         $today = date('Y-m-d');
 
-        $stmt = $conn->prepare("SELECT description,  event_date FROM events WHERE user_id = :user_id AND event_date = :today");
+        $stmt = $conn->prepare("SELECT description,  due_date FROM events WHERE user_id = :user_id AND due_date = :today");
         $stmt->bindParam(':user_id', $user_id);
         $stmt->bindParam(':today', $today);
 
