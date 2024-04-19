@@ -22,8 +22,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     if (empty($password)) {
         $errors[] = "Password is required";
-    }
+    } elseif (!preg_match("/^(?=.*[A-Z])(?=.*[!@#$%^&*])(?=.{8,})/", $password)) {
 
+        $errors[] = "Password must be at least 8 characters long and contain at least one uppercase letter and one special character";
+    }
     if (empty($first_name)) {
         $errors[] = "First name is required";
     }
