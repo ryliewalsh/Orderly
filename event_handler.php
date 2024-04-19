@@ -7,7 +7,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $description = $_POST['description'];
     $due_date = $_POST['due_date'];
     $time = $_POST['time'];
-    $user_id = $_SESSION['user_id'];
+
     $errors = array();
     if (empty($description)) {
         $errors[] = "Description is required";
