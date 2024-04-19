@@ -182,7 +182,7 @@ class DAO {
 
         $today = date('Y-m-d');
 
-        $stmt = $conn->prepare("SELECT description,  due_date FROM events WHERE user_id = :user_id AND event_date = :today");
+        $stmt = $conn->prepare("SELECT description,  event_date FROM events WHERE user_id = :user_id AND event_date = :today");
         $stmt->bindParam(':user_id', $user_id);
         $stmt->bindParam(':today', $today);
 
