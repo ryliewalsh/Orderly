@@ -1,4 +1,5 @@
 <?php include_once("header.php");
+session_start();
 require_once "DAO.php";
 $dao = new DAO();
 ?>
