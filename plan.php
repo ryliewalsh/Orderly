@@ -19,7 +19,7 @@ $dao = new DAO();
 
                 <?php
 
-                $lines = $dao->getEvents();
+                //$lines = $dao->getEvents();
 
                 if (count($lines) == 0) {
                     echo "<div class='item-box'><div class='item'><span>Nothing going on...</span></div></div>";
