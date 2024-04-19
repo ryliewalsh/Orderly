@@ -44,7 +44,7 @@ $dao = new DAO();
             $dao = new DAO();
             $lines = $dao->getTodaysBills();
             if (count($lines) == 0) {
-                echo "<div class='item-box'><div class='item'><span>Congrats, nothing due!</span></div></div>";
+                echo "<div class='item-box'><div class='item'><span>Caught up for the day!</span></div></div>";
             } else {
                 echo "<div class='item-box'>";
                 foreach ($lines as $line) {
