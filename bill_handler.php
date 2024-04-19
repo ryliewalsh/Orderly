@@ -47,6 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION['error_messages'] = $errors;
         $_SESSION['inputs']['description'] = $description;
         $_SESSION['inputs']['amount'] = $amount;
+        $_SESSION['inputs']['due_date'] = $due_date;
 
         header("Location:https://orderly-b0075f006315.herokuapp.com/pay.php");
         exit();

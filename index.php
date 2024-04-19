@@ -46,7 +46,7 @@
                     foreach ($upcomingChores as $chore) {
                         echo "<div class='item-box'><a href='do.php' class='small-item chore'>Chore</a><div>{$chore['description']}</div></div>";
                     }
-                    foreach ($upcomingChores as $bill) {
+                    foreach ($upcomingBills as $bill) {
                         echo "<div class='item-box'><a href = 'pay.php' class ='small-item bill'>Bill</a><div>{$bill['description']}</div></div>";
                     }
                 }
