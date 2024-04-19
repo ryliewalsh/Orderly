@@ -166,4 +166,13 @@ class DAO {
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+
+    public function getEvent(){
+        $conn = $this->getConnection();
+        $user_id = $_SESSION['user_id'];
+        $stmt = $conn->prepare("SELECT name, description, due_date, time FROM events WHERE user_id = :user_id ORDER BY time DESC");
+        $stmt->bindParam(':user_id', $user_id);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
 }
