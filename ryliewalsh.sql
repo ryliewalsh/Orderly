@@ -66,6 +66,7 @@ CREATE TABLE user_bills (
 
 -- Table for storing events/ Plan page items
 CREATE TABLE events (
+                        user_id INT NOT NULL,
                         event_id INT AUTO_INCREMENT PRIMARY KEY,
                         event_date DATE NOT NULL,
                         event_name VARCHAR(100) NOT NULL,
