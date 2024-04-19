@@ -103,7 +103,7 @@ class DAO {
         $q->bindParam(":user_id", $user_id);
         $q->bindParam(":name", $name);
         $q->bindParam(":description", $description);
-        $q->bindParam(":due_date", $due_date);
+        $q->bindParam(":event_date", $due_date);
         $q->bindParam(":time", $time);
         $q->execute();
     }

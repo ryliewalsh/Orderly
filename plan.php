@@ -26,7 +26,7 @@ $dao = new DAO();
                 } else {
                     echo "<div class='item-box'>";
                     foreach ($lines as $line) {
-                        echo "<div class='item'><span>{$line['name']}</span><span>{$line['description']}</span><span>{$line['due_date']}</span></div>";
+                        echo "<div class='item'><span>{$line['name']}</span><span>{$line['description']}</span><span>{$line['event_date']}</span></div>";
                     }
                     echo "</div>";
                 }
@@ -49,7 +49,7 @@ $dao = new DAO();
             } else {
                 echo "<div class='item-box'>";
                 foreach ($lines as $line) {
-                    echo "<div class='item'><span>{$line['name']}</span><span>{$line['description']}</span><span>{$line['due_date']}</span></div>";
+                    echo "<div class='item'><span>{$line['name']}</span><span>{$line['description']}</span><span>{$line['event_date']}</span></div>";
                 }
                 echo "</div>";
             }
