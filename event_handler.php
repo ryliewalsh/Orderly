@@ -43,6 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 } else {
 
+    header("Location:https://orderly-b0075f006315.herokuapp.com/plan.php");
     exit();
 }
 ?>
