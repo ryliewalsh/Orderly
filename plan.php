@@ -15,23 +15,23 @@ $dao = new DAO();
         <div class="title">
             <h1>Upcoming Events</h1>
 
-            <table>
-
-                <?php
-
-                //$lines = $dao->getEvents();
-
-                if (count($lines) == 0) {
-                    echo "<div class='item-box'><div class='item'><span>Nothing going on...</span></div></div>";
-                } else {
-                    echo "<div class='item-box'>";
-                    foreach ($lines as $line) {
-                        echo "<div class='item'><span>{$line['name']}</span><span>{$line['description']}</span><span>{$line['due_date']}</span></div>";
-                    }
-                    echo "</div>";
-                }
-                ?>
-            </table>
+<!--            <table>-->
+<!---->
+<!--                --><?php
+//
+//                $lines = $dao->getEvents();
+//
+//                if (count($lines) == 0) {
+//                    echo "<div class='item-box'><div class='item'><span>Nothing going on...</span></div></div>";
+//                } else {
+//                    echo "<div class='item-box'>";
+//                    foreach ($lines as $line) {
+//                        echo "<div class='item'><span>{$line['name']}</span><span>{$line['description']}</span><span>{$line['due_date']}</span></div>";
+//                    }
+//                    echo "</div>";
+//                }
+//                ?>
+<!--            </table>-->
         </div>
     </large-box>
 
