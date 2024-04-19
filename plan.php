@@ -26,7 +26,7 @@ $dao = new DAO();
                 } else {
                     echo "<div class='item-box'>";
                     foreach ($lines as $line) {
-                        echo "<div class='item'><span>{$line['description']}</span><span>{$line['amount']}</span><span>{$line['due_date']}</span></div>";
+                        echo "<div class='item'><span>{$line['name']}</span><span>{$line['description']}</span><span>{$line['due_date']}</span></div>";
                     }
                     echo "</div>";
                 }
@@ -44,7 +44,7 @@ $dao = new DAO();
             $lines = $dao->getTodaysBills();
             if (count($lines) == 0) {
                 echo "<div class='item-box'><div class='item'><span>Nothing planned.</span></div></div>";
-                echo "<div class='item-box'><div class='item'><span>Need Inspiration?</span></div></div>";
+
 
             } else {
                 echo "<div class='item-box'>";
