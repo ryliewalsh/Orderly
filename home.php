@@ -13,6 +13,7 @@
 <div class="header">
     <a class="logo" href="index.php">Orderly.</a>
 </div>
+
 <a href= 'signUp.php'>Sign up</a>
 <a href = 'login.php'>Log in</a>
 </body>
