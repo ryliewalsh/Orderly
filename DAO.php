@@ -95,7 +95,7 @@ class DAO {
     public function addEvent($user_id,$name, $description, $due_date, $time ) {
 
         $conn = $this->getConnection();
-        $is_done = 0;
+
         $saveQuery =
             "INSERT INTO chores(user_id, name, description, due_date,time )
             VALUES(:user_id, :name, :description,  :due_date,  :time)";
