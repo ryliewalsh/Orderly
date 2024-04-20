@@ -37,6 +37,10 @@ body {
 .header a.logo:hover {
   background-color: transparent;
 }
+.header .active {
+    border: 2px solid #555555;
+    border-radius: 5px;
+}
 
   .header-right {
   float: right;
