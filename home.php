@@ -1,12 +1,20 @@
-<?php session_start()?>
-<html>
+<?php session_start(); ?>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
 
+            setTimeout(function() {
+                $(".error-message").fadeOut();
+            }, 3000);
+        });
+    </script>
 </head>
 
 <body>
@@ -24,12 +32,12 @@
 <?php
 if (isset($_SESSION['error_messages'])) {
     foreach ($_SESSION['error_messages'] as $error) {
-        echo "<div class='message'>$error</div>";
+        echo "<div class='message error-message'>$error</div>";
     }
     unset($_SESSION['error_messages']);
 }
 ?>
-<a href= 'signUp.php'>Sign up</a>
-<a href = 'login.php'>Log in</a>
+<a href="signUp.php">Sign up</a>
+<a href="login.php">Log in</a>
 </body>
 </html>
