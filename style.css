@@ -69,8 +69,8 @@ body {
   background-color: #B2ABA1;
 }
 .active {
-    border: 10px solid #555555;
-    border-radius: 4px;
+    border: 2px solid #555555;
+    border-radius: 5px;
 }
 .header a:hover {
   background-color: #555;
