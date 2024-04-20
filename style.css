@@ -37,10 +37,7 @@ body {
 .header a.logo:hover {
   background-color: transparent;
 }
-.header a:active {
-    border: 2px solid #555555;
-    border-radius: 5px;
-}
+
 
   .header-right {
   float: right;
@@ -71,7 +68,10 @@ body {
 .header a.about {
   background-color: #B2ABA1;
 }
-
+.header a:active {
+    border: 10px solid #555555;
+    border-radius: 4px;
+}
 .header a:hover {
   background-color: #555;
 }
