@@ -246,16 +246,25 @@ large-box {
     border-radius: 5px;
     display: inline-block;
 }
+
+.signup-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .signup-form {
     margin: 20px auto ;
     padding: 20px;
     width: 400px;
     background-color: #ffffff;
     border-radius: 8px;
-    display: flex;
+    display: inline-block;
 
 }
-g
+
 input[type="text"],
 input[type="email"],
 input[type="password"] {
