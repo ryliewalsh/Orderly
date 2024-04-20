@@ -33,7 +33,7 @@ session_start();
     </script>
 </head>
 <body>
-<div class="wallpaper">
+
 <div class="header">
     <a class="logo" href="index.php">Orderly.</a>
     <a class="overview <?php echo ($_SERVER['SCRIPT_NAME'] == '/index.php') ? 'active' : ''; ?>" href="index.php">Overview</a>
@@ -45,6 +45,7 @@ session_start();
         <a class="user" href="signUp.php">Join Now!</a>
     </div>
 </div>
+<div class="wallpaper">
 <?php
 if (isset($_SESSION['error_messages'])) {
     foreach ($_SESSION['error_messages'] as $error) {
@@ -53,6 +54,7 @@ if (isset($_SESSION['error_messages'])) {
     unset($_SESSION['error_messages']);
 }
 ?>
+
 <div class="signup-form">
 <h2>Login Page</h2>
 <form method="post" action="login_handler.php">
