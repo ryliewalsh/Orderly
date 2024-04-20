@@ -32,7 +32,7 @@
 <?php
 if (isset($_SESSION['error_messages'])) {
     foreach ($_SESSION['error_messages'] as $error) {
-        echo "<div class='message'>$error</div>";
+        echo "<div class='message error-message'>$error</div>";
     }
     unset($_SESSION['error_messages']);
 }
