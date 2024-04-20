@@ -31,7 +31,7 @@ if (isset($_SESSION['error_messages'])) {
 }
 ?>
 <div class="wallpaper">
-
+ <div class ='signup-container'>
     <div class="signup-form">
             <h2>Sign Up</h2>
             <form action="signUp_handler.php" method="post">
@@ -51,6 +51,7 @@ if (isset($_SESSION['error_messages'])) {
 
             </form>
         </div>
+ </div>
 </div>
 </body>
 </html>
