@@ -55,18 +55,19 @@ if (isset($_SESSION['error_messages'])) {
 }
 ?>
 <div class="wallpaper">
-<div class="signup-form">
-<h2>Login Page</h2>
-<form method="post" action="login_handler.php">
-    <label for="username">Username:</label>
-    <input type="text" id="username" name="username" autocomplete="off"><br><br>
 
-    <label for="password">Password:</label>
-    <input type="password" id="password" name="password" autocomplete="off"><br><br>
+    <div class="signup-form">
+    <h2>Login Page</h2>
+    <form method="post" action="login_handler.php">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" autocomplete="off"><br><br>
 
-    <div><input type="submit" value="Login"></div>
-</form>
-</div>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" autocomplete="off"><br><br>
+
+        <div><input type="submit" value="Login"></div>
+    </form>
+    </div>
 </div>
 
 </body>
