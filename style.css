@@ -69,7 +69,7 @@ body {
   background-color: #B2ABA1;
 }
 .active {
-    outline: 2px solid #555555;
+    outline: 2px solid #cccccc;
     outline-offset: 2px;
     border-radius: 5px;
 }
