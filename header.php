@@ -5,11 +5,8 @@ if (isset($_SESSION['authenticated']) && $_SESSION['authenticated']) {
    if (isset($_SESSION['house_key'])) {
         header("Location: /index.php");
         exit();
-    } elseif ($_SERVER['SCRIPT_NAME'] !== '/joinHousehold.php') {
-        // If the house_id is not set and the current page is not joinHousehold.php, redirect to the joinHousehold page
-        header("Location: /joinHousehold.php");
-        exit();
     }
+
 
 
 } else {

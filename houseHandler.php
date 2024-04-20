@@ -56,9 +56,10 @@ function generateNewKey() {
 
     return $key;
 }
-if (!empty($errors)) {
-    foreach ($errors as $error) {
-        echo "<p>Error: $error</p>";
+if (isset($_SESSION['error_messages'])) {
+    foreach ($_SESSION['error_messages'] as $error) {
+        echo "<div class='message error-message'>$error</div>";
     }
+    unset($_SESSION['error_messages']);
 }
 ?>
