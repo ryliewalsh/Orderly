@@ -29,7 +29,7 @@
         <a class="user" href="signUp.php">Join Now!</a>
     </div>
 </div>
-<div class="wallpaper">
+
 <?php
 if (isset($_SESSION['error_messages'])) {
     foreach ($_SESSION['error_messages'] as $error) {
@@ -38,9 +38,10 @@ if (isset($_SESSION['error_messages'])) {
     unset($_SESSION['error_messages']);
 }
 ?>
+<div class="wallpaper">
 <div class = 'home-options'>
     <a class = 'content-box' href="signUp.php">Sign up</a>
-    <a class = 'content-box' href="signUp.php">Log in</a>
+    <a class = 'content-box' href="login.php">Log in</a>
 </div>
 </div>
 </body>
