@@ -1,5 +1,5 @@
-<?php session_start(); ?>
-<!DOCTYPE html>
+<?php session_start()?>
+<html>
 <html lang="en">
 <head>
     <link rel="stylesheet" href="style.css">
@@ -32,12 +32,12 @@
 <?php
 if (isset($_SESSION['error_messages'])) {
     foreach ($_SESSION['error_messages'] as $error) {
-        echo "<div class='message error-message'>$error</div>";
+        echo "<div class='message'>$error</div>";
     }
     unset($_SESSION['error_messages']);
 }
 ?>
-<a href="signUp.php">Sign up</a>
-<a href="login.php">Log in</a>
+<a href= 'signUp.php'>Sign up</a>
+<a href = 'login.php'>Log in</a>
 </body>
 </html>
