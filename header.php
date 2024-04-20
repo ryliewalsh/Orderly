@@ -26,8 +26,8 @@ if (isset($_SESSION['authenticated']) && $_SESSION['authenticated']) {
 <body>
 <div class="header">
     <a class="logo" href="index.php">Orderly.</a>
-    <a class="overview" href="index.php">Overview</a>
-    <a class="pay" href="pay.php">Pay</a>
+    <a class="overview <?php echo ($_SERVER['SCRIPT_NAME'] == '/index.php') ? 'active' : ''; ?>" href="index.php">Overview</a>
+    <a class="pay <?php echo ($_SERVER['SCRIPT_NAME'] == '/pay.php') ? 'active' : ''; ?>" href="pay.php">Pay</a>
     <a class="plan" href="plan.php">Plan</a>
     <a class="do" href="do.php">Do</a>
     <a class="about" href="about.php">About</a>
