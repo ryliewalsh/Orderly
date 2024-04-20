@@ -252,7 +252,7 @@ large-box {
     height: 100vh;
     display: flex;
     justify-content: center;
-
+    align-items: flex-start;
 }
 
 .signup-form {
