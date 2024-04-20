@@ -252,10 +252,10 @@ large-box {
     width: 400px;
     background-color: #ffffff;
     border-radius: 8px;
-    display: inline-block;
+    display: flex;
 
 }
-
+g
 input[type="text"],
 input[type="email"],
 input[type="password"] {
