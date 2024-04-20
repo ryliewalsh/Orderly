@@ -111,6 +111,11 @@ body {
     margin-right: 10px;
     justify-items: flex-start;
 }
+.home-options {
+    flex-direction: column;
+    flex: 1;
+    justify-items: center;
+}
 
 large-box {
     background-color: #f0f0f0;

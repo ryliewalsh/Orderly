@@ -37,7 +37,9 @@ if (isset($_SESSION['error_messages'])) {
     unset($_SESSION['error_messages']);
 }
 ?>
-<a class="small-box" href= 'signUp.php'>Sign up</a>
-<a href = 'login.php'>Log in</a>
+<div class = 'home-options'>
+    <a class = 'content-box' href="signUp.php">Signup</a>
+    <a class = 'content-box' href="signUp.php">Signup</a>
+</div>
 </body>
 </html>
