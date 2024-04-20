@@ -2,7 +2,7 @@
 session_start();
 $errors = array();
 if (isset($_SESSION['authenticated']) && $_SESSION['authenticated']) {
-  /*  if (isset($_SESSION['house_id'])) {
+   if (isset($_SESSION['house_key'])) {
         header("Location: /index.php");
         exit();
     } elseif ($_SERVER['SCRIPT_NAME'] !== '/joinHousehold.php') {
@@ -10,7 +10,7 @@ if (isset($_SESSION['authenticated']) && $_SESSION['authenticated']) {
         header("Location: /joinHousehold.php");
         exit();
     }
-  */
+
 
 } else {
     $errors[] = "Join or log in to experience Orderly.";

@@ -30,7 +30,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 }
             } elseif ($action === "create") {
                 $new_key = generateNewKey();
-                $dao->addHousehold($enteredHouseName, $enteredHouseKey);
+
+                $dao->addHousehold($enteredHouseName, $new_key);
+                $_SESSION['house_key']= $new_key;
                 header("Location: https://orderly-b0075f006315.herokuapp.com/index.php");
                 exit();
 

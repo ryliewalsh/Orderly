@@ -247,7 +247,7 @@ large-box {
     display: inline-block;
 }
 .signup-form {
-    margin: 20px auto 0;
+    margin: 20px auto ;
     padding: 20px;
     width: 400px;
     background-color: #ffffff;
