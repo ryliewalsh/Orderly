@@ -21,7 +21,14 @@
         <a class="user" href="signUp.php">Join Now!</a>
     </div>
 </div>
-
+<?php
+if (isset($_SESSION['error_messages'])) {
+    foreach ($_SESSION['error_messages'] as $error) {
+        echo "<div class='message'>$error</div>";
+    }
+    unset($_SESSION['error_messages']);
+}
+?>
 <a href= 'signUp.php'>Sign up</a>
 <a href = 'login.php'>Log in</a>
 </body>
