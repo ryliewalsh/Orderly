@@ -68,7 +68,7 @@ body {
 .header a.about {
   background-color: #B2ABA1;
 }
-.header a:active {
+.active {
     border: 10px solid #555555;
     border-radius: 4px;
 }
