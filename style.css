@@ -69,7 +69,8 @@ body {
   background-color: #B2ABA1;
 }
 .active {
-    border: 2px solid #555555;
+    outline: 2px solid #555555;
+    outline-offset: 2px;
     border-radius: 5px;
 }
 .header a:hover {
