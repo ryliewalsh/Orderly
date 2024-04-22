@@ -98,7 +98,7 @@ class DAO {
         $is_done = 0;
         $saveQuery =
             "INSERT INTO events(user_id, name, description, due_date,time, is_done )
-            VALUES(:user_id, :name, :description,  :due_date,  :time)";
+            VALUES(:user_id, :name, :description,  :due_date,  :time, :is_done)";
         $q = $conn->prepare($saveQuery);
         $q->bindParam(":user_id", $user_id);
         $q->bindParam(":name", $name);
