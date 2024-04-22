@@ -6,7 +6,7 @@
     <a class="do <?php echo ($_SERVER['SCRIPT_NAME'] == '/do.php') ? 'active' : ''; ?>" href="do.php">Do</a>
     <a class="about <?php echo ($_SERVER['SCRIPT_NAME'] == '/about.php') ? 'active' : ''; ?>" href="about.php">About</a>
     <div class="header-right">
-        <a class="user" href="signUp.php">Join Now!</a>
+        <a class="user" href="signUp.php">Account Settings</a>
     </div>
 </div>
 
