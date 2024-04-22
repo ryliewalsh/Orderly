@@ -1,5 +1,4 @@
-<?php session_start();
-unset($_SESSION['inputs']);?>
+<?php session_start(); ?>
 
 <html>
 <html lang="en">
