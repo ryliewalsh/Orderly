@@ -6,6 +6,7 @@
     $dao = new DAO();
     $chores = $dao->getChores();
     $bills = $dao->getBills();
+    $userEvents = $dao->getEvents();
     $events = array();
 
     foreach ($chores as $chore) {
@@ -20,6 +21,13 @@
             'title' => 'Bill: ' . $bill['description'],
             'start' => $bill['due_date'],
             'url' => 'pay.php'
+        );
+    }
+    foreach ($userEvents as $event) {
+        $events[] = array(
+            'title' => 'Event: ' . $event['description'],
+            'start' => $event['due_date'],
+            'url' => 'plan.php'
         );
     }
     $allEvents = json_encode($events);
