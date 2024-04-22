@@ -49,7 +49,13 @@ class DAO {
     }
 
 
-
+    public function getName($username) {
+        $conn = $this->getConnection();
+        $stmt = $conn->prepare("SELECT first_name FROM users WHERE username = :username LIMIT 1");
+        $stmt->bindParam(":username", $username);
+        $stmt->execute();
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
 
     function getHouseId($houseName, $houseKey) {
         $conn = $this->getConnection();
