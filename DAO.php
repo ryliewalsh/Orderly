@@ -145,6 +145,7 @@ class DAO {
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
+
     public function getTodaysChores() {
         $conn = $this->getConnection();
         $user_id = $_SESSION['user_id'];
