@@ -20,7 +20,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $errors[] = "Due date cannot be prior to the current date";
     }
     if (empty($time)) {
-    $errors[] = "Time is required";
+        $errors[] = "Time is required";
+    }
 
 
     if (empty($errors)) {
