@@ -38,6 +38,7 @@ if (isset($_POST['bill_id'])) {
     try {
         $dao->payBill($bill_id);
         echo json_encode(['success' => true]);
+
     } catch (Exception $e) {
         echo json_encode(['success' => false, 'message' => 'Failed to pay bill: ' . $e->getMessage()]);
     }
