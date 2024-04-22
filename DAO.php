@@ -194,7 +194,7 @@ class DAO {
         $conn = $this->getConnection();
 
 
-        $stmt = $conn->prepare("UPDATE bills SET is_paid = 1 WHERE bill_id = :bill_id ");
+        $stmt = $conn->prepare("UPDATE bills SET is_paid = 1 WHERE bill_id = :billId ");
         $stmt->bindParam(':bill_id', $billId);
 
 
