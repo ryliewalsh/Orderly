@@ -7,6 +7,15 @@ session_start();
 
     <link rel="stylesheet" href="style.css">
     <title>Sign Up</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+
+            setTimeout(function() {
+                $(".error-message").fadeOut();
+            }, 1000);
+        });
+    </script>
 </head>
 <body>
 

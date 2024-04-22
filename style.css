@@ -178,11 +178,19 @@ large-box {
     display: block;
     float: left;
 }
-
+button[type="submit"] {
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text */
+    padding: 10px 20px; /* Padding around the text */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Cursor style */
+    font-size: 16px; /* Font size */
+}
 .homeButton {
     display: inline-block;
     padding: 10px 20px;
-    background-color: whitesmoke; /* Green */
+    background-color: whitesmoke;
     color: black;
     text-align: center;
     text-decoration: none;
