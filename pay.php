@@ -186,12 +186,7 @@ $dao = new DAO();
                         if (xhr.status === 200) {
 
                             var response = xhr.responseText;
-                            if (response.success) {
 
-                                <?php
-                                header("Location:https://orderly-b0075f006315.herokuapp.com/pay.php");
-                                ?>
-                            }
                         } else {
                             console.error('Error: ' + xhr.status);
                         }
