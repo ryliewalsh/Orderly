@@ -52,7 +52,7 @@ $dao = new DAO();
             } else {
                 echo "<div class='item-box'>";
                 foreach ($lines as $line) {
-                    echo "<div class='item'><span>{$line['description']}</span><span>{$line['amount']}</span><span>{$line['due_date']}</span><button class='trigger-function-button'>Trigger Function</button></div>";
+                    echo "<div class='item'><span>{$line['description']}</span><span>{$line['amount']}</span><span>{$line['due_date']}</span></div>";
                 }
                 echo "</div>";
             }
