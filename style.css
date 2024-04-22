@@ -333,6 +333,10 @@ input[type="password"] {
     background-color: #ceac8f;
 
 }
+.small-item.event{
+    background-color: #D5DBD9;
+
+}
 .item {
     display: flex;
     justify-content: space-between;
