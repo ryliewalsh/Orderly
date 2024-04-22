@@ -162,7 +162,7 @@ class DAO {
     public function getChores() {
         $conn = $this->getConnection();
         $user_id = $_SESSION['user_id'];
-        $stmt = $conn->prepare("SELECT description, due_date, is_done FROM chores WHERE user_id = :user_id ORDER BY due_date DESC");
+        $stmt = $conn->prepare("SELECT description, due_date, chore_id FROM chores WHERE user_id = :user_id ORDER BY due_date DESC");
         $stmt->bindParam(':user_id', $user_id);
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -198,6 +198,17 @@ class DAO {
         $stmt = $conn->prepare("UPDATE bills SET is_paid = '1' WHERE bill_id = :bill_id ");
         $stmt->bindParam(':bill_id', $bill_id);
 
+
+        $stmt->execute();
+
+
+    }
+    public function removeChore($chore_id) {
+        $conn = $this->getConnection();
+
+
+        $stmt = $conn->prepare("UPDATE chores SET is_paid = '1' WHERE chore_id = :chore_id ");
+        $stmt->bindParam(':chore_id', $chore_id);
 
 
         $stmt->execute();

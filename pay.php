@@ -31,7 +31,7 @@ $dao = new DAO();
                         echo "<div class='item'><span>{$line['description']}</span>
                                <span>{$line['amount']}</span><span>{$line['due_date']}</span>
                                
-                               <button class='trigger-function-button' b_id='{$line['bill_id']}'>Trigger Function</button></div>";
+                               <button class='trigger-function-button' b_id='{$line['bill_id']}'>Mark as Paid</button></div>";
                     }
                     echo "</div>";
                 }

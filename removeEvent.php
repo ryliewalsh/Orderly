@@ -14,7 +14,16 @@ if (isset($_POST['bill_id'])) {
     } catch (Exception $e) {
         echo json_encode(['success' => false, 'message' => 'Failed to pay bill: ' . $e->getMessage()]);
     }
+} elseif (isset($_POST['chore_id'])) {
+    $chore_id = $_POST['chore_id'];
+
+    try {
+        $dao->removeChore($chore_id);
+        echo json_encode(['success' => true, 'message' => 'Chore removed successfully']);
+    } catch (Exception $e) {
+        echo json_encode(['success' => false, 'message' => 'Failed to remove chore: ' . $e->getMessage()]);
+    }
 } else {
-    echo json_encode(['success' => false, 'message' => 'Bill ID not provided']);
+    echo json_encode(['success' => false, 'message' => 'Bill or chore ID not provided']);
 }
 ?>
