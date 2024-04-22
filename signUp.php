@@ -1,12 +1,11 @@
-<?php
-session_start();
-
-?>
-
+<?php session_start()?>
+<html>
+<html lang="en">
 <head>
-
     <link rel="stylesheet" href="style.css">
-    <title>Sign Up</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         $(document).ready(function() {
@@ -59,7 +58,7 @@ if (isset($_SESSION['error_messages'])) {
                 <button type="submit">Sign Up</button>
 
             </form>
-        <a class = 'homeButton' href="login.php">Log in</a>
+
         </div>
  </div>
 </div>
