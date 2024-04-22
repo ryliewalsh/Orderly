@@ -29,7 +29,7 @@ $dao = new DAO();
                         echo "<div class='item'><span>{$line['name']}</span><span>{$line['description']}</span>
                         <span>{$line['due_date']}</span>
                         <span>{$line['time']}</span>
-                        <button class='trigger-function-button'>Response</button></div>";
+                        <button class='trigger-function-button'e_id='{$line['event_id']}'>Response</button></div>";
                     }
                     echo "</div>";
                 }
@@ -53,7 +53,7 @@ $dao = new DAO();
                 echo "<div class='item-box'>";
                 foreach ($lines as $line) {
                     echo "<div class='item'><span>{$line['name']}</span><span>{$line['description']}</span><span>{$line['due_date']}</span></div>";
-                    echo "<button class='trigger-function-button'>Trigger Function</button>";
+
                 }
                 echo "</div>";
             }
@@ -68,5 +68,37 @@ $dao = new DAO();
 </div>
 </body>
 </html>
+<script>
+
+    document.addEventListener('DOMContentLoaded', function() {
+        var buttons = document.querySelectorAll('.trigger-function-button');
+
+        buttons.forEach(function(button) {
+            button.addEventListener('click', function(event) {
+                var event_id = this.getAttribute('e_id');
+
+
+                var xhr = new XMLHttpRequest();
+                xhr.open('POST', 'removeEvent.php', true);
+                xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState === XMLHttpRequest.DONE) {
+                        if (xhr.status === 200) {
+
+                            var response = xhr.responseText;
+                            console.log(response);
+
+                        } else {
+                            console.error('Error: ' + xhr.status);
+                        }
+                    }
+                };
+                xhr.send('event_id=' + event_id);
+            });
+        });
+    });
+
+</script>
+
 
 <?php require_once "footer.php"; ?>

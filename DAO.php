@@ -95,9 +95,9 @@ class DAO {
     public function addEvent($user_id,$name, $description, $due_date, $time ) {
 
         $conn = $this->getConnection();
-
+        $is_done = 0;
         $saveQuery =
-            "INSERT INTO events(user_id, name, description, due_date,time )
+            "INSERT INTO events(user_id, name, description, due_date,time, is_done )
             VALUES(:user_id, :name, :description,  :due_date,  :time)";
         $q = $conn->prepare($saveQuery);
         $q->bindParam(":user_id", $user_id);
@@ -105,6 +105,8 @@ class DAO {
         $q->bindParam(":description", $description);
         $q->bindParam(":due_date", $due_date);
         $q->bindParam(":time", $time);
+        $q->bindParam(":is_done", $is_done);
+
         $q->execute();
     }
 
@@ -171,11 +173,12 @@ class DAO {
     public function getEvents(){
         $conn = $this->getConnection();
         $user_id = $_SESSION['user_id'];
-        $stmt = $conn->prepare("SELECT name, description, due_date, time FROM events WHERE user_id = :user_id  ORDER BY time DESC");
+        $stmt = $conn->prepare("SELECT name, description, due_date, time FROM events WHERE user_id = :user_id AND is_done = 0 ORDER BY time DESC");
         $stmt->bindParam(':user_id', $user_id);
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+
 
     public function getTodaysEvents() {
         $conn = $this->getConnection();
@@ -183,7 +186,7 @@ class DAO {
 
         $today = date('Y-m-d');
 
-        $stmt = $conn->prepare("SELECT description,  due_date FROM events WHERE user_id = :user_id AND due_date = :today");
+        $stmt = $conn->prepare("SELECT description,  due_date FROM events WHERE user_id = :user_id  AND is_done = 0 AND due_date = :today");
         $stmt->bindParam(':user_id', $user_id);
         $stmt->bindParam(':today', $today);
 
@@ -209,6 +212,18 @@ class DAO {
 
         $stmt = $conn->prepare("UPDATE chores SET is_done = '1' WHERE chore_id = :chore_id ");
         $stmt->bindParam(':chore_id', $chore_id);
+
+
+        $stmt->execute();
+
+
+    }
+    public function removeEvent($event_id) {
+        $conn = $this->getConnection();
+
+
+        $stmt = $conn->prepare("UPDATE events SET is_done = '1' WHERE event_id = :event_id ");
+        $stmt->bindParam(':event_id', $event_id);
 
 
         $stmt->execute();
