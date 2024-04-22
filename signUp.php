@@ -1,14 +1,15 @@
 <?php session_start()?>
-<!DOCTYPE html>
+<html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome</title>
-    <link rel="stylesheet" href="style.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         $(document).ready(function() {
+
             setTimeout(function() {
                 $(".error-message").fadeOut();
             }, 1000);
@@ -38,8 +39,8 @@ if (isset($_SESSION['error_messages'])) {
 }
 ?>
 <div class="wallpaper">
-    <div class="signup-container">
-        <div class="signup-form">
+ <div class ='signup-container'>
+    <div class="signup-form">
             <h2>Sign Up</h2>
             <form action="signUp_handler.php" method="post">
                 <label for="email">Email:</label>
@@ -57,8 +58,9 @@ if (isset($_SESSION['error_messages'])) {
                 <button type="submit">Sign Up</button>
 
             </form>
+
         </div>
-    </div>
+ </div>
 </div>
 </body>
 </html>
