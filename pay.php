@@ -67,40 +67,31 @@ $dao = new DAO();
 </body>
 </html>
 <script>
+
     document.addEventListener('DOMContentLoaded', function() {
         var buttons = document.querySelectorAll('.trigger-function-button');
 
         buttons.forEach(function(button) {
             button.addEventListener('click', function(event) {
-                var billId = this.getAttribute('id');
+                var billId = this.getAttribute('data-bill-id');
 
 
                 var xhr = new XMLHttpRequest();
+                xhr.open('POST', 'removeEvent.php', true);
+                xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState === XMLHttpRequest.DONE) {
+                        if (xhr.status === 200) {
 
+                            var response = xhr.responseText;
+                            console.log(response);
 
-                xhr.open('POST', 'payBill.php', true);
-
-
-                xhr.setRequestHeader('Content-Type', 'application/json');
-
-
-                xhr.onload = function() {
-
-                    if (xhr.status >= 200 && xhr.status < 300) {
-
-                        var response = JSON.parse(xhr.responseText);
-
-                    } else {
-
-                        console.error('HTTP error:', xhr.status, xhr.statusText);
+                        } else {
+                            console.error('Error: ' + xhr.status);
+                        }
                     }
                 };
-
-                xhr.onerror = function() {
-                    console.error('Network error');
-                };
-
-                xhr.send(JSON.stringify({ billId: billId }));
+                xhr.send('billId=' + billId);
             });
         });
     });

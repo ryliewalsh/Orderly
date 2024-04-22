@@ -139,7 +139,7 @@ class DAO {
     public function getBills() {
         $conn = $this->getConnection();
         $user_id = $_SESSION['user_id'];
-        $stmt = $conn->prepare("SELECT description, amount, due_date, is_paid FROM bills WHERE user_id = :user_id ORDER BY due_date DESC");
+        $stmt = $conn->prepare("SELECT description, amount, due_date, is_paid FROM bills WHERE user_id = :user_id AND is_paid = 0 ORDER BY due_date DESC");
         $stmt->bindParam(':user_id', $user_id);
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -192,10 +192,9 @@ class DAO {
     }
     public function payBill($billId) {
         $conn = $this->getConnection();
-        $user_id = $_SESSION['user_id'];
 
 
-        $stmt = $conn->prepare("UPDATE bills SET is_paid = 1 WHERE bill_id = :bill_id AND user_id = :user_id");
+        $stmt = $conn->prepare("UPDATE bills SET is_paid = 1 WHERE bill_id = :bill_id ");
         $stmt->bindParam(':bill_id', $billId);
         $stmt->bindParam(':user_id', $user_id);
 
