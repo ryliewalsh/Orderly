@@ -1,21 +1,23 @@
 <?php
 session_start();
 
-// Include DAO.php
+
 require_once "DAO.php";
 $dao = new DAO();
 
-if (isset($_POST['billId'])) {
+header('Content-Type: application/json');
 
+if (isset($_POST['billId'])) {
     $billId = $_POST['billId'];
 
 
-    $dao->payBill($billId);
-
-
-    echo json_encode(['success' => true]);
+    try {
+        $dao->payBill($billId);
+        echo json_encode(['success' => true]);
+    } catch (Exception $e) {
+        echo json_encode(['success' => false, 'message' => 'Failed to pay bill: ' . $e->getMessage()]);
+    }
 } else {
-
     echo json_encode(['success' => false, 'message' => 'Bill ID not provided']);
 }
 ?>
