@@ -28,3 +28,10 @@ if (isset($_SESSION['error_messages'])) {
         <input type="submit" value="Submit">
     </form>
 </div>
+<script>
+    $(document).ready(function() {
+        setTimeout(function() {
+            $(".message").fadeOut();
+        }, 1000);
+    });
+</script>
