@@ -73,7 +73,7 @@ $dao = new DAO();
 
         buttons.forEach(function(button) {
             button.addEventListener('click', function(event) {
-                var bill_id = 24;
+                var bill_id = this.getAttribute('id');
 
 
                 var xhr = new XMLHttpRequest();
