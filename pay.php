@@ -31,6 +31,7 @@ $dao = new DAO();
                         echo "<div class='item'><span>{$line['description']}</span>
                                <span>{$line['amount']}</span><span>{$line['due_date']}</span>
                                <button class='trigger-function-button' id='{$line['bill_id']}'>Trigger Function</button></div>";
+                        echo"<button class='trigger-function-button' id='{$line['bill_id']}'>Trigger Function</button></div>";
                     }
                     echo "</div>";
                 }
@@ -73,7 +74,7 @@ $dao = new DAO();
 
         buttons.forEach(function(button) {
             button.addEventListener('click', function(event) {
-                var bill_id = this.getAttribute('bill_id');
+                var bill_id = this.getAttribute();
 
 
                 var xhr = new XMLHttpRequest();
