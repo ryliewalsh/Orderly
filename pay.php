@@ -85,10 +85,8 @@ $dao = new DAO();
                         if (xhr.status === 200) {
 
                             var response = xhr.responseText;
-                            if (response.success) {
-                                // Redirect to the pay page after successful deletion
-                                window.location.href = 'pay.php';
-                            }
+                            console.log(response);
+
                         } else {
                             console.error('Error: ' + xhr.status);
                         }
