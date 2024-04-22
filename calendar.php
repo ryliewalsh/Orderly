@@ -41,7 +41,7 @@
 
             var calendar = new FullCalendar.Calendar(calendarEl, {
                 initialView: 'dayGridMonth',
-                initialDate: '2024-04-07',
+                initialDate: '2024-04-22',
                 headerToolbar: {
                     left: 'prev,next today',
                     center: 'title',

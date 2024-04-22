@@ -37,7 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         require_once 'DAO.php';
         $dao = new DAO();
         $dao->addUser($email, $username, $hashed_password, $first_name);
-
+        unset($_SESSION['inputs']);
         header("Location: https://orderly-b0075f006315.herokuapp.com/login.php");
         exit();
     } else {
