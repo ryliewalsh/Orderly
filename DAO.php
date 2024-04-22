@@ -207,7 +207,7 @@ class DAO {
         $conn = $this->getConnection();
 
 
-        $stmt = $conn->prepare("UPDATE chores SET is_paid = '1' WHERE chore_id = :chore_id ");
+        $stmt = $conn->prepare("UPDATE chores SET is_done = '1' WHERE chore_id = :chore_id ");
         $stmt->bindParam(':chore_id', $chore_id);
 
 

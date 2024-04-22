@@ -67,7 +67,7 @@
 
         buttons.forEach(function(button) {
             button.addEventListener('click', function(event) {
-                var bill_id = this.getAttribute('c_id');
+                var chore_id = this.getAttribute('c_id');
 
 
                 var xhr = new XMLHttpRequest();
