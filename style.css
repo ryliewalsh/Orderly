@@ -178,14 +178,7 @@ large-box {
     display: block;
     float: left;
 }
-button[type="submit"] {
-    background-color: whitesmoke;
-    color: black;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-}
+
 .homeButton {
     display: inline-block;
     padding: 10px 20px;
