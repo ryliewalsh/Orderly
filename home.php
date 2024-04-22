@@ -39,7 +39,7 @@ if (isset($_SESSION['error_messages'])) {
 }
 ?>
 <div class="wallpaper">
-<div class = 'home-options'>
+<div class = 'signup-container'>
     <a class = 'content-box' href="signUp.php">Sign up</a>
     <a class = 'content-box' href="login.php">Log in</a>
 </div>
