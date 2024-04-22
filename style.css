@@ -112,6 +112,7 @@ body {
     justify-items: flex-start;
 }
 .homeContainer {
+    height: 100vh;
     text-align: center;
     margin: 50px;
     background-color: white;

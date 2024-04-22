@@ -40,8 +40,8 @@ if (isset($_SESSION['error_messages'])) {
 ?>
 <div class="wallpaper">
     <div class="homeContainer">
-        <h1 class="homeTitle">Welcome to Orderly</h1>
-        <p class="homeSentence">Ready to be orderly?</p>
+        <h1 class="homeTitle">Welcome</h1>
+        <p class="homeSentence">Ready to be Orderly?</p>
 
         <a class="homeButton" href="signUp.php">Sign up</a>
         <a class="homeButton" href="login.php">Log in</a>
