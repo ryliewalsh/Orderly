@@ -3,10 +3,10 @@ session_start();
 $errors = array();
 
 if (isset($_SESSION['authenticated']) && $_SESSION['authenticated']) {
-
+   if (isset($_SESSION['house_key'])) {
         header("Location: /index.php");
         exit();
-
+    }
 
 
 } else {
