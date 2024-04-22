@@ -9,6 +9,7 @@ $dao = new DAO();
     <title>To Pay</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
 <div class="wallpaper">
@@ -27,7 +28,9 @@ $dao = new DAO();
                 } else {
                     echo "<div class='item-box'>";
                     foreach ($lines as $line) {
-                        echo "<div class='item'><span>{$line['description']}</span><span>{$line['amount']}</span><span>{$line['due_date']}</span><button class='trigger-function-button'>Trigger Function</button></div>";
+                        echo "<div class='item'><span>{$line['description']}</span>
+                               <span>{$line['amount']}</span><span>{$line['due_date']}</span>
+                               <button class='trigger-function-button' id='{$line['bill_id']}'>Trigger Function</button></div>";
                     }
                     echo "</div>";
                 }
@@ -63,5 +66,44 @@ $dao = new DAO();
 </div>
 </body>
 </html>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var buttons = document.querySelectorAll('.trigger-function-button');
 
+        buttons.forEach(function(button) {
+            button.addEventListener('click', function(event) {
+                var billId = this.getAttribute('id');
+
+
+                var xhr = new XMLHttpRequest();
+
+
+                xhr.open('POST', 'payBill.php', true);
+
+
+                xhr.setRequestHeader('Content-Type', 'application/json');
+
+
+                xhr.onload = function() {
+
+                    if (xhr.status >= 200 && xhr.status < 300) {
+
+                        var response = JSON.parse(xhr.responseText);
+
+                    } else {
+
+                        console.error('HTTP error:', xhr.status, xhr.statusText);
+                    }
+                };
+
+                xhr.onerror = function() {
+                    console.error('Network error');
+                };
+
+                xhr.send(JSON.stringify({ billId: billId }));
+            });
+        });
+    });
+
+</script>
 <?php require_once "footer.php"; ?>
