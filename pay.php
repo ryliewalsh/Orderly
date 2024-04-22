@@ -68,7 +68,6 @@ $dao = new DAO();
 </body>
 </html>
 <script>
-
     document.addEventListener('DOMContentLoaded', function() {
         var buttons = document.querySelectorAll('.trigger-function-button');
 
@@ -76,17 +75,20 @@ $dao = new DAO();
             button.addEventListener('click', function(event) {
                 var bill_id = this.getAttribute('b_id');
 
-
                 var xhr = new XMLHttpRequest();
                 xhr.open('POST', 'removeEvent.php', true);
                 xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
                 xhr.onreadystatechange = function() {
                     if (xhr.readyState === XMLHttpRequest.DONE) {
                         if (xhr.status === 200) {
-
-                            var response = xhr.responseText;
-                            console.log(response);
-
+                            // Parse the JSON response
+                            var response = JSON.parse(xhr.responseText);
+                            if (response.success) {
+                                // Update the bill list based on the response
+                                updateBillList(response.bills);
+                            } else {
+                                console.error('Failed to delete bill: ' + response.message);
+                            }
                         } else {
                             console.error('Error: ' + xhr.status);
                         }
@@ -95,7 +97,24 @@ $dao = new DAO();
                 xhr.send('bill_id=' + bill_id);
             });
         });
-    });
 
+        // Function to update the bill list
+        function updateBillList(bills) {
+            var tableBody = document.querySelector('.item-box');
+
+            tableBody.innerHTML = '';
+
+            bills.forEach(function(bill) {
+                var row = '<div class="item">';
+                row += '<span>' + bill.description + '</span>';
+                row += '<span>' + bill.amount + '</span>';
+                row += '<span>' + bill.due_date + '</span>';
+                row += '<button class="trigger-function-button" b_id="' + bill.bill_id + '">Trigger Function</button>';
+                row += '</div>';
+                tableBody.innerHTML += row;
+            });
+        }
+    });
 </script>
+
 <?php require_once "footer.php"; ?>
