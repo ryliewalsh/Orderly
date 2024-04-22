@@ -222,7 +222,7 @@ class DAO {
         $conn = $this->getConnection();
 
 
-        $stmt = $conn->prepare("UPDATE events SET is_done = '1' WHERE event_id = :event_id ");
+        $stmt = $conn->prepare("UPDATE events SET is_done = 1 WHERE event_id = :event_id ");
         $stmt->bindParam(':event_id', $event_id);
 
 
