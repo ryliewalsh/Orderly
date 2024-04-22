@@ -13,7 +13,7 @@ if (isset($_SESSION['authenticated']) && $_SESSION['authenticated']) {
 } else {
     $errors[] = "Join or log in to experience Orderly.";
     $_SESSION['error_messages'] = $errors;
-    header("Location: https://orderly-b0075f006315.herokuapp.com/signUp.php");
+    header("Location: https://orderly-b0075f006315.herokuapp.com/home.php");
     exit();
 }
 
