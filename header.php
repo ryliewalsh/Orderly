@@ -1,6 +1,7 @@
 <?php
 session_start();
 $errors = array();
+
 if (isset($_SESSION['authenticated']) && $_SESSION['authenticated']) {
    if (isset($_SESSION['house_key'])) {
         header("Location: /index.php");
@@ -15,6 +16,7 @@ if (isset($_SESSION['authenticated']) && $_SESSION['authenticated']) {
     header("Location: https://orderly-b0075f006315.herokuapp.com/signUp.php");
     exit();
 }
+
 ?>
 <html>
 <head>

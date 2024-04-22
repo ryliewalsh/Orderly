@@ -1,5 +1,15 @@
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function() {
+
+        setTimeout(function() {
+            $(".error-message").fadeOut();
+        }, 1000);
+    });
+</script>
 <?php
 session_start();
+
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -41,12 +51,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit();
     } else {
 
-        $_SESSION['error_messages'] = $errors;
-        $_SESSION['inputs'] = array(
-            'email' => $email,
-            'username' => $username,
-            'first_name' => $first_name
-        );
+
+if (isset($_SESSION['error_messages'])) {
+    foreach ($_SESSION['error_messages'] as $error) {
+        echo "<div class='message error-message'>$error</div>";
+    }
+    unset($_SESSION['error_messages']);
+}
+
+
         header("Location: https://orderly-b0075f006315.herokuapp.com/signUp.php");
         exit();
     }
