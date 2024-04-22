@@ -49,7 +49,7 @@ class DAO {
     }
 
 
- 
+
 
     function getHouseId($houseName, $houseKey) {
         $conn = $this->getConnection();
@@ -97,7 +97,7 @@ class DAO {
         $conn = $this->getConnection();
 
         $saveQuery =
-            "INSERT INTO chores(user_id, name, description, due_date,time )
+            "INSERT INTO events(user_id, name, description, due_date,time )
             VALUES(:user_id, :name, :description,  :due_date,  :time)";
         $q = $conn->prepare($saveQuery);
         $q->bindParam(":user_id", $user_id);
