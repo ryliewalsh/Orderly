@@ -14,6 +14,7 @@ if (isset($_POST['bill_id'])) {
     try {
         $updatedBills = $dao->getBills();
         echo json_encode(['success' => true, 'bills' => $updatedBills]);
+        header("Location: https://orderly-b0075f006315.herokuapp.com/pay.php");
     } catch (Exception $e) {
         echo json_encode(['success' => false, 'message' => 'Failed to pay bill: ' . $e->getMessage()]);
     }
