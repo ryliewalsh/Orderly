@@ -73,7 +73,7 @@ $dao = new DAO();
 
         buttons.forEach(function(button) {
             button.addEventListener('click', function(event) {
-                var billId = this.getAttribute('bill_id');
+                var bill_id = this.getAttribute('bill_id');
 
 
                 var xhr = new XMLHttpRequest();
@@ -91,7 +91,7 @@ $dao = new DAO();
                         }
                     }
                 };
-                xhr.send('billId=' + billId);
+                xhr.send('bill_id=' + bill_id);
             });
         });
     });

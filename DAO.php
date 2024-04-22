@@ -190,12 +190,12 @@ class DAO {
 
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
-    public function payBill($billId) {
+    public function payBill($bill_id) {
         $conn = $this->getConnection();
 
 
-        $stmt = $conn->prepare("UPDATE bills SET is_paid = 1 WHERE bill_id = :billId ");
-        $stmt->bindParam(':bill_id', $billId);
+        $stmt = $conn->prepare("UPDATE bills SET is_paid = 1 WHERE bill_id = :bill_id ");
+        $stmt->bindParam(':bill_id', $bill_id);
 
 
 
