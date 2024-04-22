@@ -29,7 +29,7 @@ if (isset($_POST['bill_id'])) {
 
     try {
         $dao->removeEvent($event_id);
-        echo json_encode(['success' => true, 'message' => 'Chore removed successfully']);
+        echo json_encode(['success' => true, 'message' => 'Event removed successfully']);
     } catch (Exception $e) {
         echo json_encode(['success' => false, 'message' => 'Failed to remove chore: ' . $e->getMessage()]);
     }
