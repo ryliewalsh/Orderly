@@ -111,10 +111,9 @@ body {
     margin-right: 10px;
     justify-items: flex-start;
 }
-.home-options {
-    flex-direction: column;
-    flex: 1;
-    justify-items: center;
+.homeContainer {
+    text-align: center;
+    margin-top: 50px;
 }
 
 large-box {
