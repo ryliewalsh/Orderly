@@ -32,7 +32,8 @@ if (isset($_SESSION['authenticated']) && $_SESSION['authenticated']) {
     <a class="do <?php echo ($_SERVER['SCRIPT_NAME'] == '/do.php') ? 'active' : ''; ?>" href="do.php">Do</a>
     <a class="about <?php echo ($_SERVER['SCRIPT_NAME'] == '/about.php') ? 'active' : ''; ?>" href="about.php">About</a>
     <div class="header-right">
-        <a class="user" href="userSettings.php">Welcome home, <span class="username"<?php echo ($_SERVER['first_name']);?>/span></a>
+        <a class="user" href="userSettings.php">Welcome home, <span class="username"><?php echo ($_SERVER['first_name']);?></span></a>
+
     </div>
 </div>
 </body>

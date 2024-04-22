@@ -16,7 +16,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
     }
 
     $user = $dao->getUser($username);
-    $firstName = $dao->getName($username);
+
     if (empty($errors)) {
 
 
@@ -24,6 +24,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
             $_SESSION['authenticated'] = true;
             $_SESSION['username'] = $username;
             $_SESSION['user_id'] = $user['user_id'];
+            $firstName = $dao->getName($username);
             $_SESSION['first_name']= $firstName;
 
             unset($_POST['password']);
