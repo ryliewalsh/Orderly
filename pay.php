@@ -189,6 +189,7 @@ $dao = new DAO();
                             if (response.success) {
 
                                 window.location.reload();
+                            }
                         } else {
                             console.error('Error: ' + xhr.status);
                         }
