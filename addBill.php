@@ -8,7 +8,6 @@ if (isset($_SESSION['error_messages'])) {
     unset($_SESSION['error_messages']);
 }
 ?>
-
 <div id="text">
     <form method="post" action="bill_handler.php">
         <div>
@@ -28,6 +27,7 @@ if (isset($_SESSION['error_messages'])) {
         <input type="submit" value="Submit">
     </form>
 </div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
     $(document).ready(function() {
         setTimeout(function() {
