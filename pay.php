@@ -30,8 +30,7 @@ $dao = new DAO();
                     foreach ($lines as $line) {
                         echo "<div class='item'><span>{$line['description']}</span>
                                <span>{$line['amount']}</span><span>{$line['due_date']}</span>
-                               
-                               <button class='trigger-function-button' b_id='{$line['bill_id']}'>Trigger Function</button></div>";
+                           </div>";
                     }
                     echo "</div>";
                 }
@@ -67,35 +66,5 @@ $dao = new DAO();
 </div>
 </body>
 </html>
-<script>
 
-    document.addEventListener('DOMContentLoaded', function() {
-        var buttons = document.querySelectorAll('.trigger-function-button');
-
-        buttons.forEach(function(button) {
-            button.addEventListener('click', function(event) {
-                var bill_id = this.getAttribute('b_id');
-
-
-                var xhr = new XMLHttpRequest();
-                xhr.open('POST', 'removeEvent.php', true);
-                xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-                xhr.onreadystatechange = function() {
-                    if (xhr.readyState === XMLHttpRequest.DONE) {
-                        if (xhr.status === 200) {
-
-                            var response = xhr.responseText;
-                            console.log(response);
-
-                        } else {
-                            console.error('Error: ' + xhr.status);
-                        }
-                    }
-                };
-                xhr.send('bill_id=' + bill_id);
-            });
-        });
-    });
-
-</script>
 <?php require_once "footer.php"; ?>
