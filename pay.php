@@ -30,7 +30,7 @@ $dao = new DAO();
                     foreach ($lines as $line) {
                         echo "<div class='item'><span>{$line['description']}</span>
                                <span>{$line['amount']}</span><span>{$line['due_date']}</span>
-                              
+                               <span>{$line['bill_id']}</span>
                                <button class='trigger-function-button' b_id='{$line['bill_id']}'>Trigger Function</button></div>";
                     }
                     echo "</div>";
@@ -85,7 +85,10 @@ $dao = new DAO();
                         if (xhr.status === 200) {
 
                             var response = xhr.responseText;
-
+                            if (response.success) {
+                                // Redirect to the pay page after successful deletion
+                                window.location.href = 'pay.php';
+                            }
                         } else {
                             console.error('Error: ' + xhr.status);
                         }
