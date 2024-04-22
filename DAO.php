@@ -128,7 +128,7 @@ class DAO {
 
         $today = date('Y-m-d');
 
-        $stmt = $conn->prepare("SELECT description, amount, due_date, is_paid FROM bills WHERE user_id = :user_id AND due_date = :today");
+        $stmt = $conn->prepare("SELECT description, amount, due_date, is_paid FROM bills WHERE user_id = :user_id AND is_paid = 0 AND due_date = :today");
         $stmt->bindParam(':user_id', $user_id);
         $stmt->bindParam(':today', $today);
         $stmt->execute();
@@ -152,7 +152,7 @@ class DAO {
 
         $today = date('Y-m-d');
 
-        $stmt = $conn->prepare("SELECT description,  due_date FROM chores WHERE user_id = :user_id AND due_date = :today");
+        $stmt = $conn->prepare("SELECT description,  due_date FROM chores WHERE user_id = :user_id AND is_done = 0 AND due_date = :today");
         $stmt->bindParam(':user_id', $user_id);
         $stmt->bindParam(':today', $today);
         $stmt->execute();
@@ -162,7 +162,7 @@ class DAO {
     public function getChores() {
         $conn = $this->getConnection();
         $user_id = $_SESSION['user_id'];
-        $stmt = $conn->prepare("SELECT description, due_date, chore_id FROM chores WHERE user_id = :user_id ORDER BY due_date DESC");
+        $stmt = $conn->prepare("SELECT description, due_date, chore_id FROM chores WHERE user_id = :user_id AND is_done = 0 ORDER BY due_date DESC");
         $stmt->bindParam(':user_id', $user_id);
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -171,7 +171,7 @@ class DAO {
     public function getEvents(){
         $conn = $this->getConnection();
         $user_id = $_SESSION['user_id'];
-        $stmt = $conn->prepare("SELECT name, description, due_date, time FROM events WHERE user_id = :user_id ORDER BY time DESC");
+        $stmt = $conn->prepare("SELECT name, description, due_date, time FROM events WHERE user_id = :user_id  ORDER BY time DESC");
         $stmt->bindParam(':user_id', $user_id);
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
