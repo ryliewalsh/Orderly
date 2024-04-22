@@ -50,7 +50,7 @@ if (isset($_SESSION['error_messages'])) {
                 <button type="submit">Sign Up</button>
 
             </form>
-        <a class = 'content-box' href="login.php">Log in</a>
+        <a class = 'homeButton' href="login.php">Log in</a>
         </div>
  </div>
 </div>
