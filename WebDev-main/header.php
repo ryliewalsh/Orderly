@@ -1,8 +1,8 @@
 <?php
 session_start();
-/*
+
 if (isset($_SESSION['authenticated']) && $_SESSION['authenticated']) {
-   if (isset($_SESSION['house_id'])) {
+  /* if (isset($_SESSION['house_id'])) {
         header("Location: /index.php");
         exit();
     } elseif ($_SERVER['SCRIPT_NAME'] !== '/joinHousehold.php') {
@@ -10,14 +10,14 @@ if (isset($_SESSION['authenticated']) && $_SESSION['authenticated']) {
         header("Location: /joinHousehold.php");
         exit();
     }
-  
+  */
 
 } else {
     unset($_SESSION['login_failed']);
     header("Location: https://orderly-b0075f006315.herokuapp.com/home.php");
     exit();
 }
-*/
+
 ?>
 <html>
 <head>
