@@ -1,14 +1,14 @@
 <?php include_once("header.php"); ?>
-<html>
+    <html>
 <head>
-    <title>Home Page</title>
+    <title>To Plan</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <div class="wallpaper">
-    <large-box >
-        <?php include_once("calendar.php"); ?>
+    <large-box class="title">
+        <h1>Upcoming Events</h1>
     </large-box>
     <div class="vertical">
         <div class="small-box">
