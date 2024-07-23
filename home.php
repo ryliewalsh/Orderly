@@ -1,3 +1,3 @@
-<?php_include_once("header.php"); ?>
-<?php include_once("index.php"); ?>
+<?php_include_once("./header.php"); ?>
+<?php _include_once("./index.php"); ?>
 
