@@ -17,7 +17,7 @@ if (isset($_SESSION['authenticated']) && $_SESSION['authenticated']) {
         exit();
 } else {
     unset($_SESSION['login_failed']);
-    header("Location: https://orderly-b0075f006315.herokuapp.com/home.php");
+    header("Location: https://orderly-b0075f006315.herokuapp.com/signUp.php");
     exit();
 }
 
