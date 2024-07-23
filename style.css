@@ -12,7 +12,8 @@ body {
     padding: 20px 10px;
     align-items: center;
     width: 98.8%;
-    height: 8%;
+    height: 6%;
+
 }
 
 .header a {
@@ -36,6 +37,7 @@ body {
 .header a.logo:hover {
   background-color: transparent;
 }
+
 
   .header-right {
   float: right;
@@ -66,7 +68,11 @@ body {
 .header a.about {
   background-color: #B2ABA1;
 }
-
+.active {
+    outline: 2px solid #cccccc;
+    outline-offset: 2px;
+    border-radius: 5px;
+}
 .header a:hover {
   background-color: #555;
 }
@@ -87,7 +93,7 @@ body {
   background-size: cover;
   background-position: center;
   display: flex;
-  justify-items: center;
+  justify-content: center;
   width: 100%;
   height: 100%;
 }
@@ -104,6 +110,15 @@ body {
     margin-left: 2%;
     margin-right: 10px;
     justify-items: flex-start;
+}
+.homeContainer {
+    width: 400px;
+    height: 150px;
+    text-align: center;
+    margin: 50px;
+    background-color: white;
+    border-radius: 10px;
+
 }
 
 large-box {
@@ -168,7 +183,31 @@ large-box {
     float: left;
 }
 
+.homeButton {
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: whitesmoke;
+    color: black;
+    margin: 5px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+    border: black;
 
+}
+.homeTitle {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 20px;
+    color: #555555;
+}
+
+.homeSentence {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #777777;
+}
 
 .month {
     padding: 10px;
@@ -224,4 +263,96 @@ large-box {
 .days li .active {
     background: #A57959;
     color: white !important;
+}
+
+.message{
+    margin: 5px;
+    color: white;
+    padding: 5px 10px;
+    width: 98%;
+    background-color: #e3826d;
+    border-radius: 5px;
+    display: inline-block;
+}
+.skinny-message{
+    width: 95%;
+}
+.signup-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.signup-form {
+    margin: 20px auto ;
+    padding: 20px;
+    width: 400px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    display: inline-block;
+
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.item-box {
+    background-color: whitesmoke;
+    padding: 10px;
+    border-radius: 5px;
+}
+.small-item {
+    color: whitesmoke;
+    width: 10%;
+    height: 20px;
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    font-size: 10px;
+    text-decoration: none;
+
+}
+.small-item.chore{
+    background-color: #BFC4BA;
+
+
+}
+.small-item.bill{
+    background-color: #ceac8f;
+
+}
+.small-item.event{
+    background-color: #D5DBD9;
+
+}
+.item {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.item:last-child {
+    border-bottom: none;
+}
+
+.item span {
+    flex: 1;
+    padding: 5px;
+}
+
+.item span:first-child {
+    margin-right: 10px;
 }
