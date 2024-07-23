@@ -4,10 +4,10 @@ class DAO {
 
     public $filename;
 
-    private $host = "cb5ajfjosdpmil.cluster-czrs8kj4isg7.us-east-1.rds.amazonaws.com";
-    private $db = "d1epleqn6m9red";
-    private $user = "u42lgkdc8r0k9t";
-    private $pass = "pd0adf2a1bcddc57c84ed8f54ccfb1a989f656662b3da54dfe639f26cd35700d2";
+    private $host = "thh2lzgakldp794r.cbetxkdyhwsb.us-east-1.rds.amazonaws.com";
+    private $db = "ks1fg6ao8s6swsi5";
+    private $user = "jo0w6x5oajq53ucf";
+    private $pass = "xlz7v6pfxv3q3udc";
 
     public function getConnection () {
         return
