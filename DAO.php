@@ -4,10 +4,10 @@ class DAO {
 
     public $filename;
 
-    private $host = "us-cluster-east-01.k8s.cleardb.net";
-    private $db = "heroku_7470d7db78a1ee5";
-    private $user = "b27d5efeabac5a";
-    private $pass = "f63ea30c";
+    private $host = "cb5ajfjosdpmil.cluster-czrs8kj4isg7.us-east-1.rds.amazonaws.com";
+    private $db = "d1epleqn6m9red";
+    private $user = "u42lgkdc8r0k9t";
+    private $pass = "pd0adf2a1bcddc57c84ed8f54ccfb1a989f656662b3da54dfe639f26cd35700d2";
 
     public function getConnection () {
         return
