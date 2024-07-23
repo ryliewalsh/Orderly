@@ -1,4 +1,5 @@
 <?php include_once("header.php");
+session_start();
 require_once "DAO.php";
 $dao = new DAO();
 ?>
@@ -26,8 +27,8 @@ $dao = new DAO();
                 } else {
                     echo "<div class='item-box'>";
                     foreach ($lines as $line) {
-                        echo "<div class='item'><span>{$line['name']}</span><span>{$line['description']}</span>
-                        <span>{$line['due_date']}</span>
+                        echo "<div class='item'><span>{$line['event_name']}</span><span>{$line['event_description']}</span>
+                        <span>{$line['event_date']}</span>
                         <span>{$line['time']}</span>
                         <button class='trigger-function-button'e_id='{$line['event_id']}'>Response</button></div>";
                     }
@@ -52,7 +53,7 @@ $dao = new DAO();
             } else {
                 echo "<div class='item-box'>";
                 foreach ($lines as $line) {
-                    echo "<div class='item'><span>{$line['name']}</span><span>{$line['description']}</span><span>{$line['due_date']}</span></div>";
+                    echo "<div class='item'><span>{$line['event_name']}</span><span>{$line['event_description']}</span><span>{$line['event_date']}</span></div>";
 
                 }
                 echo "</div>";
