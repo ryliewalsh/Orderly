@@ -1,71 +1,67 @@
-<?php ?>
-<!DOCTYPE html>
+<?php session_start(); ?>
+
+<html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Sign Up</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-body{ font: 14px sans-serif; }
-        .wrapper{ width: 360px; padding: 20px; }
-        /* Apply the same styles as defined in style.css */
-        .form-group {
-    margin-bottom: 20px;
-        }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
 
-        .form-group label {
-    display: block;
-    margin-bottom: 5px;
-            font-weight: bold;
-        }
-
-        .form-control {
-    width: 100%;
-    padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-
-        .btn-primary {
-    display: block;
-    width: 100%;
-    padding: 10px;
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            text-align: center;
-            text-decoration: none;
-            cursor: pointer;
-        }
-
-        .btn-primary:hover {
-    background-color: #0056b3;
-        }
-    </style>
+            setTimeout(function() {
+                $(".error-message").fadeOut();
+            }, 1000);
+        });
+    </script>
 </head>
 <body>
-<div class="wrapper">
-    <h2>Sign Up</h2>
-    <p>Please fill this form to create an account.</p>
-    <form>
-        <div class="form-group">
-            <label>Username</label>
-            <input type="text" name="username" class="form-control">
+
+<div class="header">
+    <a class="logo" href="index.php">Orderly.</a>
+    <a class="overview <?php echo ($_SERVER['SCRIPT_NAME'] == '/index.php') ? 'active' : ''; ?>" href="index.php">Overview</a>
+    <a class="pay <?php echo ($_SERVER['SCRIPT_NAME'] == '/pay.php') ? 'active' : ''; ?>" href="pay.php">Pay</a>
+    <a class="plan <?php echo ($_SERVER['SCRIPT_NAME'] == '/plan.php') ? 'active' : ''; ?>" href="plan.php">Plan</a>
+    <a class="do <?php echo ($_SERVER['SCRIPT_NAME'] == '/do.php') ? 'active' : ''; ?>" href="do.php">Do</a>
+    <a class="about <?php echo ($_SERVER['SCRIPT_NAME'] == '/about.php') ? 'active' : ''; ?>" href="about.php">About</a>
+    <div class="header-right">
+        <a class="user" href="signUp.php">Join Now!</a>
+    </div>
+</div>
+
+<?php
+if (isset($_SESSION['error_messages'])) {
+    foreach ($_SESSION['error_messages'] as $error) {
+        echo "<div class='message'>$error</div>";
+    }
+    unset($_SESSION['error_messages']);
+}
+?>
+<div class="wallpaper">
+ <div class ='signup-container'>
+    <div class="signup-form">
+            <h2>Sign Up</h2>
+            <form action="signUp_handler.php" method="post">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" value="<?php echo isset($_SESSION['inputs']['email']) ? htmlspecialchars($_SESSION['inputs']['email']) : ''; ?>"><br><br>
+
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" value="<?php echo isset($_SESSION['inputs']['username']) ? htmlspecialchars($_SESSION['inputs']['username']) : ''; ?>"><br><br>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password"><br><br>
+
+                <label for="first_name">First Name:</label>
+                <input type="text" id="first_name" name="first_name" value="<?php echo isset($_SESSION['inputs']['first_name']) ? htmlspecialchars($_SESSION['inputs']['first_name']) : ''; ?>"><br><br>
+
+                <button type="submit">Sign Up</button>
+
+            </form>
+
         </div>
-        <div class="form-group">
-            <label>Password</label>
-            <input type="password" name="password" class="form-control">
-        </div>
-        <div class="form-group">
-            <label>Confirm Password</label>
-            <input type="password" name="confirm_password" class="form-control">
-        </div>
-        <div class="form-group">
-            <a href="home.php" class="btn btn-primary">Sign In</a>
-        </div>
-        <p>Already have an account? <a href="login.php">Login here</a>.</p>
-    </form>
+ </div>
 </div>
 </body>
 </html>
