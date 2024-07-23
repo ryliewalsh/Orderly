@@ -173,7 +173,7 @@ class DAO {
     public function getEvents(){
         $conn = $this->getConnection();
         $user_id = $_SESSION['user_id'];
-        $stmt = $conn->prepare("SELECT name, description, due_date, time FROM events WHERE user_id = :user_id AND is_done = 0 ORDER BY time DESC");
+        $stmt = $conn->prepare("SELECT event_name, event_description, event_date FROM events WHERE user_id = :user_id ORDER BY time DESC");
         $stmt->bindParam(':user_id', $user_id);
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -186,7 +186,7 @@ class DAO {
 
         $today = date('Y-m-d');
 
-        $stmt = $conn->prepare("SELECT description,  due_date FROM events WHERE user_id = :user_id  AND is_done = 0 AND due_date = :today");
+        $stmt = $conn->prepare("SELECT event_description,  event_date FROM events WHERE user_id = :user_id  AND event_date = :today");
         $stmt->bindParam(':user_id', $user_id);
         $stmt->bindParam(':today', $today);
 
