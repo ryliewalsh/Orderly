@@ -6,32 +6,31 @@ $dao = new DAO();
 
 <html>
 <head>
-    <title>To Pay</title>
+    <title>To Plan</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
 <div class="wallpaper">
     <large-box>
         <div class="title">
-            <h1>Budget</h1>
+            <h1>Upcoming Events</h1>
 
             <table>
 
                 <?php
 
-                $lines = $dao->getBills();
+                $lines = $dao->getEvents();
 
                 if (count($lines) == 0) {
-                    echo "<div class='item-box'><div class='item'><span>Congrats, nothing due!</span></div></div>";
+                    echo "<div class='item-box'><div class='item'><span>Nothing going on...</span></div></div>";
                 } else {
                     echo "<div class='item-box'>";
                     foreach ($lines as $line) {
-                        echo "<div class='item'><span>{$line['description']}</span>
-                               <span>{$line['amount']}</span><span>{$line['due_date']}</span>
-                               
-                               <button class='trigger-function-button' b_id='{$line['bill_id']}'>Mark as Paid</button></div>";
+                        echo "<div class='item'><span>{$line['event_name']}</span><span>{$line['event_description']}</span>
+                        <span>{$line['event_date']}</span>
+                        <span>{$line['time']}</span>
+                        <button class='trigger-function-button'e_id='{$line['event_id']}'>Response</button></div>";
                     }
                     echo "</div>";
                 }
@@ -42,17 +41,20 @@ $dao = new DAO();
 
     <div class="vertical">
         <div class="small-box">
-            <div class="label-box">Due Today</div>
+            <div class="label-box">Plans for Today</div>
             <?php
             require_once "DAO.php";
             $dao = new DAO();
-            $lines = $dao->getTodaysBills();
+            $lines = $dao->getTodaysEvents();
             if (count($lines) == 0) {
-                echo "<div class='item-box'><div class='item'><span>Caught up for the day!</span></div></div>";
+                echo "<div class='item-box'><div class='item'><span>Nothing planned.</span></div></div>";
+
+
             } else {
                 echo "<div class='item-box'>";
                 foreach ($lines as $line) {
-                    echo "<div class='item'><span>{$line['description']}</span><span>{$line['amount']}</span><span>{$line['due_date']}</span></div>";
+                    echo "<div class='item'><span>{$line['event_name']}</span><span>{$line['event_description']}</span><span>{$line['event_date']}</span></div>";
+
                 }
                 echo "</div>";
             }
@@ -60,8 +62,8 @@ $dao = new DAO();
         </div>
 
         <div class="small-box">
-            <div class="label-box">Add an Expense</div>
-            <div class="content-box"> <?php include_once("addBill.php");?></div>
+            <div class="label-box">Plan a Date</div>
+            <div class="content-box"> <?php include_once("addEvent.php");?></div>
         </div>
     </div>
 </div>
@@ -74,7 +76,7 @@ $dao = new DAO();
 
         buttons.forEach(function(button) {
             button.addEventListener('click', function(event) {
-                var bill_id = this.getAttribute('b_id');
+                var event_id = this.getAttribute('e_id');
 
 
                 var xhr = new XMLHttpRequest();
@@ -92,10 +94,12 @@ $dao = new DAO();
                         }
                     }
                 };
-                xhr.send('bill_id=' + bill_id);
+                xhr.send('event_id=' + event_id);
             });
         });
     });
 
 </script>
+
+
 <?php require_once "footer.php"; ?>
