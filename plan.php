@@ -21,7 +21,7 @@ $dao = new DAO();
 
                 <?php
 
-                $lines = $dao->getEvents();
+                $lines = $dao->getBills();
 
                 if (count($lines) == 0) {
                     echo "<div class='item-box'><div class='item'><span>Congrats, nothing due!</span></div></div>";
