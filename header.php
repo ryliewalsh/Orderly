@@ -11,6 +11,8 @@ if (isset($_SESSION['authenticated']) && $_SESSION['authenticated']) {
         exit();
     }
     */
+   header("Location: /index.php");
+        exit();
 
 } else {
     unset($_SESSION['login_failed']);
