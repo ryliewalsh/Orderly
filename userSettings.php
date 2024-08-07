@@ -1,4 +1,8 @@
-<?php include_once("header.php"); ?>
+<?php include_once("header.php");
+session_start();
+require_once "DAO.php";
+$dao = new DAO();
+?>
     <html>
     <head>
         <title>Account Settings</title>
