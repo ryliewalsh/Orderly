@@ -19,7 +19,7 @@ $dao = new DAO();
 
                 <?php
 
-                $lines = $dao->getBills();
+                $lines = $dao->getUserHouse();
 
                 if (count($lines) == 0) {
                     echo "<div class='item-box'><div class='item'><span>None set</span></div></div>";

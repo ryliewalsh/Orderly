@@ -50,7 +50,7 @@ class DAO {
     }
     public function getUserHouse($username) {
         $conn = $this->getConnection();
-        $stmt = $conn->prepare("SELECT household_id FROM users WHERE username = :username LIMIT 1");
+        $stmt = $conn->prepare("SELECT household_id FROM users WHERE username = :username AND household_id is NOT NULL");
         $stmt->bindParam(":username", $username);
         $stmt->execute();
         return $stmt->fetch(PDO::FETCH_ASSOC);
