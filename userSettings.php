@@ -7,30 +7,31 @@
     <body>
 
     <div class="wallpaper">
-        <div class="title">
-            <h1>Your Household</h1>
-             <table>
+         <large-box>
+              <div class="title">
+                <h1>Your Household</h1>
+                <table>
 
-                <?php
+                    <?php
 
-                $lines = $dao->getBills();
+                    $lines = $dao->getBills();
 
-                if (count($lines) == 0) {
-                    echo "<div class='item-box'><div class='item'><span>Congrats, nothing due!</span></div></div>";
-                } else {
-                    echo "<div class='item-box'>";
-                    foreach ($lines as $line) {
-                        echo "<div class='item'><span>{$line['description']}</span>
-                               <span>{$line['amount']}</span><span>{$line['due_date']}</span>
-                               
-                               <button class='trigger-function-button' b_id='{$line['bill_id']}'>Mark as Paid</button></div>";
+                    if (count($lines) == 0) {
+                        echo "<div class='item-box'><div class='item'><span>Congrats, nothing due!</span></div></div>";
+                    } else {
+                        echo "<div class='item-box'>";
+                        foreach ($lines as $line) {
+                            echo "<div class='item'><span>{$line['description']}</span>
+                                <span>{$line['amount']}</span><span>{$line['due_date']}</span>
+                                
+                                <button class='trigger-function-button' b_id='{$line['bill_id']}'>Mark as Paid</button></div>";
+                        }
+                        echo "</div>";
                     }
-                    echo "</div>";
-                }
-                ?>
-            </table>
-            
+                    ?>
+                </table>
             </div>
+         </large-box>
         <div class="vertical">
             <div class="small-box">
                 <div class="label-box">Your info</div>
