@@ -48,7 +48,13 @@ class DAO {
         $stmt->execute();
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
-
+    public function getUserHouse($username) {
+        $conn = $this->getConnection();
+        $stmt = $conn->prepare("SELECT household_id FROM users WHERE username = :username LIMIT 1");
+        $stmt->bindParam(":username", $username);
+        $stmt->execute();
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
 
 
 
@@ -77,7 +83,6 @@ class DAO {
 
 
     public function addBill($user_id,$description, $amount, $due_date ) {
-        #$this->logger->LogInfo("saveComment: [{$name}], [{$comment}]");
         $conn = $this->getConnection();
         $is_paid = 0;
         $saveQuery =
