@@ -29,7 +29,7 @@ class DAO {
     }
 
     public function addUser($email, $username, $password_hash, $first_name) {
-       
+     
         $conn = $this->getConnection();
         $saveQuery =
             "INSERT INTO users (email, username, password_hash,  first_name)
@@ -39,13 +39,10 @@ class DAO {
         $q->bindParam(":username", $username);
         $q->bindParam(":password_hash", $password_hash);
         $q->bindParam(":first_name", $first_name);
-       
+        
 
         $q->execute();
     }
-
-
-    
     public function getUser($username) {
         $conn = $this->getConnection();
         $stmt = $conn->prepare("SELECT * FROM users WHERE username = :username LIMIT 1");
@@ -56,13 +53,12 @@ class DAO {
     public function getUserHouse() {
         $conn = $this->getConnection();
         $user_id = $_SESSION['user_id'];
-        $sql = "SELECT * FROM users WHERE user_id = :user_id ";
-        $stmt = $pdo->prepare($sql);
-        $stmt->bindParam(':user_id', $user_id);
+       
+        $stmt = $conn->prepare("SELECT household_id FROM users WHERE user_id = :user_id ");
+        $stmt->bindParam(":user_id", $user_id);
         $stmt->execute();
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
-        }
-    
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
 
 
 
