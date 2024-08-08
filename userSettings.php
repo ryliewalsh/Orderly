@@ -23,7 +23,7 @@ $dao = new DAO();
                 
                 foreach ($lines as $line) {
                     echo $line;
-                    if($line == 'None'){
+                    if($line == 'Array'){
                         echo "<div class='item-box'><div class='item'><span>Caught up for the day!</span></div></div>";
                     }
                 }
