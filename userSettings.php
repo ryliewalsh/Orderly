@@ -25,7 +25,7 @@ $dao = new DAO();
                 } else {
                     echo "<div class='item-box'>";
                     foreach ($lines as $line) {
-                        echo "<div class='item'><span>{$line['household_id']}</span></div>";
+                        echo "<div class='item-box'><div class='item'><span>Here</span></div></div>";
                     }
                     echo "</div>";
                 }
