@@ -20,20 +20,12 @@ $dao = new DAO();
                 <?php
 
                 $lines = $dao->getUserHouse();
-                echo $lines;
-                if ($lines == 'None') {
-                    echo "<div class='item-box'><div class='item'><span>Congrats, nothing due!</span></div></div>";
-                    
-                } else {
-                    echo "<div class='item-box'>";
-                    foreach ($lines as $line) {
-                        echo "<div class='item'><span>{$line['description']}</span>
-                               <span>{$line['amount']}</span><span>{$line['due_date']}</span>
-                               
-                               <button class='trigger-function-button' b_id='{$line['bill_id']}'>Mark as Paid</button></div>";
+                
+                foreach ($lines as $line) {
+                    echo $line;
+                    if($line == 'None'){
+                        echo "<div class='item-box'><div class='item'><span>Caught up for the day!</span></div></div>";
                     }
-                    echo "</div>";
-                }
                 ?>
             </table>
         </div>
