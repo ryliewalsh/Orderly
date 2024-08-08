@@ -48,9 +48,10 @@ class DAO {
         $stmt->execute();
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
-    public function getUserHouse($username) {
+    public function getUserHouse() {
+        $user_id = $_SESSION['user_id'];
         $conn = $this->getConnection();
-        $stmt = $conn->prepare("SELECT household_id FROM users WHERE username = :username AND household_id is NOT NULL");
+        $stmt = $conn->prepare("SELECT household_id FROM users WHERE user_id = :user_id AND household_id is NOT NULL");
         $stmt->bindParam(":username", $username);
         $stmt->execute();
         return $stmt->fetch(PDO::FETCH_ASSOC);

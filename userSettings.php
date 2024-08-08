@@ -23,6 +23,7 @@ $dao = new DAO();
 
                 if (count($lines) == 0) {
                     echo "<div class='item-box'><div class='item'><span>None set</span></div></div>";
+                    
                 } else {
                     echo "<div class='item-box'>";
                     foreach ($lines as $line) {
@@ -37,30 +38,17 @@ $dao = new DAO();
             </table>
         </div>
     </large-box>
-
     <div class="vertical">
-        <div class="small-box">
-            <div class="label-box">Due Today</div>
-            <?php
-            require_once "DAO.php";
-            $dao = new DAO();
-            $lines = $dao->getTodaysBills();
-            if (count($lines) == 0) {
-                echo "<div class='item-box'><div class='item'><span>Caught up for the day!</span></div></div>";
-            } else {
-                echo "<div class='item-box'>";
-                foreach ($lines as $line) {
-                    echo "<div class='item'><span>{$line['description']}</span><span>{$line['amount']}</span><span>{$line['due_date']}</span></div>";
-                }
-                echo "</div>";
-            }
-            ?>
-        </div>
-
-        <div class="small-box">
-            <div class="label-box">Add an Expense</div>
-            <div class="content-box"> <?php include_once("addBill.php");?></div>
+            <div class="small-box">
+                <div class="label-box">Your info</div>
+                <div class="content-box">*****</div>
+            </div>
+            <div class="small-box">
+                <div class="label-box">Account</div>
+                <a class = "homeButton" href="signOut.php">Sign Out.</a>
+                <div class="content-box">Delete account</div>
+            </div>
         </div>
     </div>
-</div>
+    </body>
 <?php require_once "footer.php"; ?>
