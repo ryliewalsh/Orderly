@@ -26,6 +26,7 @@ $dao = new DAO();
                     if($line == 'None'){
                         echo "<div class='item-box'><div class='item'><span>Caught up for the day!</span></div></div>";
                     }
+                }
                 ?>
             </table>
         </div>
