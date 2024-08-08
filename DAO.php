@@ -56,7 +56,7 @@ class DAO {
     public function getUserHouse() {
         $conn = $this->getConnection();
         $user_id = $_SESSION['user_id'];
-        $sql = "SELECT household_id FROM users WHERE user_id = :user_id";
+        $sql = "SELECT household_id FROM users WHERE user_id = :user_id and household_id is NULL";
         $stmt = $pdo->prepare($sql);
         $stmt->bindParam(':user_id', $user_id);
         $stmt->execute();
