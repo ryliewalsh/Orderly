@@ -29,15 +29,17 @@ class DAO {
     }
 
     public function addUser($email, $username, $password_hash, $first_name) {
+        $household_id = 0;
         $conn = $this->getConnection();
         $saveQuery =
-            "INSERT INTO users (email, username, password_hash,  first_name)
-            VALUES (:email, :username, :password_hash,   :first_name)";
+            "INSERT INTO users (email, username, password_hash,  first_name, household_id)
+            VALUES (:email, :username, :password_hash,   :first_name, :household_id)";
         $q = $conn->prepare($saveQuery);
         $q->bindParam(":email", $email);
         $q->bindParam(":username", $username);
         $q->bindParam(":password_hash", $password_hash);
         $q->bindParam(":first_name", $first_name);
+        $q->bindParam(":household_id", $household_id);
 
         $q->execute();
     }
@@ -55,12 +57,7 @@ class DAO {
         $stmt = $conn->prepare("SELECT household_id FROM users WHERE user_id = :user_id ");
         $stmt->bindParam(":user_id", $user_id);
         $stmt->execute();
-        $row = $stmt->fetch(PDO::FETCH_ASSOC);
-        if ($row) {
-            return $row['household_id'];
-        } else {
-            return null;
-        }
+        return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
 
