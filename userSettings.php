@@ -21,7 +21,7 @@ $dao = new DAO();
 
                 $lines = $dao->getUserHouse();
 
-                if (count($lines) == 0) {
+                if ($lines == 'None') {
                     echo "<div class='item-box'><div class='item'><span>Congrats, nothing due!</span></div></div>";
                     
                 } else {
