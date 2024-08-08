@@ -20,13 +20,7 @@ $dao = new DAO();
                 <?php
 
                 $lines = $dao->getUserHouse();
-                
-                foreach ($lines as $line) {
-                    echo $line;
-                    if($line == 'NULL'){
-                        echo "<div class='item-box'><div class='item'><span>Caught up for the day!</span></div></div>";
-                    }
-                }
+                echo $lines;
                 ?>
             </table>
         </div>

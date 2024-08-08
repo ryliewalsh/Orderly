@@ -55,7 +55,18 @@ class DAO {
         $stmt = $conn->prepare("SELECT household_id FROM users WHERE user_id = :user_id ");
         $stmt->bindParam(":user_id", $user_id);
         $stmt->execute();
-        return $stmt->fetch(PDO::FETCH_ASSOC);
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+        if ($row !== false) {
+            // Check if household_id is NULL
+            if (is_null($row['household_id'])) {
+                return "User with user_id $user_id does not have a household.";
+            } else {
+                return "User with user_id $user_id has household_id " . $row['household_id'] . ".";
+            }
+        } else {
+            // User with the given user_id does not exist
+            return "User with user_id $user_id does not exist.";
+        }
     }
 
 
