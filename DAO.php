@@ -60,15 +60,9 @@ class DAO {
         $stmt = $pdo->prepare($sql);
         $stmt->bindParam(':user_id', $user_id);
         $stmt->execute();
-        
-        $result = $stmt->fetch(PDO::FETCH_ASSOC);
-        
-        if (is_null($result['household_id'])) {
-            echo 'Household ID is NULL for this user.';
-        } else {
-            echo 'Household ID is: ' . $result['household_id'];
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
         }
-    }
+    
 
 
 
