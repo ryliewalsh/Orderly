@@ -27,8 +27,8 @@ $dao = new DAO();
                 } else {
                     echo "<div class='item-box'>";
                     foreach ($lines as $line) {
-                        echo "<div class='item'><span>{$line['household_id']}</span>
-                               <span>{$line['amount']}</span><span>{$line['due_date']}</span>
+                        echo "<div class='item'><span>{$line}</span>
+                             
                                
                                <button class='trigger-function-button' b_id='{$line['bill_id']}'>Mark as Paid</button></div>";
                     }
