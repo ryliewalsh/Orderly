@@ -53,7 +53,7 @@ class DAO {
     public function getUser() {
         $conn = $this->getConnection();
         $user_id = $_SESSION['user_id'];
-        $stmt = $conn->prepare("SELECT first_name, last_name, username, email FROM users WHERE username = :username LIMIT 1");
+        $stmt = $conn->prepare("SELECT first_name, last_name, username, email FROM users WHERE user_id = :user_id LIMIT 1");
         $q = $conn->prepare($stmt);
     
         $q->execute();
