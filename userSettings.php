@@ -14,9 +14,10 @@ $dao = new DAO();
     <large-box>
         <div class="title">
             <h1>Your Household</h1>
-            
-            <div class="content-box"> <?php include_once("joinHousehold.php");?></div>
-            
+        </div>
+        <div class="small-box">
+            <div class="label-box">Add an Expense</div>
+            <div class="content-box"> <?php include_once("addBill.php");?></div>
         </div>
     </large-box>
 
