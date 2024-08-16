@@ -14,26 +14,9 @@ $dao = new DAO();
     <large-box>
         <div class="title">
             <h1>Your Household</h1>
-
-            <table>
-
-                <?php
-
-                $lines = $dao->getUserHouse();
-               
-                if ($lines == 'None') {
-                    echo "<div class='item-box'><div class='item'><span>Congrats, nothing due!</span></div></div>";
-                    
-                } else {
-                    echo "<div class='item-box'>";
-                    foreach ($lines as $line) {
-                        echo "<div class='item'><span>{$line}</span>
-                          </div>";
-                    }
-                    echo "</div>";
-                }
-                ?>
-            </table>
+            
+            <div class="content-box"> <?php include_once("joinHousehold.php");?></div>
+            
         </div>
     </large-box>
 

@@ -1,37 +1,37 @@
-<?php include_once("header.php"); ?>
+<?php
+session_start();
 
-<html>
-<head>
-    <title>Welcome!</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-<div class="wallpaper">
-    <large-box>
-        <large-box class="title">
-            <h1>Welcome!</h1>
-            <div class = 'houseKey'> Join a house/get new key
-                <form action="houseHandler.php" method="post">
-                    <div>
-                        <label for="houseName">Household Name:</label>
-                        <input type="text" id="houseName" name="houseName" >
-                    </div>
-                    <div>
-                        <label for="houseKey">Household Key:</label>
-                        <input type="text" id="houseKey" name="houseKey" >
-                    </div>
-                    <div>
-                        <button type="submit" name="action" value="join">Join Existing Household</button>
-                        <button type="submit" name="action" value="create">Create New Household</button>
-                    </div>
-                </form>
-            </div>
-        </large-box>
-    </large-box>
+if (isset($_SESSION['error_messages'])) {
+    foreach ($_SESSION['error_messages'] as $error) {
+        echo "<div class='message skinny-message'>$error</div>";
+    }
+    unset($_SESSION['error_messages']);
+}
+?>
+<div id="text">
+    <form method="post" action="house_handler.php">
+        <div>
+            <label for="description">Description:</label>
+            <input type="text" id="description" name="description" value="<?php echo isset($_SESSION['inputs']['description']) ? htmlspecialchars( $_SESSION['inputs']['description']) : ""; ?>">
+        </div>
+        <div>
+            <label for="amount">Amount:</label>
+            <input type="text" id="amount" name="amount" value="<?php echo isset($_SESSION['inputs']['amount']) ? htmlspecialchars( $_SESSION['inputs']['amount']): ""; ?>">
+        </div>
+        <div>
+            <label for="due_date">Due Date:</label>
+            <input type="date" id="due_date" name="due_date">
+        </div>
 
 
+        <input type="submit" value="Submit">
+    </form>
 </div>
-</body>
-</html>
-<?php require_once "footer.php"; ?>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function() {
+        setTimeout(function() {
+            $(".message").fadeOut();
+        }, 1000);
+    });
+</script>
