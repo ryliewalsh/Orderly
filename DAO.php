@@ -52,18 +52,13 @@ class DAO {
     }
     public function getUser() {
         $conn = $this->getConnection();
-        $user_id = 1;
+        $user_id = $_SESSION['user_id'];
         $stmt = $conn->prepare("SELECT first_name, last_name, username, email FROM users WHERE user_id = :user_id LIMIT 1");
         $stmt->bindParam(":user_id", $user_id);
         $q = $conn->prepare($stmt);
     
         $q->execute();
-         $row = $stmt->fetch(PDO::FETCH_ASSOC);
-        if ($row) {
-            return $row;
-        } else {
-            return 'error';
-        }
+        return $stmt->fetch(PDO::FETCH_ASSOC);
     }
     public function getUserHouse() {
         $conn = $this->getConnection();
