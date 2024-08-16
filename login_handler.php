@@ -15,7 +15,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
         $errors[] = "Password is required";
     }
 
-    $user = $dao->getUser($username);
+    $user = $dao->findUser($username);
 
     if (empty($errors)) {
 

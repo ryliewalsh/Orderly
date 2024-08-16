@@ -2,6 +2,7 @@
 session_start();
 require_once "DAO.php";
 $dao = new DAO();
+
 ?>
     <html>
     <head>
@@ -31,8 +32,14 @@ $dao = new DAO();
 
     <div class="vertical">
             <div class="small-box">
-                <div class="label-box">Your info</div>
-                <div class="content-box">*****</div>
+                <div class="label-box">Your Info</div>
+                <div class="content-box">
+                    <?php $info = $dao->getUser();
+                  
+                        echo "<div class='item'><span>{$line['first_name']}</span> </div>"
+
+                ?>
+                </div>
             </div>
             <div class="small-box">
                 <div class="label-box">Account</div>

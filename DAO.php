@@ -43,11 +43,20 @@ class DAO {
 
         $q->execute();
     }
-    public function getUser($username) {
+    public function findUser($username) {
         $conn = $this->getConnection();
         $stmt = $conn->prepare("SELECT * FROM users WHERE username = :username LIMIT 1");
         $stmt->bindParam(":username", $username);
         $stmt->execute();
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+    public function getUser() {
+        $conn = $this->getConnection();
+        $user_id = $_SESSION['user_id'];
+        $stmt = $conn->prepare("SELECT first_name, last_name, username, email FROM users WHERE username = :username LIMIT 1");
+        $q = $conn->prepare($stmt);
+    
+        $q->execute();
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
     public function getUserHouse() {

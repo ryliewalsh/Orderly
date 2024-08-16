@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $householdId = $dao->getHouseId($enteredHouseName, $enteredHouseKey);
             if ($householdId !== null) {
                 // Household exists, proceed with adding the household member
-                $user_id = $dao->getUser($_SESSION['username']);
+                $user_id = $dao->findUser($_SESSION['username']);
                  $dao->addHouseholdMember($user_id, $householdId);
 
                     // add message

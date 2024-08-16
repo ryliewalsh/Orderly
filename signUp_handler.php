@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         require_once 'DAO.php';
         $dao = new DAO();
-        $existingUser = $dao->getUser($username);
+        $existingUser = $dao->findUser($username);
         if ($existingUser) {
             $errors[] = "Username already exists";
         }
