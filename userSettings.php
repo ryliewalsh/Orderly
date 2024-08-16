@@ -36,7 +36,7 @@ $dao = new DAO();
                 <div class="content-box">
                     <?php $info = $dao->getUser();
                   
-                        echo "<div class='item'><span>{$line['first_name']}</span> </div>"
+                        echo "<div class='item'><span>{$info['first_name']}</span> </div>"
 
                 ?>
                 </div>
