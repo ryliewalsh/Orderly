@@ -34,14 +34,7 @@ $dao = new DAO();
             <div class="small-box">
                 <div class="label-box">Your Info</div>
                 <div class="content-box">
-                    <?php $info = $dao->getUser();
-                
-                            echo "<div class='item-box'>";
-                                echo "<div class='item'><span>{$info['first_name']}</span>";
-                            
-                            echo "</div>";
-                        
-                    ?>
+                 ***This Feature is Coming Soon***
                 </div>
             </div>
             <div class="small-box">
