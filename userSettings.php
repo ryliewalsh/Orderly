@@ -37,13 +37,11 @@ $dao = new DAO();
                     <?php $info = $dao->getUser();
                 
                             echo "<div class='item-box'>";
-                                echo "<div class='item'><span>{$info['first_name']}</span>
-                                    <span>{$info['last_name']}</span><span>{$info['username']}</span>";
+                                echo "<div class='item'><span>{$info['first_name']}</span>";
                             
                             echo "</div>";
                         
-                    
-                ?>
+                    ?>
                 </div>
             </div>
             <div class="small-box">
