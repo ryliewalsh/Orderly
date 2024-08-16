@@ -22,10 +22,9 @@ $dao = new DAO();
 
          }
          else{
-            echo "join ";
+          include_once("joinHousehold.php");
          }
       
-         
         ?>
            
     </large-box>

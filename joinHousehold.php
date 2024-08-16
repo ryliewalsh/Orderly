@@ -9,23 +9,20 @@ if (isset($_SESSION['error_messages'])) {
 }
 ?>
 <div id="text">
-    <form method="post" action="house_handler.php">
-        <div>
-            <label for="description">Description:</label>
-            <input type="text" id="description" name="description" value="<?php echo isset($_SESSION['inputs']['description']) ? htmlspecialchars( $_SESSION['inputs']['description']) : ""; ?>">
-        </div>
-        <div>
-            <label for="amount">Amount:</label>
-            <input type="text" id="amount" name="amount" value="<?php echo isset($_SESSION['inputs']['amount']) ? htmlspecialchars( $_SESSION['inputs']['amount']): ""; ?>">
-        </div>
-        <div>
-            <label for="due_date">Due Date:</label>
-            <input type="date" id="due_date" name="due_date">
-        </div>
-
-
-        <input type="submit" value="Submit">
-    </form>
+<form action="houseHandler.php" method="post">
+                    <div>
+                        <label for="houseName">Household Name:</label>
+                        <input type="text" id="houseName" name="houseName" >
+                    </div>
+                    <div>
+                        <label for="houseKey">Household Key:</label>
+                        <input type="text" id="houseKey" name="houseKey" >
+                    </div>
+                    <div>
+                        <button type="submit" name="action" value="join">Join Existing Household</button>
+                        <button type="submit" name="action" value="create">Create New Household</button>
+                    </div>
+                </form>
 </div>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
