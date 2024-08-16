@@ -33,7 +33,21 @@ $dao = new DAO();
     <div class="vertical">
             <div class="small-box">
                 <div class="label-box">Your Info</div>
-                
+                <div class="content-box">
+                    <?php $info = $dao->getUser();
+                  
+                        if (count($info) == 0) {
+                            echo "<div class='item-box'><div class='item'><span>Congrats, nothing due!</span></div></div>";
+                        } else {
+                            echo "<div class='item-box'>";
+                                echo "<div class='item'><span>{$info['first_name']}</span>
+                                    <span>{$info['last_name']}</span><span>{$info['username']}</span>";
+                            
+                            echo "</div>";
+                        }
+                    
+                ?>
+                </div>
             </div>
             <div class="small-box">
                 <div class="label-box">Account</div>
