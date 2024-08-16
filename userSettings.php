@@ -33,13 +33,7 @@ $dao = new DAO();
     <div class="vertical">
             <div class="small-box">
                 <div class="label-box">Your Info</div>
-                <div class="content-box">
-                    <?php $info = $dao->getUser();
-                  
-                     echo $info;
-                    
-                ?>
-                </div>
+                
             </div>
             <div class="small-box">
                 <div class="label-box">Account</div>
