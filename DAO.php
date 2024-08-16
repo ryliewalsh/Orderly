@@ -58,7 +58,12 @@ class DAO {
         $q = $conn->prepare($stmt);
     
         $q->execute();
-        return $stmt->fetch(PDO::FETCH_ASSOC);
+         $row = $stmt->fetch(PDO::FETCH_ASSOC);
+        if ($row) {
+            return $row;
+        } else {
+            return 'error';
+        }
     }
     public function getUserHouse() {
         $conn = $this->getConnection();
