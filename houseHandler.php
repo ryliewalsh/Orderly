@@ -36,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                   );
                 $dao->addHousehold($enteredHouseName, $new_key);
                 $_SESSION['house_key']= $new_key;
-                header("Location: https://orderly-b0075f006315.herokuapp.com/joinHousehold.php");
+               
                 exit();
 
             }
