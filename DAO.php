@@ -3,11 +3,19 @@
 class DAO {
 
     public $filename;
-   
-    private $host = "thh2lzgakldp794r.cbetxkdyhwsb.us-east-1.rds.amazonaws.com";
-    private $db = "ks1fg6ao8s6swsi5";
-    private $user = "jo0w6x5oajq53ucf";
-    private $pass = "xlz7v6pfxv3q3udc";
+
+    private $host;
+    private $db;
+    private $user;
+    private $pass;
+
+    public function __construct($filename = "bills.data") {
+        $this->host = getenv('DB_HOST');
+        $this->db   = getenv('DB_NAME');
+        $this->user = getenv('DB_USER');
+        $this->pass = getenv('DB_PASS');
+        $this->filename = $filename;
+    }
 
     public function getConnection () {
         return
@@ -15,9 +23,7 @@ class DAO {
                 $this->pass);
     }
 
-    public function __construct ($filename = "bills.data") {
-        $this->filename = $filename;
-    }
+  
     public function addHousehold($household_name, $house_key) {
         $conn = $this->getConnection();
         $saveQuery =
