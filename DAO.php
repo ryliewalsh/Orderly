@@ -55,8 +55,13 @@ class DAO {
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
-
-
+public function getUserByEmail($email) {
+    $conn = $this->getConnection();
+    $stmt = $conn->prepare("SELECT * FROM users WHERE email = :email LIMIT 1");
+    $stmt->bindParam(":email", $email);
+    $stmt->execute();
+    return $stmt->fetch(PDO::FETCH_ASSOC);
+}
 
     function getHouseId($houseName, $houseKey) {
         $conn = $this->getConnection();
