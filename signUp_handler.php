@@ -10,7 +10,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $first_name = htmlspecialchars($_POST['first_name']);
 
     $errors = array();
-
+if (empty($email)) {
+    $errors[] = "Email is required";
+} else {
+    require_once 'DAO.php';
+    $dao = new DAO();
+    $existingEmail = $dao->getUserByEmail($email);
+    if ($existingEmail) {
+        $errors[] = "An account with that email already exists";
+    }
+}
     if (empty($username)) {
         $errors[] = "Username is required";
     } else {
@@ -38,7 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $dao = new DAO();
         $dao->addUser($email, $username, $hashed_password, $first_name);
         unset($_SESSION['inputs']);
-        header("Location: https://orderly-app-48b98ea3c658.herokuapp.com/login.php");
+       header("Location: /login.php");
         exit();
     } else {
 
