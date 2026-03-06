@@ -13,7 +13,11 @@
         <div class="vertical">
             <div class="small-box">
                 <div class="label-box">Your info</div>
-                <div class="content-box">*****</div>
+                <div class="content-box">
+    <p>Name: <?php echo $_SESSION['first_name']; ?></p>
+    <p>Username: <?php echo $_SESSION['username']; ?></p>
+    <p>Email: <?php echo $_SESSION['email']; ?></p>
+</div>
             </div>
             <div class="small-box">
                 <div class="label-box">Account</div>
