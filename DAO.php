@@ -3,10 +3,11 @@
 class DAO {
 
     public $filename;
-    private $host = "us-cluster-east-01.k8s.cleardb.net";
-    private $db = "heroku_1d54b3f3ff98f88";
-    private $user = "bbf816cd32fc09";
-    private $pass = "0c51babd";
+
+    private $host = "db";
+    private $db = "orderly";
+    private $user = "rylie";
+    private $pass = "password";
 
     public function getConnection () {
         return
