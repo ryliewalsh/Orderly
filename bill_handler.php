@@ -40,7 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $dao->addBill($user_id,$description, $amount,  $due_date);
 
 
-        header("Location: https://orderly-b0075f006315.herokuapp.com/pay.php");
+        header("Location: /pay.php");
         exit();
     } else {
 
@@ -49,14 +49,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION['inputs']['amount'] = $amount;
         $_SESSION['inputs']['due_date'] = $due_date;
 
-        header("Location:https://orderly-b0075f006315.herokuapp.com/pay.php");
+        header("Location:/pay.php");
         exit();
     }
 } else {
 
 
     $_SESSION['error_messages'] = array("Invalid request method");
-    header("Location:https://orderly-b0075f006315.herokuapp.com/pay.php");
+    header("Location:/pay.php");
     exit();
 }
 ?>

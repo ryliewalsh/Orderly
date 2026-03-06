@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                  $dao->addHouseholdMember($user_id, $householdId);
 
                     // add message
-                    header("Location: https://orderly-b0075f006315.herokuapp.com/index.php");
+                    header("Location: /index.php");
                     exit();
                 } else {
                     // Error adding household member
@@ -36,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                   );
                // $dao->addHousehold($enteredHouseName, $new_key);
                 $_SESSION['house_key']= $new_key;
-                //header("Location: https://orderly-b0075f006315.herokuapp.com/joinHousehold.php");
+                //header("Location: /joinHousehold.php");
                 exit();
 
             }

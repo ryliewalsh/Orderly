@@ -27,7 +27,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
 
 
             unset($_POST['password']);
-            header("Location: https://orderly-b0075f006315.herokuapp.com/index.php");
+            header("Location: /index.php");
             exit();
         } else {
             $errors[] = "Username or password is incorrect";
@@ -35,16 +35,16 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
     }
     $_SESSION['error_messages'] = $errors;
     $_SESSION['username'] = $username;
-    header("Location:https://orderly-b0075f006315.herokuapp.com/login.php");
+    header("Location:/login.php");
 }
 
 
 
 
 if ($_SESSION['authenticated']) {
-    header("Location: https://orderly-b0075f006315.herokuapp.com/index.php");
+    header("Location: /index.php");
 } else {
-    header("Location: https://orderly-b0075f006315.herokuapp.com/login.php");
+    header("Location: /login.php");
 }
 
 exit();

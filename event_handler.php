@@ -32,19 +32,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $dao->addEvent($user_id,$name, $description,  $due_date, $time);
 
 
-        header("Location: https://orderly-b0075f006315.herokuapp.com/plan.php");
+        header("Location: /plan.php");
         exit();
     } else {
 
         $_SESSION['error_messages'] = $errors;
         $_SESSION['inputs']['name'] = $name;
         $_SESSION['inputs']['description'] = $description;
-        header("Location:https://orderly-b0075f006315.herokuapp.com/plan.php");
+        header("Location:/plan.php");
         exit();
     }
 } else {
 
-    header("Location:https://orderly-b0075f006315.herokuapp.com/plan.php");
+    header("Location:/plan.php");
     exit();
 }
 ?>

@@ -38,7 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $dao = new DAO();
         $dao->addUser($email, $username, $hashed_password, $first_name);
         unset($_SESSION['inputs']);
-        header("Location: https://orderly-b0075f006315.herokuapp.com/login.php");
+        header("Location: https://orderly-app-48b98ea3c658.herokuapp.com/login.php");
         exit();
     } else {
 
@@ -49,7 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             'first_name' => $first_name
         );
 
-        header("Location: https://orderly-b0075f006315.herokuapp.com/signUp.php");
+        header("Location: /signUp.php");
         exit();
     }
 
