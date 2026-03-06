@@ -3,6 +3,7 @@
 
     <?php
     require_once "DAO.php";
+    $date = date('Y-m-d');
     $dao = new DAO();
     $chores = $dao->getChores();
     $bills = $dao->getBills();
@@ -41,7 +42,7 @@
 
             var calendar = new FullCalendar.Calendar(calendarEl, {
                 initialView: 'dayGridMonth',
-                initialDate: '2024-04-22',
+                initialDate:  '<?= $date ?>',
                 headerToolbar: {
                     left: 'prev,next today',
                     center: 'title',
